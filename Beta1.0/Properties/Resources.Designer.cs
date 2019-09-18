@@ -93,6 +93,16 @@ namespace Promissum.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cadeado_fechado {
+            get {
+                object obj = ResourceManager.GetObject("cadeado_fechado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car_icon {
             get {
                 object obj = ResourceManager.GetObject("car icon", resourceCulture);
@@ -206,6 +216,36 @@ namespace Promissum.Properties {
         internal static System.Drawing.Bitmap fornecedor {
             get {
                 object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_fechar {
+            get {
+                object obj = ResourceManager.GetObject("icone_fechar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_maximizar {
+            get {
+                object obj = ResourceManager.GetObject("icone_maximizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_minimizar {
+            get {
+                object obj = ResourceManager.GetObject("icone_minimizar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

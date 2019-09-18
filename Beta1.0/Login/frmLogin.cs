@@ -46,12 +46,13 @@ namespace Beta1._0.Login
                     if (!String.IsNullOrEmpty(txtUsuario.Text) && !String.IsNullOrEmpty(txtSenha.Text))
                     {
                         var usuario = contexto.usuario.Where(u => u.usu_nome.Equals(txtUsuario.Text) && u.usu_senha.Equals(txtSenha.Text));
-                        if (usuario.Count() >= 0)
+                        if (usuario.Count() > 0)
                         {
                             this.Hide();
                             this.status = true;
-                            frmPrincipal.usuario = txtUsuario.Text;             
-                                          
+                            frmPrincipal.usuario = txtUsuario.Text;
+                            Promissum.frmDesignerMelhorado frmTeste = new Promissum.frmDesignerMelhorado();
+                            frmTeste.ShowDialog();              
                         }
 
                     }

@@ -237,7 +237,7 @@ namespace Beta1._0.Consulta
             //preVisualizacao.PrintPreviewControl.Zoom =1;
             //preVisualizacao.ShowDialog();
 
-            Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento frm = new Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento(Convert.ToInt32(this.codigoOrcamento), conexao);
+            Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento frm = new Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento();
             frm.ShowDialog();
 
         }
@@ -421,7 +421,7 @@ namespace Beta1._0.Consulta
 
         private void btnGerarPdf_Click(object sender, EventArgs e)
         {
-            Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento frm = new Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento(Convert.ToInt32(this.codigoOrcamento), conexao,"Sintetico","PDF");
+            Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento frm = new Relatorio_Atualizado.Orcamento.frmRelatorioOrçamento();
             frm.ShowDialog();
         }
     }

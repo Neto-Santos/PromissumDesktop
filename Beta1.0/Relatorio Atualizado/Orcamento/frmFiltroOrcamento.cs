@@ -24,13 +24,13 @@ namespace Beta1._0.Relatorio_Atualizado.Orcamento
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmRelatorioOrçamento frm = new frmRelatorioOrçamento(new DAL.DalConexao(DAL.DadosConexao.stringConexao),"", txtCliente.Text, txtRSocial.Text, txtCidade.Text, txtUF.Text, txtStatus.Text, txtDefeito.Text, txtServico.Text, txtCNPJ.Text,dtInicio.Value,dtFim.Value,"Analitico");
+            frmRelatorioOrçamento frm = new frmRelatorioOrçamento();
             frm.ShowDialog();
         }
 
         private void btnGerarPdf_Click(object sender, EventArgs e)
         {
-            frmRelatorioOrçamento frm = new frmRelatorioOrçamento(new DAL.DalConexao(DAL.DadosConexao.stringConexao),"PDF", txtCliente.Text, txtRSocial.Text, txtCidade.Text, txtUF.Text, txtStatus.Text, txtDefeito.Text, txtServico.Text, txtCNPJ.Text, dtInicio.Value, dtFim.Value, "Analitico");
+            frmRelatorioOrçamento frm = new frmRelatorioOrçamento();
             frm.ShowDialog();
         }
     }

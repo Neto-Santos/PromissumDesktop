@@ -26,20 +26,12 @@ namespace Beta1._0.Consulta.ConsultaRapida
 
             if (rbCategoria.Checked)
             {
-               
-                try
-                {
-                    dgProduto.DataSource = contexto.produto.Where(p => p.categoria.cat_nome.Contains(txtPesquisa.Text));
-                }
-                catch (Exception)
-                {
-                    throw new Exception();
-                }
+                dgProduto.DataSource = contexto.produto.Include("categoria").Where(p => p.categoria.cat_nome.Contains(txtPesquisa.Text)).Select(p=>new {p.pro_nome,p.categoria.cat_nome }).ToList();
 
             }
             if (rbReferencia.Checked)
             {
-               
+
                 try
                 {
                     dgProduto.DataSource = contexto.produto.Where(p => p.pro_ref.Contains(txtPesquisa.Text));

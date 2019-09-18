@@ -26,3 +26,5 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Ferramentas\bin\x64\Release\Newtonsoft.Json.pdb
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Ferramentas\bin\x64\Release\Newtonsoft.Json.xml
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Ferramentas\bin\x64\Release\Microsoft.ReportViewer.WinForms.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Ferramentas\bin\x64\Release\EntityFramework.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Ferramentas\bin\x64\Release\EntityFramework.xml

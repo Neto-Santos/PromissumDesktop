@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="promissumServicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="cat_cod" />
+    </Key>
+    <Property Name="cat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cat_cadastro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_produto_categoria" FromRole="categoria" ToRole="produto" />
+    <NavigationProperty Name="subcategoria" Relationship="Self.FK_subcategoria_categoria" FromRole="categoria" ToRole="subcategoria" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="cli_cod" />
+    </Key>
+    <Property Name="cli_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cli_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cpfcnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_rgie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cli_endereco" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="cli_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_endnumero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_observacao" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cadastro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_cliente" FromRole="cliente" ToRole="ClienteProduto" />
+  </EntityType>
+  <EntityType Name="ClienteProduto">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codCliente" Type="Int32" />
+    <Property Name="codProduto" Type="Int32" />
+    <Property Name="referencia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cliente" Relationship="Self.FK_ClienteProduto_cliente" FromRole="ClienteProduto" ToRole="cliente" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_ClienteProduto_produto" FromRole="ClienteProduto" ToRole="produto" />
+    <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_ClienteProduto" FromRole="ClienteProduto" ToRole="itensvenda" />
+  </EntityType>
+  <EntityType Name="clienteVeiculo">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codCliente" Type="Int32" />
+    <Property Name="codVeiculo" Type="Int32" />
+    <Property Name="placa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="modelo" Relationship="Self.FK_clienteVeiculo_modelo" FromRole="clienteVeiculo" ToRole="modelo" />
+  </EntityType>
+  <EntityType Name="email">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="assunto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="corpo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rodape1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rodape2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="rodape3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="fornecedor">
+    <Key>
+      <PropertyRef Name="for_cod" />
+    </Key>
+    <Property Name="for_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="for_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_ie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cep" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_endnumero" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cadastro" Type="DateTime" Precision="0" />
+    <Property Name="for_cpf" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_observacao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_produto_fornecedor" FromRole="fornecedor" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="itensvenda">
+    <Key>
+      <PropertyRef Name="itv_cod" />
+    </Key>
+    <Property Name="itv_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="itv_qtde" Type="Double" />
+    <Property Name="itv_valor" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ven_cod" Type="Int32" />
+    <Property Name="cp_cod" Type="Int32" />
+    <Property Name="referencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="itv_valorBase" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="itv_desconto" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="op_cod" Type="Int32" />
+    <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_itensvenda_ClienteProduto" FromRole="itensvenda" ToRole="ClienteProduto" />
+    <NavigationProperty Name="operacao" Relationship="Self.FK_itensvenda_operacao" FromRole="itensvenda" ToRole="operacao" />
+    <NavigationProperty Name="venda" Relationship="Self.FK_itensvenda_venda" FromRole="itensvenda" ToRole="venda" />
+  </EntityType>
+  <EntityType Name="lembrete">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="diasAviso" Type="Int32" />
+    <Property Name="mensagemAviso" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="tituloAviso" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="modelo">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codMontadora" Type="Int32" />
+    <Property Name="modelo1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="anoInicio" Type="Int32" />
+    <Property Name="anoFim" Type="Int32" />
+    <Property Name="cadastro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="clienteVeiculo" Relationship="Self.FK_clienteVeiculo_modelo" FromRole="modelo" ToRole="clienteVeiculo" />
+    <NavigationProperty Name="montadora" Relationship="Self.FK_modelo_montadora" FromRole="modelo" ToRole="montadora" />
+  </EntityType>
+  <EntityType Name="montadora">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="montadora1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="abreviatura_montadora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cadastro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="modelo" Relationship="Self.FK_modelo_montadora" FromRole="montadora" ToRole="modelo" />
+  </EntityType>
+  <EntityType Name="operacao">
+    <Key>
+      <PropertyRef Name="op_cod" />
+    </Key>
+    <Property Name="op_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="op_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="op_cadastro" Type="DateTime" Precision="0" />
+    <Property Name="op_descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_operacao" FromRole="operacao" ToRole="itensvenda" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="pro_cod" />
+    </Key>
+    <Property Name="pro_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pro_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="pro_descricao" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="pro_foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="pro_valorpago" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pro_valorvenda" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="pro_qtde" Type="Double" />
+    <Property Name="umed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cat_cod" Type="Int32" />
+    <Property Name="scat_cod" Type="Int32" />
+    <Property Name="pro_cadastro" Type="DateTime" Precision="0" />
+    <Property Name="for_cod" Type="Int32" />
+    <Property Name="pro_ref" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="localizacao" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="categoria" Relationship="Self.FK_produto_categoria" FromRole="produto" ToRole="categoria" />
+    <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_produto" FromRole="produto" ToRole="ClienteProduto" />
+    <NavigationProperty Name="fornecedor" Relationship="Self.FK_produto_fornecedor" FromRole="produto" ToRole="fornecedor" />
+    <NavigationProperty Name="subcategoria" Relationship="Self.FK_produto_subcategoria" FromRole="produto" ToRole="subcategoria" />
+  </EntityType>
+  <EntityType Name="subcategoria">
+    <Key>
+      <PropertyRef Name="scat_cod" />
+    </Key>
+    <Property Name="scat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cat_cod" Type="Int32" />
+    <Property Name="scat_cadastro" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="categoria" Relationship="Self.FK_subcategoria_categoria" FromRole="subcategoria" ToRole="categoria" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_produto_subcategoria" FromRole="subcategoria" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="usu_cod" />
+    </Key>
+    <Property Name="usu_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usu_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usu_senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="usu_cadastro" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="venda">
+    <Key>
+      <PropertyRef Name="ven_cod" />
+    </Key>
+    <Property Name="ven_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ven_data" Type="DateTime" Precision="3" />
+    <Property Name="ven_nfiscal" Type="Int32" />
+    <Property Name="ven_total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ven_status" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cod" Type="Int32" />
+    <Property Name="ven_nparcelas" Type="Int32" />
+    <Property Name="tpa_cod" Type="Int32" />
+    <Property Name="ven_avista" Type="Int32" />
+    <Property Name="ven_data_entrada" Type="DateTime" Precision="0" />
+    <Property Name="ven_data_saida" Type="DateTime" Precision="0" />
+    <Property Name="ven_hora_entrada" Type="DateTime" Precision="3" />
+    <Property Name="ven_hora_saida" Type="DateTime" Precision="3" />
+    <Property Name="ven_defeito_apresentado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ven_servico_efetuado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ven_lembrete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ven_diasProximaRevisao" Type="Int32" />
+    <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_venda" FromRole="venda" ToRole="itensvenda" />
+  </EntityType>
+  <EntityType Name="cidades">
+    <Key>
+      <PropertyRef Name="UF" />
+      <PropertyRef Name="Nome_UF" />
+      <PropertyRef Name="Mesorregiao_Geografica" />
+      <PropertyRef Name="Nome_Mesorregiao" />
+      <PropertyRef Name="Microrregiao_Geografica" />
+      <PropertyRef Name="Nome_Microrregiao" />
+      <PropertyRef Name="Municipio" />
+      <PropertyRef Name="Cod_Municipio_Completo" />
+      <PropertyRef Name="Nome_Municipio" />
+    </Key>
+    <Property Name="UF" Type="Int32" Nullable="false" />
+    <Property Name="Nome_UF" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mesorregiao_Geografica" Type="Int32" Nullable="false" />
+    <Property Name="Nome_Mesorregiao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Microrregiao_Geografica" Type="Int32" Nullable="false" />
+    <Property Name="Nome_Microrregiao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Municipio" Type="Int32" Nullable="false" />
+    <Property Name="Cod_Municipio_Completo" Type="Int32" Nullable="false" />
+    <Property Name="Nome_Municipio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empresa">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cpfcnpj" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telefone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="endereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bairro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cadastro" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_produto_categoria">
+    <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="cat_cod" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="cat_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subcategoria_categoria">
+    <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+    <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="cat_cod" />
+      </Principal>
+      <Dependent Role="subcategoria">
+        <PropertyRef Name="cat_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteProduto_cliente">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="cli_cod" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="codCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteProduto_produto">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="pro_cod" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="codProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itensvenda_ClienteProduto">
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="0..1" />
+    <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClienteProduto">
+        <PropertyRef Name="cod" />
+      </Principal>
+      <Dependent Role="itensvenda">
+        <PropertyRef Name="cp_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clienteVeiculo_modelo">
+    <End Role="modelo" Type="Self.modelo" Multiplicity="0..1" />
+    <End Role="clienteVeiculo" Type="Self.clienteVeiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modelo">
+        <PropertyRef Name="cod" />
+      </Principal>
+      <Dependent Role="clienteVeiculo">
+        <PropertyRef Name="codVeiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_produto_fornecedor">
+    <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fornecedor">
+        <PropertyRef Name="for_cod" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="for_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itensvenda_operacao">
+    <End Role="operacao" Type="Self.operacao" Multiplicity="0..1" />
+    <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operacao">
+        <PropertyRef Name="op_cod" />
+      </Principal>
+      <Dependent Role="itensvenda">
+        <PropertyRef Name="op_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itensvenda_venda">
+    <End Role="venda" Type="Self.venda" Multiplicity="0..1" />
+    <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venda">
+        <PropertyRef Name="ven_cod" />
+      </Principal>
+      <Dependent Role="itensvenda">
+        <PropertyRef Name="ven_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_montadora">
+    <End Role="montadora" Type="Self.montadora" Multiplicity="0..1" />
+    <End Role="modelo" Type="Self.modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="montadora">
+        <PropertyRef Name="cod" />
+      </Principal>
+      <Dependent Role="modelo">
+        <PropertyRef Name="codMontadora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_produto_subcategoria">
+    <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subcategoria">
+        <PropertyRef Name="scat_cod" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="scat_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="promissumServicoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="categoria" EntityType="Self.categoria" />
+    <EntitySet Name="cliente" EntityType="Self.cliente" />
+    <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" />
+    <EntitySet Name="clienteVeiculo" EntityType="Self.clienteVeiculo" />
+    <EntitySet Name="email" EntityType="Self.email" />
+    <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
+    <EntitySet Name="itensvenda" EntityType="Self.itensvenda" />
+    <EntitySet Name="lembrete" EntityType="Self.lembrete" />
+    <EntitySet Name="modelo" EntityType="Self.modelo" />
+    <EntitySet Name="montadora" EntityType="Self.montadora" />
+    <EntitySet Name="operacao" EntityType="Self.operacao" />
+    <EntitySet Name="produto" EntityType="Self.produto" />
+    <EntitySet Name="subcategoria" EntityType="Self.subcategoria" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <EntitySet Name="venda" EntityType="Self.venda" />
+    <EntitySet Name="cidades" EntityType="Self.cidades" />
+    <EntitySet Name="empresa" EntityType="Self.empresa" />
+    <AssociationSet Name="FK_produto_categoria" Association="Self.FK_produto_categoria">
+      <End Role="categoria" EntitySet="categoria" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subcategoria_categoria" Association="Self.FK_subcategoria_categoria">
+      <End Role="categoria" EntitySet="categoria" />
+      <End Role="subcategoria" EntitySet="subcategoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteProduto_cliente" Association="Self.FK_ClienteProduto_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteProduto_produto" Association="Self.FK_ClienteProduto_produto">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itensvenda_ClienteProduto" Association="Self.FK_itensvenda_ClienteProduto">
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+      <End Role="itensvenda" EntitySet="itensvenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clienteVeiculo_modelo" Association="Self.FK_clienteVeiculo_modelo">
+      <End Role="modelo" EntitySet="modelo" />
+      <End Role="clienteVeiculo" EntitySet="clienteVeiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_produto_fornecedor" Association="Self.FK_produto_fornecedor">
+      <End Role="fornecedor" EntitySet="fornecedor" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itensvenda_operacao" Association="Self.FK_itensvenda_operacao">
+      <End Role="operacao" EntitySet="operacao" />
+      <End Role="itensvenda" EntitySet="itensvenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itensvenda_venda" Association="Self.FK_itensvenda_venda">
+      <End Role="venda" EntitySet="venda" />
+      <End Role="itensvenda" EntitySet="itensvenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_montadora" Association="Self.FK_modelo_montadora">
+      <End Role="montadora" EntitySet="montadora" />
+      <End Role="modelo" EntitySet="modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_produto_subcategoria" Association="Self.FK_produto_subcategoria">
+      <End Role="subcategoria" EntitySet="subcategoria" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

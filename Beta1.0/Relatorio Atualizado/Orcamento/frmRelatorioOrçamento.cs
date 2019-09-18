@@ -15,29 +15,10 @@ namespace Beta1._0.Relatorio_Atualizado.Orcamento
 {
     public partial class frmRelatorioOrçamento : Form
     {
-        public frmRelatorioOrçamento(string formato, string cliente, string rsocial, string cidade, string uf, string status, string defeito, string servico, string cnpj, DateTime inicio, DateTime fim, string tipo = "Sintetico")
+        public frmRelatorioOrçamento()
         {
             InitializeComponent();
-            this.conexao = conexao;
-            this.tipo = tipo;
-            this.cliente = cliente;
-            this.rsocial = rsocial;
-            this.cidade = cidade;
-            this.uf = uf;
-            this.status = status;
-            this.servico = servico;
-            this.defeito = defeito;
-            this.cnpj = cnpj;
-            this.inicio = inicio;
-            this.fim = fim;
-            this.formato = formato;
-        }
-        public frmRelatorioOrçamento(int codVenda, DalConexao conexao, string tipo = "Sintetico",string formato="")
-        {
-            InitializeComponent();
-            this.conexao = conexao;
-            this.codVenda = codVenda;
-            this.tipo = tipo;
+           
             this.formato = formato;
         }
 

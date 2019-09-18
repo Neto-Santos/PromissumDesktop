@@ -253,6 +253,12 @@
     <Compile Include="Consulta\frmConsultaSubCategoria.Designer.cs">
       <DependentUpon>frmConsultaSubCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDesignerMelhorado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDesignerMelhorado.Designer.cs">
+      <DependentUpon>frmDesignerMelhorado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -685,6 +691,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consulta\frmConsultaSubCategoria.resx">
       <DependentUpon>frmConsultaSubCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDesignerMelhorado.resx">
+      <DependentUpon>frmDesignerMelhorado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -1137,6 +1146,10 @@
   <ItemGroup>
     <Content Include="icone.ico" />
     <Content Include="Logo\logo.jpeg" />
+    <None Include="Resources\cadeado_fechado.png" />
+    <None Include="Resources\icone_fechar.png" />
+    <None Include="Resources\icone_maximizar.png" />
+    <None Include="Resources\icone_minimizar.png" />
     <None Include="Resources\car icon.png" />
     <None Include="Resources\backup.png" />
     <None Include="Resources\sobre48.png" />

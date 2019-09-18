@@ -194,3 +194,10 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Release\Promissum.Cadastro.frmCadMontadora.resources
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Release\Promissum.Consulta.frmConsultaMontadora.resources
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Release\Promissum.NFS_e.frmNFSe.resources
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Release\Promissum.frmDesignerMelhorado.resources
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Release\Promissum.Relatorio_Atualizado.Operacao.frmFiltroOperacao.resources
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Release\Promissum.Relatorio_Atualizado.Operacao.frmRelatorioOperacao.resources
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Release\EntityFramework.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Release\EntityFramework.SqlServer.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Release\EntityFramework.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Release\EntityFramework.SqlServer.xml

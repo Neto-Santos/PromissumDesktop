@@ -200,3 +200,5 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\EntityFramework.SqlServer.dll
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\EntityFramework.xml
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\EntityFramework.SqlServer.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Debug\Promissum.frmDesignerMelhorado.resources
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\Debug\Promissum.exe.config

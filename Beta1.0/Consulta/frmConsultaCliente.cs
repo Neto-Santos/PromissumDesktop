@@ -136,6 +136,8 @@ namespace Beta1._0.Consulta
                         objClienteProduto.codProduto = Convert.ToInt32(txtCod.Text);
                         objClienteProduto.referencia = txtReferencia.Text;
 
+                        contexto.ClienteProduto.Add(objClienteProduto);
+                        contexto.SaveChanges();
                     }
                     else
                     {
@@ -217,9 +219,7 @@ namespace Beta1._0.Consulta
                 {
                     try
                     {
-                        BLLClienteProduto bll = new BLLClienteProduto(conexao);
-                        bll.Excluir(codigoClienteProduto);
-                        atualizaDgClienteProduto(codigoCliente);
+                       //Não poderá ser mais excluído um cliente produtos, mas sim cancelado.
                     }
                     catch (Exception)
                     {

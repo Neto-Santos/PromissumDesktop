@@ -16,13 +16,15 @@ namespace Beta1._0.Consulta
 {
     public partial class frmConsultaProduto : Form
     {
-        public frmConsultaProduto(string codigo = null)
+        public frmConsultaProduto()
         {
             InitializeComponent();
-            this.codigo = codigo;
+            this.codigo = null;
             conexao = new DalConexao(DadosConexao.stringConexao);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+       
 
         DalConexao conexao;
         string codigo;
@@ -67,6 +69,8 @@ namespace Beta1._0.Consulta
         {
             Ferramentas.impressao objferra = new Ferramentas.impressao();
             objferra.CarregarListaDeImpressoras(cbImpressora);
+
+            
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)

@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="promissumServicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="cat_cod" />
+    </Key>
+    <Property Name="cat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cat_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cat_cadastro" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'promissumServico.dbo.cidades' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="cidades">
+    <Key>
+      <PropertyRef Name="UF" />
+      <PropertyRef Name="Nome_UF" />
+      <PropertyRef Name="Mesorregiao_Geografica" />
+      <PropertyRef Name="Nome_Mesorregiao" />
+      <PropertyRef Name="Microrregiao_Geografica" />
+      <PropertyRef Name="Nome_Microrregiao" />
+      <PropertyRef Name="Municipio" />
+      <PropertyRef Name="Cod_Municipio_Completo" />
+      <PropertyRef Name="Nome_Municipio" />
+    </Key>
+    <Property Name="UF" Type="int" Nullable="false" />
+    <Property Name="Nome_UF" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Mesorregiao_Geografica" Type="int" Nullable="false" />
+    <Property Name="Nome_Mesorregiao" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Microrregiao_Geografica" Type="int" Nullable="false" />
+    <Property Name="Nome_Microrregiao" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Municipio" Type="int" Nullable="false" />
+    <Property Name="Cod_Municipio_Completo" Type="int" Nullable="false" />
+    <Property Name="Nome_Municipio" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="cli_cod" />
+    </Key>
+    <Property Name="cli_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cli_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cli_cpfcnpj" Type="varchar" MaxLength="95" />
+    <Property Name="cli_rgie" Type="varchar" MaxLength="95" />
+    <Property Name="cli_rsocial" Type="varchar" MaxLength="95" />
+    <Property Name="cli_tipo" Type="varchar" MaxLength="50" />
+    <Property Name="cli_cep" Type="varchar" MaxLength="20" />
+    <Property Name="cli_endereco" Type="varchar" MaxLength="250" />
+    <Property Name="cli_bairro" Type="varchar" MaxLength="95" />
+    <Property Name="cli_fone" Type="varchar" MaxLength="95" />
+    <Property Name="cli_cel" Type="varchar" MaxLength="95" />
+    <Property Name="cli_email" Type="varchar" MaxLength="95" />
+    <Property Name="cli_endnumero" Type="varchar" MaxLength="10" />
+    <Property Name="cli_cidade" Type="varchar" MaxLength="95" />
+    <Property Name="cli_estado" Type="varchar" MaxLength="95" />
+    <Property Name="cli_observacao" Type="varchar" MaxLength="95" />
+    <Property Name="cli_cadastro" Type="date" />
+  </EntityType>
+  <EntityType Name="ClienteProduto">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codCliente" Type="int" />
+    <Property Name="codProduto" Type="int" />
+    <Property Name="referencia" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="clienteVeiculo">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codCliente" Type="int" />
+    <Property Name="codVeiculo" Type="int" />
+    <Property Name="placa" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="email">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="assunto" Type="text" />
+    <Property Name="corpo" Type="text" />
+    <Property Name="rodape1" Type="text" />
+    <Property Name="rodape2" Type="text" />
+    <Property Name="rodape3" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="empresa">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="100" />
+    <Property Name="cpfcnpj" Type="varchar" MaxLength="100" />
+    <Property Name="telefone" Type="varchar" MaxLength="100" />
+    <Property Name="celular" Type="varchar" MaxLength="100" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="endereco" Type="varchar" MaxLength="100" />
+    <Property Name="numero" Type="varchar" MaxLength="100" />
+    <Property Name="cidade" Type="varchar" MaxLength="100" />
+    <Property Name="bairro" Type="varchar" MaxLength="100" />
+    <Property Name="estado" Type="varchar" MaxLength="100" />
+    <Property Name="cadastro" Type="date" />
+  </EntityType>
+  <EntityType Name="fornecedor">
+    <Key>
+      <PropertyRef Name="for_cod" />
+    </Key>
+    <Property Name="for_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="for_nome" Type="varchar" MaxLength="95" />
+    <Property Name="for_rsocial" Type="varchar" MaxLength="95" />
+    <Property Name="for_ie" Type="varchar" MaxLength="95" />
+    <Property Name="for_cnpj" Type="varchar" MaxLength="95" />
+    <Property Name="for_cep" Type="varchar" MaxLength="95" />
+    <Property Name="for_endereco" Type="varchar" MaxLength="95" />
+    <Property Name="for_bairro" Type="varchar" MaxLength="95" />
+    <Property Name="for_fone" Type="varchar" MaxLength="95" />
+    <Property Name="for_cel" Type="varchar" MaxLength="95" />
+    <Property Name="for_email" Type="varchar" MaxLength="95" />
+    <Property Name="for_endnumero" Type="varchar" MaxLength="95" />
+    <Property Name="for_cidade" Type="varchar" MaxLength="95" />
+    <Property Name="for_estado" Type="varchar" MaxLength="95" />
+    <Property Name="for_cadastro" Type="date" />
+    <Property Name="for_cpf" Type="varchar" MaxLength="95" />
+    <Property Name="for_observacao" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="itensvenda">
+    <Key>
+      <PropertyRef Name="itv_cod" />
+    </Key>
+    <Property Name="itv_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="itv_qtde" Type="float" />
+    <Property Name="itv_valor" Type="money" />
+    <Property Name="ven_cod" Type="int" />
+    <Property Name="cp_cod" Type="int" />
+    <Property Name="referencia" Type="varchar" MaxLength="100" />
+    <Property Name="itv_valorBase" Type="money" />
+    <Property Name="itv_desconto" Type="money" />
+    <Property Name="op_cod" Type="int" />
+  </EntityType>
+  <EntityType Name="lembrete">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="diasAviso" Type="int" />
+    <Property Name="mensagemAviso" Type="varchar" MaxLength="500" />
+    <Property Name="tituloAviso" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="modelo">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codMontadora" Type="int" />
+    <Property Name="modelo" Type="varchar" MaxLength="100" />
+    <Property Name="anoInicio" Type="int" />
+    <Property Name="anoFim" Type="int" />
+    <Property Name="cadastro" Type="date" />
+  </EntityType>
+  <EntityType Name="montadora">
+    <Key>
+      <PropertyRef Name="cod" />
+    </Key>
+    <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="montadora" Type="varchar" MaxLength="100" />
+    <Property Name="abreviatura_montadora" Type="varchar" MaxLength="50" />
+    <Property Name="cadastro" Type="date" />
+  </EntityType>
+  <EntityType Name="operacao">
+    <Key>
+      <PropertyRef Name="op_cod" />
+    </Key>
+    <Property Name="op_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="op_nome" Type="varchar" MaxLength="95" />
+    <Property Name="op_cadastro" Type="date" />
+    <Property Name="op_descricao" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="pro_cod" />
+    </Key>
+    <Property Name="pro_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pro_nome" Type="varchar" MaxLength="95" />
+    <Property Name="pro_descricao" Type="varchar" MaxLength="95" />
+    <Property Name="pro_foto" Type="text" />
+    <Property Name="pro_valorpago" Type="money" />
+    <Property Name="pro_valorvenda" Type="money" />
+    <Property Name="pro_qtde" Type="float" />
+    <Property Name="umed" Type="varchar" MaxLength="50" />
+    <Property Name="cat_cod" Type="int" />
+    <Property Name="scat_cod" Type="int" />
+    <Property Name="pro_cadastro" Type="date" />
+    <Property Name="for_cod" Type="int" />
+    <Property Name="pro_ref" Type="varchar" MaxLength="100" />
+    <Property Name="localizacao" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="subcategoria">
+    <Key>
+      <PropertyRef Name="scat_cod" />
+    </Key>
+    <Property Name="scat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scat_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cat_cod" Type="int" />
+    <Property Name="scat_cadastro" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="usu_cod" />
+    </Key>
+    <Property Name="usu_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usu_nome" Type="varchar" MaxLength="50" />
+    <Property Name="usu_senha" Type="varchar" MaxLength="50" />
+    <Property Name="usu_cadastro" Type="date" />
+  </EntityType>
+  <EntityType Name="venda">
+    <Key>
+      <PropertyRef Name="ven_cod" />
+    </Key>
+    <Property Name="ven_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ven_data" Type="datetime" />
+    <Property Name="ven_nfiscal" Type="int" />
+    <Property Name="ven_total" Type="money" />
+    <Property Name="ven_status" Type="varchar" MaxLength="95" />
+    <Property Name="cli_cod" Type="int" />
+    <Property Name="ven_nparcelas" Type="int" />
+    <Property Name="tpa_cod" Type="int" />
+    <Property Name="ven_avista" Type="int" />
+    <Property Name="ven_data_entrada" Type="date" />
+    <Property Name="ven_data_saida" Type="date" />
+    <Property Name="ven_hora_entrada" Type="datetime" />
+    <Property Name="ven_hora_saida" Type="datetime" />
+    <Property Name="ven_defeito_apresentado" Type="varchar" MaxLength="500" />
+    <Property Name="ven_servico_efetuado" Type="varchar" MaxLength="500" />
+    <Property Name="ven_lembrete" Type="varchar" MaxLength="50" />
+    <Property Name="ven_diasProximaRevisao" Type="int" />
+  </EntityType>
+  <Association Name="FK_ClienteProduto_cliente">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="cli_cod" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="codCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClienteProduto_produto">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="pro_cod" />
+      </Principal>
+      <Dependent Role="ClienteProduto">
+        <PropertyRef Name="codProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clienteVeiculo_modelo">
+    <End Role="modelo" Type="Self.modelo" Multiplicity="0..1" />
+    <End Role="clienteVeiculo" Type="Self.clienteVeiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modelo">
+        <PropertyRef Name="cod" />
+      </Principal>
+      <Dependent Role="clienteVeiculo">
+        <PropertyRef Name="codVeiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itensvenda_ClienteProduto">
+    <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="0..1" />
+    <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClienteProduto">
+        <PropertyRef Name="cod" />
+      </Principal>
+      <Dependent Role="itensvenda">
+        <PropertyRef Name="cp_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itensvenda_operacao">
+    <End Role="operacao" Type="Self.operacao" Multiplicity="0..1" />
+    <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operacao">
+        <PropertyRef Name="op_cod" />
+      </Principal>
+      <Dependent Role="itensvenda">
+        <PropertyRef Name="op_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_itensvenda_venda">
+    <End Role="venda" Type="Self.venda" Multiplicity="0..1" />
+    <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venda">
+        <PropertyRef Name="ven_cod" />
+      </Principal>
+      <Dependent Role="itensvenda">
+        <PropertyRef Name="ven_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_montadora">
+    <End Role="montadora" Type="Self.montadora" Multiplicity="0..1" />
+    <End Role="modelo" Type="Self.modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="montadora">
+        <PropertyRef Name="cod" />
+      </Principal>
+      <Dependent Role="modelo">
+        <PropertyRef Name="codMontadora" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_produto_categoria">
+    <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="cat_cod" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="cat_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_produto_fornecedor">
+    <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fornecedor">
+        <PropertyRef Name="for_cod" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="for_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_produto_subcategoria">
+    <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subcategoria">
+        <PropertyRef Name="scat_cod" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="scat_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subcategoria_categoria">
+    <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+    <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="cat_cod" />
+      </Principal>
+      <Dependent Role="subcategoria">
+        <PropertyRef Name="cat_cod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="promissumServicoModelStoreContainer">
+    <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="clienteVeiculo" EntityType="Self.clienteVeiculo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="email" EntityType="Self.email" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="itensvenda" EntityType="Self.itensvenda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lembrete" EntityType="Self.lembrete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="modelo" EntityType="Self.modelo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="montadora" EntityType="Self.montadora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="operacao" EntityType="Self.operacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="produto" EntityType="Self.produto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategoria" EntityType="Self.subcategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="venda" EntityType="Self.venda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cidades" EntityType="Self.cidades" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [cidades].[UF] AS [UF], 
+    [cidades].[Nome_UF] AS [Nome_UF], 
+    [cidades].[Mesorregiao_Geografica] AS [Mesorregiao_Geografica], 
+    [cidades].[Nome_Mesorregiao] AS [Nome_Mesorregiao], 
+    [cidades].[Microrregiao_Geografica] AS [Microrregiao_Geografica], 
+    [cidades].[Nome_Microrregiao] AS [Nome_Microrregiao], 
+    [cidades].[Municipio] AS [Municipio], 
+    [cidades].[Cod_Municipio_Completo] AS [Cod_Municipio_Completo], 
+    [cidades].[Nome_Municipio] AS [Nome_Municipio]
+    FROM [dbo].[cidades] AS [cidades]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="empresa" EntityType="Self.empresa" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [empresa].[cod] AS [cod], 
+    [empresa].[nome] AS [nome], 
+    [empresa].[cpfcnpj] AS [cpfcnpj], 
+    [empresa].[telefone] AS [telefone], 
+    [empresa].[celular] AS [celular], 
+    [empresa].[email] AS [email], 
+    [empresa].[endereco] AS [endereco], 
+    [empresa].[numero] AS [numero], 
+    [empresa].[cidade] AS [cidade], 
+    [empresa].[bairro] AS [bairro], 
+    [empresa].[estado] AS [estado], 
+    [empresa].[cadastro] AS [cadastro]
+    FROM [dbo].[empresa] AS [empresa]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ClienteProduto_cliente" Association="Self.FK_ClienteProduto_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClienteProduto_produto" Association="Self.FK_ClienteProduto_produto">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clienteVeiculo_modelo" Association="Self.FK_clienteVeiculo_modelo">
+      <End Role="modelo" EntitySet="modelo" />
+      <End Role="clienteVeiculo" EntitySet="clienteVeiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itensvenda_ClienteProduto" Association="Self.FK_itensvenda_ClienteProduto">
+      <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+      <End Role="itensvenda" EntitySet="itensvenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itensvenda_operacao" Association="Self.FK_itensvenda_operacao">
+      <End Role="operacao" EntitySet="operacao" />
+      <End Role="itensvenda" EntitySet="itensvenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_itensvenda_venda" Association="Self.FK_itensvenda_venda">
+      <End Role="venda" EntitySet="venda" />
+      <End Role="itensvenda" EntitySet="itensvenda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_montadora" Association="Self.FK_modelo_montadora">
+      <End Role="montadora" EntitySet="montadora" />
+      <End Role="modelo" EntitySet="modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_produto_categoria" Association="Self.FK_produto_categoria">
+      <End Role="categoria" EntitySet="categoria" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_produto_fornecedor" Association="Self.FK_produto_fornecedor">
+      <End Role="fornecedor" EntitySet="fornecedor" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_produto_subcategoria" Association="Self.FK_produto_subcategoria">
+      <End Role="subcategoria" EntitySet="subcategoria" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subcategoria_categoria" Association="Self.FK_subcategoria_categoria">
+      <End Role="categoria" EntitySet="categoria" />
+      <End Role="subcategoria" EntitySet="subcategoria" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
