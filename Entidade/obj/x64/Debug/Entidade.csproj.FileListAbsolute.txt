@@ -1,0 +1,13 @@
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\Entidade\bin\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\Entidade\bin\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\Entidade\obj\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\Entidade\obj\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\documents\visual studio 2015\Projects\Beta1.0\Entidade\obj\x64\Debug\Entidade.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\bin\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\bin\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\obj\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\obj\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\bin\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\bin\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\obj\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Entidade\obj\x64\Debug\Entidade.pdb

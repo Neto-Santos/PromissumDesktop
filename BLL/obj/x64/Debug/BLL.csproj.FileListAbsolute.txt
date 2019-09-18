@@ -1,0 +1,99 @@
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Ferramentas.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Tulpep.NotificationWindow.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Ferramentas.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\obj\x64\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\obj\x64\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.BatchParser.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.XE.Core.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.XEvent.Linq.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Smo.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.SmoExtended.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Dmf.Common.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Diagnostics.STrace.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlTDiagM.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Smo.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.SmoExtended.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.ConnectionInfo.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlEnum.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.Dmf.Common.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.ServiceBrokerEnum.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x64\Debug\Microsoft.SqlServer.RegSvrEnum.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.BatchParser.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.XE.Core.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.XEvent.Linq.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Ferramentas.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Tulpep.NotificationWindow.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Smo.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SmoExtended.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Dmf.Common.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Diagnostics.STrace.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlTDiagM.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Ferramentas.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Smo.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SmoExtended.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.ConnectionInfo.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlEnum.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Dmf.Common.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.ServiceBrokerEnum.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.RegSvrEnum.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\obj\x64\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\obj\x64\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\xmlConfig\config.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\obj\x64\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\obj\x64\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\obj\x64\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Ferramentas.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Tulpep.NotificationWindow.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Smo.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SmoExtended.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlEnum.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Ferramentas.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DataSetOperacao\dsOperacao.Designer.cs
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DataSetOperacao\dsOperacao.xsc
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DataSetOperacao\dsOperacao.xsd
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\DataSetOperacao\dsOperacao.xss
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\xmlConfig\config.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\xmlConfig\config.cs
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Newtonsoft.Json.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\EntityFramework.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\BLL\bin\x64\Debug\EntityFramework.xml

@@ -1,0 +1,26 @@
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x64\Release\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x64\Release\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x64\Release\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x64\Release\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\obj\x64\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\obj\x64\Release\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\obj\x64\Release\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\obj\x64\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\obj\x64\Release\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\obj\x64\Release\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DataSetOperacao\dsOperacao.Designer.cs
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DataSetOperacao\dsOperacao.xsc
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DataSetOperacao\dsOperacao.xsd
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DataSetOperacao\dsOperacao.xss
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DAL.dll.config
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\bin\x64\Release\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\obj\x64\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\obj\x64\Release\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\DAL\obj\x64\Release\DAL.pdb

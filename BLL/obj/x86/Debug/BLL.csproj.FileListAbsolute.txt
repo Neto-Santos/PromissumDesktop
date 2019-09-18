@@ -1,0 +1,12 @@
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\BLL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\Ferramentas.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\Tulpep.NotificationWindow.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\Ferramentas.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\bin\x86\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\obj\x86\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\obj\x86\Debug\BLL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\BLL\obj\x86\Debug\BLL.pdb

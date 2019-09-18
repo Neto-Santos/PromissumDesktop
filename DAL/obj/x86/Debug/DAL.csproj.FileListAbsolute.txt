@@ -1,0 +1,7 @@
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x86\Debug\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x86\Debug\DAL.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x86\Debug\Entidade.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\bin\x86\Debug\Entidade.pdb
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\obj\x86\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\obj\x86\Debug\DAL.dll
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\Beta1.0\DAL\obj\x86\Debug\DAL.pdb

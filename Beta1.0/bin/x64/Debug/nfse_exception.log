@@ -1,0 +1,18 @@
+[02/02/2019 21:07:34:626] 9344 - EspdNFSeFileNotFoundException : O arquivo de servidores informado não existe: nfseServidoresHom.ini
+[02/02/2019 21:07:34:672] 9344 - EspdNFSeException : O CNPJ SoftwareHouse não foi configurado corretamente. Para isso utilize o método ConfigurarSoftwareHouse após instanciar o componente ou entre em contato com o suporte técnico.
+[02/02/2019 21:07:34:686] 9344 - EspdNFSeException : O CNPJ SoftwareHouse não foi configurado corretamente. Para isso utilize o método ConfigurarSoftwareHouse após instanciar o componente ou entre em contato com o suporte técnico.
+[02/02/2019 21:08:11:578] 9344 - EspdNFSeCheckParams : Xml não possui valor
+[02/02/2019 21:08:11:582] 9344 - EspdNFSeFileNotFoundException : O arquivo de servidores informado não existe: nfseServidoresHom.ini
+[02/02/2019 21:08:11:588] 9344 - EspdNFSeException : O CNPJ SoftwareHouse não foi configurado corretamente. Para isso utilize o método ConfigurarSoftwareHouse após instanciar o componente ou entre em contato com o suporte técnico.
+[02/02/2019 21:08:17:944] 9344 - EspdNFSeCheckParams : Xml não possui valor
+[02/02/2019 21:08:17:950] 9344 - EspdNFSeFileNotFoundException : O arquivo de servidores informado não existe: nfseServidoresHom.ini
+[02/02/2019 21:08:17:956] 9344 - EspdNFSeException : O CNPJ SoftwareHouse não foi configurado corretamente. Para isso utilize o método ConfigurarSoftwareHouse após instanciar o componente ou entre em contato com o suporte técnico.
+[02/02/2019 22:53:32:372] 3436 - EspdNFSeCheckParams : CNPJ ou CPF da SoftwareHouse inválido.
+[02/02/2019 22:53:43:272] 3436 - EspdNFSeFileNotFoundException : O arquivo de servidores informado não existe: nfseServidoresHom.ini
+[02/02/2019 22:53:43:298] 3436 - EspdNFSeException : O CNPJ SoftwareHouse não foi configurado corretamente. Para isso utilize o método ConfigurarSoftwareHouse após instanciar o componente ou entre em contato com o suporte técnico.
+[02/02/2019 22:53:43:340] 3436 - EspdNFSeException : O CNPJ SoftwareHouse não foi configurado corretamente. Para isso utilize o método ConfigurarSoftwareHouse após instanciar o componente ou entre em contato com o suporte técnico.
+[02/02/2019 22:55:15:041] 5748 - EspdNFSeCheckParams : CNPJ ou CPF da SoftwareHouse inválido.
+[02/02/2019 22:55:17:797] 5748 - EspdNFSeCheckParams : CNPJ ou CPF da SoftwareHouse inválido.
+[02/02/2019 22:55:29:458] 5748 - EspdNFSeCheckParams : CNPJ ou CPF da SoftwareHouse inválido.
+[02/02/2019 22:55:32:986] 5748 - EspdNFSeCheckParams : CNPJ ou CPF da SoftwareHouse inválido.
+[02/02/2019 22:55:35:362] 5748 - EspdNFSeCheckParams : CNPJ ou CPF da SoftwareHouse inválido.

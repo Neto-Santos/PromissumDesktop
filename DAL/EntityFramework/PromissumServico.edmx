@@ -1,0 +1,1220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="promissumServicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="cat_cod" />
+          </Key>
+          <Property Name="cat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cat_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cat_cadastro" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'promissumServico.dbo.cidades' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="cidades">
+          <Key>
+            <PropertyRef Name="UF" />
+            <PropertyRef Name="Nome_UF" />
+            <PropertyRef Name="Mesorregiao_Geografica" />
+            <PropertyRef Name="Nome_Mesorregiao" />
+            <PropertyRef Name="Microrregiao_Geografica" />
+            <PropertyRef Name="Nome_Microrregiao" />
+            <PropertyRef Name="Municipio" />
+            <PropertyRef Name="Cod_Municipio_Completo" />
+            <PropertyRef Name="Nome_Municipio" />
+          </Key>
+          <Property Name="UF" Type="int" Nullable="false" />
+          <Property Name="Nome_UF" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Mesorregiao_Geografica" Type="int" Nullable="false" />
+          <Property Name="Nome_Mesorregiao" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Microrregiao_Geografica" Type="int" Nullable="false" />
+          <Property Name="Nome_Microrregiao" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Municipio" Type="int" Nullable="false" />
+          <Property Name="Cod_Municipio_Completo" Type="int" Nullable="false" />
+          <Property Name="Nome_Municipio" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="cli_cod" />
+          </Key>
+          <Property Name="cli_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cli_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cli_cpfcnpj" Type="varchar" MaxLength="95" />
+          <Property Name="cli_rgie" Type="varchar" MaxLength="95" />
+          <Property Name="cli_rsocial" Type="varchar" MaxLength="95" />
+          <Property Name="cli_tipo" Type="varchar" MaxLength="50" />
+          <Property Name="cli_cep" Type="varchar" MaxLength="20" />
+          <Property Name="cli_endereco" Type="varchar" MaxLength="250" />
+          <Property Name="cli_bairro" Type="varchar" MaxLength="95" />
+          <Property Name="cli_fone" Type="varchar" MaxLength="95" />
+          <Property Name="cli_cel" Type="varchar" MaxLength="95" />
+          <Property Name="cli_email" Type="varchar" MaxLength="95" />
+          <Property Name="cli_endnumero" Type="varchar" MaxLength="10" />
+          <Property Name="cli_cidade" Type="varchar" MaxLength="95" />
+          <Property Name="cli_estado" Type="varchar" MaxLength="95" />
+          <Property Name="cli_observacao" Type="varchar" MaxLength="95" />
+          <Property Name="cli_cadastro" Type="date" />
+        </EntityType>
+        <EntityType Name="ClienteProduto">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codCliente" Type="int" />
+          <Property Name="codProduto" Type="int" />
+          <Property Name="referencia" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="clienteVeiculo">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codCliente" Type="int" />
+          <Property Name="codVeiculo" Type="int" />
+          <Property Name="placa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="email">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="assunto" Type="text" />
+          <Property Name="corpo" Type="text" />
+          <Property Name="rodape1" Type="text" />
+          <Property Name="rodape2" Type="text" />
+          <Property Name="rodape3" Type="text" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="cpfcnpj" Type="varchar" MaxLength="100" />
+          <Property Name="telefone" Type="varchar" MaxLength="100" />
+          <Property Name="celular" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="endereco" Type="varchar" MaxLength="100" />
+          <Property Name="numero" Type="varchar" MaxLength="100" />
+          <Property Name="cidade" Type="varchar" MaxLength="100" />
+          <Property Name="bairro" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="varchar" MaxLength="100" />
+          <Property Name="cadastro" Type="date" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="for_cod" />
+          </Key>
+          <Property Name="for_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="for_nome" Type="varchar" MaxLength="95" />
+          <Property Name="for_rsocial" Type="varchar" MaxLength="95" />
+          <Property Name="for_ie" Type="varchar" MaxLength="95" />
+          <Property Name="for_cnpj" Type="varchar" MaxLength="95" />
+          <Property Name="for_cep" Type="varchar" MaxLength="95" />
+          <Property Name="for_endereco" Type="varchar" MaxLength="95" />
+          <Property Name="for_bairro" Type="varchar" MaxLength="95" />
+          <Property Name="for_fone" Type="varchar" MaxLength="95" />
+          <Property Name="for_cel" Type="varchar" MaxLength="95" />
+          <Property Name="for_email" Type="varchar" MaxLength="95" />
+          <Property Name="for_endnumero" Type="varchar" MaxLength="95" />
+          <Property Name="for_cidade" Type="varchar" MaxLength="95" />
+          <Property Name="for_estado" Type="varchar" MaxLength="95" />
+          <Property Name="for_cadastro" Type="date" />
+          <Property Name="for_cpf" Type="varchar" MaxLength="95" />
+          <Property Name="for_observacao" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="itensvenda">
+          <Key>
+            <PropertyRef Name="itv_cod" />
+          </Key>
+          <Property Name="itv_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="itv_qtde" Type="float" />
+          <Property Name="itv_valor" Type="money" />
+          <Property Name="ven_cod" Type="int" />
+          <Property Name="cp_cod" Type="int" />
+          <Property Name="referencia" Type="varchar" MaxLength="100" />
+          <Property Name="itv_valorBase" Type="money" />
+          <Property Name="itv_desconto" Type="money" />
+          <Property Name="op_cod" Type="int" />
+        </EntityType>
+        <EntityType Name="lembrete">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="diasAviso" Type="int" />
+          <Property Name="mensagemAviso" Type="varchar" MaxLength="500" />
+          <Property Name="tituloAviso" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="modelo">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codMontadora" Type="int" />
+          <Property Name="modelo" Type="varchar" MaxLength="100" />
+          <Property Name="anoInicio" Type="int" />
+          <Property Name="anoFim" Type="int" />
+          <Property Name="cadastro" Type="date" />
+        </EntityType>
+        <EntityType Name="montadora">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="montadora" Type="varchar" MaxLength="100" />
+          <Property Name="abreviatura_montadora" Type="varchar" MaxLength="50" />
+          <Property Name="cadastro" Type="date" />
+        </EntityType>
+        <EntityType Name="operacao">
+          <Key>
+            <PropertyRef Name="op_cod" />
+          </Key>
+          <Property Name="op_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="op_nome" Type="varchar" MaxLength="95" />
+          <Property Name="op_cadastro" Type="date" />
+          <Property Name="op_descricao" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="pro_cod" />
+          </Key>
+          <Property Name="pro_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pro_nome" Type="varchar" MaxLength="95" />
+          <Property Name="pro_descricao" Type="varchar" MaxLength="95" />
+          <Property Name="pro_foto" Type="text" />
+          <Property Name="pro_valorpago" Type="money" />
+          <Property Name="pro_valorvenda" Type="money" />
+          <Property Name="pro_qtde" Type="float" />
+          <Property Name="umed" Type="varchar" MaxLength="50" />
+          <Property Name="cat_cod" Type="int" />
+          <Property Name="scat_cod" Type="int" />
+          <Property Name="pro_cadastro" Type="date" />
+          <Property Name="for_cod" Type="int" />
+          <Property Name="pro_ref" Type="varchar" MaxLength="100" />
+          <Property Name="localizacao" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="subcategoria">
+          <Key>
+            <PropertyRef Name="scat_cod" />
+          </Key>
+          <Property Name="scat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="scat_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cat_cod" Type="int" />
+          <Property Name="scat_cadastro" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="usu_cod" />
+          </Key>
+          <Property Name="usu_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usu_nome" Type="varchar" MaxLength="50" />
+          <Property Name="usu_senha" Type="varchar" MaxLength="50" />
+          <Property Name="usu_cadastro" Type="date" />
+        </EntityType>
+        <EntityType Name="venda">
+          <Key>
+            <PropertyRef Name="ven_cod" />
+          </Key>
+          <Property Name="ven_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ven_data" Type="datetime" />
+          <Property Name="ven_nfiscal" Type="int" />
+          <Property Name="ven_total" Type="money" />
+          <Property Name="ven_status" Type="varchar" MaxLength="95" />
+          <Property Name="cli_cod" Type="int" />
+          <Property Name="ven_nparcelas" Type="int" />
+          <Property Name="tpa_cod" Type="int" />
+          <Property Name="ven_avista" Type="int" />
+          <Property Name="ven_data_entrada" Type="date" />
+          <Property Name="ven_data_saida" Type="date" />
+          <Property Name="ven_hora_entrada" Type="datetime" />
+          <Property Name="ven_hora_saida" Type="datetime" />
+          <Property Name="ven_defeito_apresentado" Type="varchar" MaxLength="500" />
+          <Property Name="ven_servico_efetuado" Type="varchar" MaxLength="500" />
+          <Property Name="ven_lembrete" Type="varchar" MaxLength="50" />
+          <Property Name="ven_diasProximaRevisao" Type="int" />
+        </EntityType>
+        <Association Name="FK_ClienteProduto_cliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="cli_cod" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="codCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteProduto_produto">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="pro_cod" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="codProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_clienteVeiculo_modelo">
+          <End Role="modelo" Type="Self.modelo" Multiplicity="0..1" />
+          <End Role="clienteVeiculo" Type="Self.clienteVeiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelo">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="clienteVeiculo">
+              <PropertyRef Name="codVeiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_ClienteProduto">
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="0..1" />
+          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteProduto">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="cp_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_operacao">
+          <End Role="operacao" Type="Self.operacao" Multiplicity="0..1" />
+          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operacao">
+              <PropertyRef Name="op_cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="op_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_venda">
+          <End Role="venda" Type="Self.venda" Multiplicity="0..1" />
+          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venda">
+              <PropertyRef Name="ven_cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="ven_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_modelo_montadora">
+          <End Role="montadora" Type="Self.montadora" Multiplicity="0..1" />
+          <End Role="modelo" Type="Self.modelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="montadora">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="modelo">
+              <PropertyRef Name="codMontadora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_categoria">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="cat_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="cat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_fornecedor">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="for_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="for_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_subcategoria">
+          <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subcategoria">
+              <PropertyRef Name="scat_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="scat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subcategoria_categoria">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="cat_cod" />
+            </Principal>
+            <Dependent Role="subcategoria">
+              <PropertyRef Name="cat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="promissumServicoModelStoreContainer">
+          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clienteVeiculo" EntityType="Self.clienteVeiculo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="email" EntityType="Self.email" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="itensvenda" EntityType="Self.itensvenda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lembrete" EntityType="Self.lembrete" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modelo" EntityType="Self.modelo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="montadora" EntityType="Self.montadora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operacao" EntityType="Self.operacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produto" EntityType="Self.produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subcategoria" EntityType="Self.subcategoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="venda" EntityType="Self.venda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cidades" EntityType="Self.cidades" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [cidades].[UF] AS [UF], 
+    [cidades].[Nome_UF] AS [Nome_UF], 
+    [cidades].[Mesorregiao_Geografica] AS [Mesorregiao_Geografica], 
+    [cidades].[Nome_Mesorregiao] AS [Nome_Mesorregiao], 
+    [cidades].[Microrregiao_Geografica] AS [Microrregiao_Geografica], 
+    [cidades].[Nome_Microrregiao] AS [Nome_Microrregiao], 
+    [cidades].[Municipio] AS [Municipio], 
+    [cidades].[Cod_Municipio_Completo] AS [Cod_Municipio_Completo], 
+    [cidades].[Nome_Municipio] AS [Nome_Municipio]
+    FROM [dbo].[cidades] AS [cidades]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="empresa" EntityType="Self.empresa" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [empresa].[cod] AS [cod], 
+    [empresa].[nome] AS [nome], 
+    [empresa].[cpfcnpj] AS [cpfcnpj], 
+    [empresa].[telefone] AS [telefone], 
+    [empresa].[celular] AS [celular], 
+    [empresa].[email] AS [email], 
+    [empresa].[endereco] AS [endereco], 
+    [empresa].[numero] AS [numero], 
+    [empresa].[cidade] AS [cidade], 
+    [empresa].[bairro] AS [bairro], 
+    [empresa].[estado] AS [estado], 
+    [empresa].[cadastro] AS [cadastro]
+    FROM [dbo].[empresa] AS [empresa]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ClienteProduto_cliente" Association="Self.FK_ClienteProduto_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteProduto_produto" Association="Self.FK_ClienteProduto_produto">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_clienteVeiculo_modelo" Association="Self.FK_clienteVeiculo_modelo">
+            <End Role="modelo" EntitySet="modelo" />
+            <End Role="clienteVeiculo" EntitySet="clienteVeiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_ClienteProduto" Association="Self.FK_itensvenda_ClienteProduto">
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_operacao" Association="Self.FK_itensvenda_operacao">
+            <End Role="operacao" EntitySet="operacao" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_venda" Association="Self.FK_itensvenda_venda">
+            <End Role="venda" EntitySet="venda" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_modelo_montadora" Association="Self.FK_modelo_montadora">
+            <End Role="montadora" EntitySet="montadora" />
+            <End Role="modelo" EntitySet="modelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_categoria" Association="Self.FK_produto_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_fornecedor" Association="Self.FK_produto_fornecedor">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_subcategoria" Association="Self.FK_produto_subcategoria">
+            <End Role="subcategoria" EntitySet="subcategoria" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subcategoria_categoria" Association="Self.FK_subcategoria_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="subcategoria" EntitySet="subcategoria" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="promissumServicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="cat_cod" />
+          </Key>
+          <Property Name="cat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cadastro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="produto" Relationship="Self.FK_produto_categoria" FromRole="categoria" ToRole="produto" />
+          <NavigationProperty Name="subcategoria" Relationship="Self.FK_subcategoria_categoria" FromRole="categoria" ToRole="subcategoria" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="cli_cod" />
+          </Key>
+          <Property Name="cli_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cli_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cpfcnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_rgie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cli_endereco" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="cli_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_endnumero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_observacao" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cadastro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_cliente" FromRole="cliente" ToRole="ClienteProduto" />
+        </EntityType>
+        <EntityType Name="ClienteProduto">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codCliente" Type="Int32" />
+          <Property Name="codProduto" Type="Int32" />
+          <Property Name="referencia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.FK_ClienteProduto_cliente" FromRole="ClienteProduto" ToRole="cliente" />
+          <NavigationProperty Name="produto" Relationship="Self.FK_ClienteProduto_produto" FromRole="ClienteProduto" ToRole="produto" />
+          <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_ClienteProduto" FromRole="ClienteProduto" ToRole="itensvenda" />
+        </EntityType>
+        <EntityType Name="clienteVeiculo">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codCliente" Type="Int32" />
+          <Property Name="codVeiculo" Type="Int32" />
+          <Property Name="placa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="modelo" Relationship="Self.FK_clienteVeiculo_modelo" FromRole="clienteVeiculo" ToRole="modelo" />
+        </EntityType>
+        <EntityType Name="email">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="assunto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="corpo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rodape1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rodape2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rodape3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="for_cod" />
+          </Key>
+          <Property Name="for_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="for_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_ie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cep" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_endnumero" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="for_cpf" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_observacao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="produto" Relationship="Self.FK_produto_fornecedor" FromRole="fornecedor" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="itensvenda">
+          <Key>
+            <PropertyRef Name="itv_cod" />
+          </Key>
+          <Property Name="itv_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itv_qtde" Type="Double" />
+          <Property Name="itv_valor" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ven_cod" Type="Int32" />
+          <Property Name="cp_cod" Type="Int32" />
+          <Property Name="referencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="itv_valorBase" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="itv_desconto" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="op_cod" Type="Int32" />
+          <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_itensvenda_ClienteProduto" FromRole="itensvenda" ToRole="ClienteProduto" />
+          <NavigationProperty Name="operacao" Relationship="Self.FK_itensvenda_operacao" FromRole="itensvenda" ToRole="operacao" />
+          <NavigationProperty Name="venda" Relationship="Self.FK_itensvenda_venda" FromRole="itensvenda" ToRole="venda" />
+        </EntityType>
+        <EntityType Name="lembrete">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="diasAviso" Type="Int32" />
+          <Property Name="mensagemAviso" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="tituloAviso" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="modelo">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codMontadora" Type="Int32" />
+          <Property Name="modelo1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="anoInicio" Type="Int32" />
+          <Property Name="anoFim" Type="Int32" />
+          <Property Name="cadastro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="clienteVeiculo" Relationship="Self.FK_clienteVeiculo_modelo" FromRole="modelo" ToRole="clienteVeiculo" />
+          <NavigationProperty Name="montadora" Relationship="Self.FK_modelo_montadora" FromRole="modelo" ToRole="montadora" />
+        </EntityType>
+        <EntityType Name="montadora">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="montadora1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="abreviatura_montadora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cadastro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="modelo" Relationship="Self.FK_modelo_montadora" FromRole="montadora" ToRole="modelo" />
+        </EntityType>
+        <EntityType Name="operacao">
+          <Key>
+            <PropertyRef Name="op_cod" />
+          </Key>
+          <Property Name="op_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="op_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="op_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="op_descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_operacao" FromRole="operacao" ToRole="itensvenda" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="pro_cod" />
+          </Key>
+          <Property Name="pro_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pro_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="pro_descricao" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="pro_foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pro_valorpago" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pro_valorvenda" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pro_qtde" Type="Double" />
+          <Property Name="umed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+          <Property Name="scat_cod" Type="Int32" />
+          <Property Name="pro_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="for_cod" Type="Int32" />
+          <Property Name="pro_ref" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="localizacao" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="categoria" Relationship="Self.FK_produto_categoria" FromRole="produto" ToRole="categoria" />
+          <NavigationProperty Name="ClienteProduto" Relationship="Self.FK_ClienteProduto_produto" FromRole="produto" ToRole="ClienteProduto" />
+          <NavigationProperty Name="fornecedor" Relationship="Self.FK_produto_fornecedor" FromRole="produto" ToRole="fornecedor" />
+          <NavigationProperty Name="subcategoria" Relationship="Self.FK_produto_subcategoria" FromRole="produto" ToRole="subcategoria" />
+        </EntityType>
+        <EntityType Name="subcategoria">
+          <Key>
+            <PropertyRef Name="scat_cod" />
+          </Key>
+          <Property Name="scat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="scat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+          <Property Name="scat_cadastro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="categoria" Relationship="Self.FK_subcategoria_categoria" FromRole="subcategoria" ToRole="categoria" />
+          <NavigationProperty Name="produto" Relationship="Self.FK_produto_subcategoria" FromRole="subcategoria" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="usu_cod" />
+          </Key>
+          <Property Name="usu_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usu_nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usu_senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usu_cadastro" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="venda">
+          <Key>
+            <PropertyRef Name="ven_cod" />
+          </Key>
+          <Property Name="ven_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ven_data" Type="DateTime" Precision="3" />
+          <Property Name="ven_nfiscal" Type="Int32" />
+          <Property Name="ven_total" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ven_status" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cod" Type="Int32" />
+          <Property Name="ven_nparcelas" Type="Int32" />
+          <Property Name="tpa_cod" Type="Int32" />
+          <Property Name="ven_avista" Type="Int32" />
+          <Property Name="ven_data_entrada" Type="DateTime" Precision="0" />
+          <Property Name="ven_data_saida" Type="DateTime" Precision="0" />
+          <Property Name="ven_hora_entrada" Type="DateTime" Precision="3" />
+          <Property Name="ven_hora_saida" Type="DateTime" Precision="3" />
+          <Property Name="ven_defeito_apresentado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ven_servico_efetuado" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ven_lembrete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ven_diasProximaRevisao" Type="Int32" />
+          <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_venda" FromRole="venda" ToRole="itensvenda" />
+        </EntityType>
+        <EntityType Name="cidades">
+          <Key>
+            <PropertyRef Name="UF" />
+            <PropertyRef Name="Nome_UF" />
+            <PropertyRef Name="Mesorregiao_Geografica" />
+            <PropertyRef Name="Nome_Mesorregiao" />
+            <PropertyRef Name="Microrregiao_Geografica" />
+            <PropertyRef Name="Nome_Microrregiao" />
+            <PropertyRef Name="Municipio" />
+            <PropertyRef Name="Cod_Municipio_Completo" />
+            <PropertyRef Name="Nome_Municipio" />
+          </Key>
+          <Property Name="UF" Type="Int32" Nullable="false" />
+          <Property Name="Nome_UF" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mesorregiao_Geografica" Type="Int32" Nullable="false" />
+          <Property Name="Nome_Mesorregiao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Microrregiao_Geografica" Type="Int32" Nullable="false" />
+          <Property Name="Nome_Microrregiao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Municipio" Type="Int32" Nullable="false" />
+          <Property Name="Cod_Municipio_Completo" Type="Int32" Nullable="false" />
+          <Property Name="Nome_Municipio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cpfcnpj" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="endereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numero" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="bairro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cadastro" Type="DateTime" Precision="0" />
+        </EntityType>
+        <Association Name="FK_produto_categoria">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="cat_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="cat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subcategoria_categoria">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="cat_cod" />
+            </Principal>
+            <Dependent Role="subcategoria">
+              <PropertyRef Name="cat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteProduto_cliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="cli_cod" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="codCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClienteProduto_produto">
+          <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="pro_cod" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="codProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_ClienteProduto">
+          <End Role="ClienteProduto" Type="Self.ClienteProduto" Multiplicity="0..1" />
+          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteProduto">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="cp_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_clienteVeiculo_modelo">
+          <End Role="modelo" Type="Self.modelo" Multiplicity="0..1" />
+          <End Role="clienteVeiculo" Type="Self.clienteVeiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modelo">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="clienteVeiculo">
+              <PropertyRef Name="codVeiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_fornecedor">
+          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="for_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="for_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_operacao">
+          <End Role="operacao" Type="Self.operacao" Multiplicity="0..1" />
+          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operacao">
+              <PropertyRef Name="op_cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="op_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_venda">
+          <End Role="venda" Type="Self.venda" Multiplicity="0..1" />
+          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venda">
+              <PropertyRef Name="ven_cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="ven_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_modelo_montadora">
+          <End Role="montadora" Type="Self.montadora" Multiplicity="0..1" />
+          <End Role="modelo" Type="Self.modelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="montadora">
+              <PropertyRef Name="cod" />
+            </Principal>
+            <Dependent Role="modelo">
+              <PropertyRef Name="codMontadora" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_subcategoria">
+          <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="0..1" />
+          <End Role="produto" Type="Self.produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subcategoria">
+              <PropertyRef Name="scat_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="scat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="promissumServicoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categoria" EntityType="Self.categoria" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+          <EntitySet Name="ClienteProduto" EntityType="Self.ClienteProduto" />
+          <EntitySet Name="clienteVeiculo" EntityType="Self.clienteVeiculo" />
+          <EntitySet Name="email" EntityType="Self.email" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
+          <EntitySet Name="itensvenda" EntityType="Self.itensvenda" />
+          <EntitySet Name="lembrete" EntityType="Self.lembrete" />
+          <EntitySet Name="modelo" EntityType="Self.modelo" />
+          <EntitySet Name="montadora" EntityType="Self.montadora" />
+          <EntitySet Name="operacao" EntityType="Self.operacao" />
+          <EntitySet Name="produto" EntityType="Self.produto" />
+          <EntitySet Name="subcategoria" EntityType="Self.subcategoria" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <EntitySet Name="venda" EntityType="Self.venda" />
+          <EntitySet Name="cidades" EntityType="Self.cidades" />
+          <EntitySet Name="empresa" EntityType="Self.empresa" />
+          <AssociationSet Name="FK_produto_categoria" Association="Self.FK_produto_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subcategoria_categoria" Association="Self.FK_subcategoria_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="subcategoria" EntitySet="subcategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteProduto_cliente" Association="Self.FK_ClienteProduto_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClienteProduto_produto" Association="Self.FK_ClienteProduto_produto">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_ClienteProduto" Association="Self.FK_itensvenda_ClienteProduto">
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_clienteVeiculo_modelo" Association="Self.FK_clienteVeiculo_modelo">
+            <End Role="modelo" EntitySet="modelo" />
+            <End Role="clienteVeiculo" EntitySet="clienteVeiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_fornecedor" Association="Self.FK_produto_fornecedor">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_operacao" Association="Self.FK_itensvenda_operacao">
+            <End Role="operacao" EntitySet="operacao" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_venda" Association="Self.FK_itensvenda_venda">
+            <End Role="venda" EntitySet="venda" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_modelo_montadora" Association="Self.FK_modelo_montadora">
+            <End Role="montadora" EntitySet="montadora" />
+            <End Role="modelo" EntitySet="modelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_subcategoria" Association="Self.FK_produto_subcategoria">
+            <End Role="subcategoria" EntitySet="subcategoria" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="promissumServicoModelStoreContainer" CdmEntityContainer="promissumServicoEntities">
+          <EntitySetMapping Name="categoria">
+            <EntityTypeMapping TypeName="promissumServicoModel.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+                <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
+                <ScalarProperty Name="cat_cadastro" ColumnName="cat_cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="promissumServicoModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+                <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
+                <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
+                <ScalarProperty Name="cli_rgie" ColumnName="cli_rgie" />
+                <ScalarProperty Name="cli_rsocial" ColumnName="cli_rsocial" />
+                <ScalarProperty Name="cli_tipo" ColumnName="cli_tipo" />
+                <ScalarProperty Name="cli_cep" ColumnName="cli_cep" />
+                <ScalarProperty Name="cli_endereco" ColumnName="cli_endereco" />
+                <ScalarProperty Name="cli_bairro" ColumnName="cli_bairro" />
+                <ScalarProperty Name="cli_fone" ColumnName="cli_fone" />
+                <ScalarProperty Name="cli_cel" ColumnName="cli_cel" />
+                <ScalarProperty Name="cli_email" ColumnName="cli_email" />
+                <ScalarProperty Name="cli_endnumero" ColumnName="cli_endnumero" />
+                <ScalarProperty Name="cli_cidade" ColumnName="cli_cidade" />
+                <ScalarProperty Name="cli_estado" ColumnName="cli_estado" />
+                <ScalarProperty Name="cli_observacao" ColumnName="cli_observacao" />
+                <ScalarProperty Name="cli_cadastro" ColumnName="cli_cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClienteProduto">
+            <EntityTypeMapping TypeName="promissumServicoModel.ClienteProduto">
+              <MappingFragment StoreEntitySet="ClienteProduto">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="codCliente" ColumnName="codCliente" />
+                <ScalarProperty Name="codProduto" ColumnName="codProduto" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clienteVeiculo">
+            <EntityTypeMapping TypeName="promissumServicoModel.clienteVeiculo">
+              <MappingFragment StoreEntitySet="clienteVeiculo">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="codCliente" ColumnName="codCliente" />
+                <ScalarProperty Name="codVeiculo" ColumnName="codVeiculo" />
+                <ScalarProperty Name="placa" ColumnName="placa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="email">
+            <EntityTypeMapping TypeName="promissumServicoModel.email">
+              <MappingFragment StoreEntitySet="email">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="assunto" ColumnName="assunto" />
+                <ScalarProperty Name="corpo" ColumnName="corpo" />
+                <ScalarProperty Name="rodape1" ColumnName="rodape1" />
+                <ScalarProperty Name="rodape2" ColumnName="rodape2" />
+                <ScalarProperty Name="rodape3" ColumnName="rodape3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="promissumServicoModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+                <ScalarProperty Name="for_nome" ColumnName="for_nome" />
+                <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
+                <ScalarProperty Name="for_ie" ColumnName="for_ie" />
+                <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
+                <ScalarProperty Name="for_cep" ColumnName="for_cep" />
+                <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
+                <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
+                <ScalarProperty Name="for_fone" ColumnName="for_fone" />
+                <ScalarProperty Name="for_cel" ColumnName="for_cel" />
+                <ScalarProperty Name="for_email" ColumnName="for_email" />
+                <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
+                <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
+                <ScalarProperty Name="for_estado" ColumnName="for_estado" />
+                <ScalarProperty Name="for_cadastro" ColumnName="for_cadastro" />
+                <ScalarProperty Name="for_cpf" ColumnName="for_cpf" />
+                <ScalarProperty Name="for_observacao" ColumnName="for_observacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="itensvenda">
+            <EntityTypeMapping TypeName="promissumServicoModel.itensvenda">
+              <MappingFragment StoreEntitySet="itensvenda">
+                <ScalarProperty Name="itv_cod" ColumnName="itv_cod" />
+                <ScalarProperty Name="itv_qtde" ColumnName="itv_qtde" />
+                <ScalarProperty Name="itv_valor" ColumnName="itv_valor" />
+                <ScalarProperty Name="ven_cod" ColumnName="ven_cod" />
+                <ScalarProperty Name="cp_cod" ColumnName="cp_cod" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="itv_valorBase" ColumnName="itv_valorBase" />
+                <ScalarProperty Name="itv_desconto" ColumnName="itv_desconto" />
+                <ScalarProperty Name="op_cod" ColumnName="op_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lembrete">
+            <EntityTypeMapping TypeName="promissumServicoModel.lembrete">
+              <MappingFragment StoreEntitySet="lembrete">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="diasAviso" ColumnName="diasAviso" />
+                <ScalarProperty Name="mensagemAviso" ColumnName="mensagemAviso" />
+                <ScalarProperty Name="tituloAviso" ColumnName="tituloAviso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modelo">
+            <EntityTypeMapping TypeName="promissumServicoModel.modelo">
+              <MappingFragment StoreEntitySet="modelo">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="codMontadora" ColumnName="codMontadora" />
+                <ScalarProperty Name="modelo1" ColumnName="modelo" />
+                <ScalarProperty Name="anoInicio" ColumnName="anoInicio" />
+                <ScalarProperty Name="anoFim" ColumnName="anoFim" />
+                <ScalarProperty Name="cadastro" ColumnName="cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="montadora">
+            <EntityTypeMapping TypeName="promissumServicoModel.montadora">
+              <MappingFragment StoreEntitySet="montadora">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="montadora1" ColumnName="montadora" />
+                <ScalarProperty Name="abreviatura_montadora" ColumnName="abreviatura_montadora" />
+                <ScalarProperty Name="cadastro" ColumnName="cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operacao">
+            <EntityTypeMapping TypeName="promissumServicoModel.operacao">
+              <MappingFragment StoreEntitySet="operacao">
+                <ScalarProperty Name="op_cod" ColumnName="op_cod" />
+                <ScalarProperty Name="op_nome" ColumnName="op_nome" />
+                <ScalarProperty Name="op_cadastro" ColumnName="op_cadastro" />
+                <ScalarProperty Name="op_descricao" ColumnName="op_descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="promissumServicoModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="pro_cod" ColumnName="pro_cod" />
+                <ScalarProperty Name="pro_nome" ColumnName="pro_nome" />
+                <ScalarProperty Name="pro_descricao" ColumnName="pro_descricao" />
+                <ScalarProperty Name="pro_foto" ColumnName="pro_foto" />
+                <ScalarProperty Name="pro_valorpago" ColumnName="pro_valorpago" />
+                <ScalarProperty Name="pro_valorvenda" ColumnName="pro_valorvenda" />
+                <ScalarProperty Name="pro_qtde" ColumnName="pro_qtde" />
+                <ScalarProperty Name="umed" ColumnName="umed" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
+                <ScalarProperty Name="pro_cadastro" ColumnName="pro_cadastro" />
+                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+                <ScalarProperty Name="pro_ref" ColumnName="pro_ref" />
+                <ScalarProperty Name="localizacao" ColumnName="localizacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subcategoria">
+            <EntityTypeMapping TypeName="promissumServicoModel.subcategoria">
+              <MappingFragment StoreEntitySet="subcategoria">
+                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
+                <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+                <ScalarProperty Name="scat_cadastro" ColumnName="scat_cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="promissumServicoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="promissumServicoModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="usu_cod" ColumnName="usu_cod" />
+                <ScalarProperty Name="usu_nome" ColumnName="usu_nome" />
+                <ScalarProperty Name="usu_senha" ColumnName="usu_senha" />
+                <ScalarProperty Name="usu_cadastro" ColumnName="usu_cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venda">
+            <EntityTypeMapping TypeName="promissumServicoModel.venda">
+              <MappingFragment StoreEntitySet="venda">
+                <ScalarProperty Name="ven_cod" ColumnName="ven_cod" />
+                <ScalarProperty Name="ven_data" ColumnName="ven_data" />
+                <ScalarProperty Name="ven_nfiscal" ColumnName="ven_nfiscal" />
+                <ScalarProperty Name="ven_total" ColumnName="ven_total" />
+                <ScalarProperty Name="ven_status" ColumnName="ven_status" />
+                <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+                <ScalarProperty Name="ven_nparcelas" ColumnName="ven_nparcelas" />
+                <ScalarProperty Name="tpa_cod" ColumnName="tpa_cod" />
+                <ScalarProperty Name="ven_avista" ColumnName="ven_avista" />
+                <ScalarProperty Name="ven_data_entrada" ColumnName="ven_data_entrada" />
+                <ScalarProperty Name="ven_data_saida" ColumnName="ven_data_saida" />
+                <ScalarProperty Name="ven_hora_entrada" ColumnName="ven_hora_entrada" />
+                <ScalarProperty Name="ven_hora_saida" ColumnName="ven_hora_saida" />
+                <ScalarProperty Name="ven_defeito_apresentado" ColumnName="ven_defeito_apresentado" />
+                <ScalarProperty Name="ven_servico_efetuado" ColumnName="ven_servico_efetuado" />
+                <ScalarProperty Name="ven_lembrete" ColumnName="ven_lembrete" />
+                <ScalarProperty Name="ven_diasProximaRevisao" ColumnName="ven_diasProximaRevisao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cidades">
+            <EntityTypeMapping TypeName="promissumServicoModel.cidades">
+              <MappingFragment StoreEntitySet="cidades">
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Nome_UF" ColumnName="Nome_UF" />
+                <ScalarProperty Name="Mesorregiao_Geografica" ColumnName="Mesorregiao_Geografica" />
+                <ScalarProperty Name="Nome_Mesorregiao" ColumnName="Nome_Mesorregiao" />
+                <ScalarProperty Name="Microrregiao_Geografica" ColumnName="Microrregiao_Geografica" />
+                <ScalarProperty Name="Nome_Microrregiao" ColumnName="Nome_Microrregiao" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="Cod_Municipio_Completo" ColumnName="Cod_Municipio_Completo" />
+                <ScalarProperty Name="Nome_Municipio" ColumnName="Nome_Municipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empresa">
+            <EntityTypeMapping TypeName="promissumServicoModel.empresa">
+              <MappingFragment StoreEntitySet="empresa">
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cpfcnpj" ColumnName="cpfcnpj" />
+                <ScalarProperty Name="telefone" ColumnName="telefone" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="cadastro" ColumnName="cadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,4 @@
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\Entidade\bin\Debug\Entidade.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\Entidade\bin\Debug\Entidade.pdb
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\Entidade\obj\Debug\Entidade.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\Entidade\obj\Debug\Entidade.pdb

@@ -1,0 +1,12 @@
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\BLL.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\BLL.pdb
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\DAL.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\Entidade.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\Ferramentas.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\Tulpep.NotificationWindow.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\Ferramentas.pdb
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\DAL.pdb
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\bin\Debug\Entidade.pdb
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\obj\Debug\BLL.dll
+c:\Users\netosantos\documents\visual studio 2015\Projects\Beta1.0\BLL\obj\Debug\BLL.pdb
