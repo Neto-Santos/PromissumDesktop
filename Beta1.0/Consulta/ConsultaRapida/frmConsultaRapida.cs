@@ -19,7 +19,6 @@ namespace Beta1._0.Consulta.ConsultaRapida
         public frmConsultaRapida()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -34,7 +33,7 @@ namespace Beta1._0.Consulta.ConsultaRapida
 
                 try
                 {
-                    dgProduto.DataSource = contexto.produto.Where(p => p.pro_ref.Contains(txtPesquisa.Text));
+                    dgProduto.DataSource = contexto.produto.Where(p => p.pro_ref.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {
@@ -58,7 +57,7 @@ namespace Beta1._0.Consulta.ConsultaRapida
             {
                 try
                 {
-                    dgProduto.DataSource = contexto.produto.Where(p => p.pro_nome.Contains(txtPesquisa.Text));
+                    dgProduto.DataSource = contexto.produto.Where(p => p.pro_nome.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {
@@ -69,7 +68,7 @@ namespace Beta1._0.Consulta.ConsultaRapida
             {
                 try
                 {
-                    dgProduto.DataSource = contexto.produto.Where(p => p.subcategoria.scat_nome.Contains(txtPesquisa.Text));
+                    dgProduto.DataSource = contexto.produto.Where(p => p.subcategoria.scat_nome.Contains(txtPesquisa.Text)).ToList(); ;
 
                 }
                 catch (Exception)

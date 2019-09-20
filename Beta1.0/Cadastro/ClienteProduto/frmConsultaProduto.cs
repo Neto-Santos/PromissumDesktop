@@ -8,20 +8,20 @@ using Beta1._0.Cadastro;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using DAL.EntityFramework;
 using BLL;
 
 namespace Beta1._0.Consulta.ClienteProduto
 {
     public partial class frmConsultaProduto : Form
     {
+        promissumServicoEntities contexto = new promissumServicoEntities();
         public frmConsultaProduto()
         {
             InitializeComponent();
-            conexao = new DalConexao(DadosConexao.stringConexao);
+            
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-        DalConexao conexao;
         public string codigo;
         private void frmConsultaProduto_Load(object sender, EventArgs e)
         {
@@ -30,12 +30,12 @@ namespace Beta1._0.Consulta.ClienteProduto
 
         private void dgProduto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            codigo = dgvProduto.Rows[e.RowIndex].Cells[0].Value.ToString();
+            codigo = dgvProduto.Rows[e.RowIndex].Cells["pro_cod"].Value.ToString();
         }
 
         private void dgProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            codigo = dgvProduto.Rows[e.RowIndex].Cells[0].Value.ToString();
+            codigo = dgvProduto.Rows[e.RowIndex].Cells["pro_cod"].Value.ToString();
             this.Close();
         }
 
@@ -43,10 +43,10 @@ namespace Beta1._0.Consulta.ClienteProduto
         {
             if (rbReferencia.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
+               
                 try
                 {
-                    dgvProduto.DataSource = bll.LocalizarProdutoReferencia(txtPesquisa.Text);
+                    dgvProduto.DataSource = contexto.produto.Where(p => p.pro_ref.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {
@@ -56,12 +56,12 @@ namespace Beta1._0.Consulta.ClienteProduto
             }
             if (rbCod.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
+               
                 try
                 {
                     if (!String.IsNullOrEmpty(txtPesquisa.Text))
                     {
-                        dgvProduto.DataSource = bll.LocalizarProdutoCodigo(txtPesquisa.Text);
+                        dgvProduto.DataSource = contexto.produto.Where(p => p.pro_cod.Equals(txtPesquisa.Text)).ToList();
                     }
 
                 }
@@ -70,10 +70,10 @@ namespace Beta1._0.Consulta.ClienteProduto
             }
             if (rbProduto.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
+               
                 try
                 {
-                    dgvProduto.DataSource = bll.Localizar(txtPesquisa.Text);
+                    dgvProduto.DataSource = contexto.produto.Where(p => p.pro_nome.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {

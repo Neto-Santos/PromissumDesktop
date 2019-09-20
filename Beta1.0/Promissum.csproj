@@ -115,6 +115,7 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Entity.Design" />
@@ -253,12 +254,6 @@
     <Compile Include="Consulta\frmConsultaSubCategoria.Designer.cs">
       <DependentUpon>frmConsultaSubCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDesignerMelhorado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDesignerMelhorado.Designer.cs">
-      <DependentUpon>frmDesignerMelhorado.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,10 +300,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relatorio Atualizado\Categoria\dsSubCategoria.Designer.cs">
-      <DependentUpon>dsSubCategoria.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
+      <DependentUpon>dsSubCategoria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio Atualizado\Categoria\frmFiltraSubCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio Atualizado\Categoria\frmFiltraSubCategoria.Designer.cs">
+      <DependentUpon>frmFiltraSubCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorio Atualizado\Categoria\frmRelatorioCategoria.cs">
       <SubType>Form</SubType>
@@ -389,6 +389,14 @@
       <DependentUpon>dsOrcamento.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Relatorio Atualizado\Orcamento\dsVendaAnalitico.cs">
+      <DependentUpon>dsVendaAnalitico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio Atualizado\Orcamento\dsVendaAnalitico.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVendaAnalitico.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Relatorio Atualizado\Orcamento\frmFiltroOrcamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,6 +408,12 @@
     </Compile>
     <Compile Include="Relatorio Atualizado\Orcamento\frmRelatorioOrçamento.Designer.cs">
       <DependentUpon>frmRelatorioOrçamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio Atualizado\Orcamento\frmRelatorioVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio Atualizado\Orcamento\frmRelatorioVenda.Designer.cs">
+      <DependentUpon>frmRelatorioVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorio Atualizado\Produtos\dsProduto.cs">
       <DependentUpon>dsProduto.xsd</DependentUpon>
@@ -692,9 +706,6 @@
     <EmbeddedResource Include="Consulta\frmConsultaSubCategoria.resx">
       <DependentUpon>frmConsultaSubCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDesignerMelhorado.resx">
-      <DependentUpon>frmDesignerMelhorado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -726,6 +737,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorio Atualizado\Categoria\frmFiltraSubCategoria.resx">
+      <DependentUpon>frmFiltraSubCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorio Atualizado\Categoria\frmRelatorioCategoria.resx">
       <DependentUpon>frmRelatorioCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,6 +772,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio Atualizado\Orcamento\frmRelatorioOrçamento.resx">
       <DependentUpon>frmRelatorioOrçamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio Atualizado\Orcamento\frmRelatorioVenda.resx">
+      <DependentUpon>frmRelatorioVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorio Atualizado\Orcamento\rptOrcamento.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -884,17 +901,14 @@
   <ItemGroup>
     <None Include="Relatorio Atualizado\Categoria\dsSubCategoria.xsc">
       <DependentUpon>dsSubCategoria.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\Categoria\dsSubCategoria.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsSubCategoria.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\Categoria\dsSubCategoria.xss">
       <DependentUpon>dsSubCategoria.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\ClienteProdutos\dsClienteProduto.xsc">
       <DependentUpon>dsClienteProduto.xsd</DependentUpon>
@@ -956,6 +970,17 @@
     <None Include="Relatorio Atualizado\Orcamento\dsOrcamento.xss">
       <DependentUpon>dsOrcamento.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Relatorio Atualizado\Orcamento\dsVendaAnalitico.xsc">
+      <DependentUpon>dsVendaAnalitico.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorio Atualizado\Orcamento\dsVendaAnalitico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVendaAnalitico.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorio Atualizado\Orcamento\dsVendaAnalitico.xss">
+      <DependentUpon>dsVendaAnalitico.xsd</DependentUpon>
     </None>
     <None Include="Relatorio Atualizado\Produtos\dsProduto.xsc">
       <DependentUpon>dsProduto.xsd</DependentUpon>
@@ -1146,6 +1171,20 @@
   <ItemGroup>
     <Content Include="icone.ico" />
     <Content Include="Logo\logo.jpeg" />
+    <None Include="Resources\icone_vendas.png" />
+    <None Include="Resources\icone_produtos.png" />
+    <None Include="Resources\icone_cliente.png" />
+    <None Include="Resources\icone_delete.png" />
+    <None Include="Resources\icone_alterar.png" />
+    <None Include="Resources\icon_add.png" />
+    <None Include="Resources\icone_entrar.png" />
+    <None Include="Resources\icone_sair.png" />
+    <None Include="Resources\icone_sobre.png" />
+    <None Include="Resources\icone_config.png" />
+    <None Include="Resources\icone_lock1.png" />
+    <None Include="Resources\icone_lock.png" />
+    <None Include="Resources\icone_lupa.png" />
+    <None Include="Resources\icone_backup.png" />
     <None Include="Resources\cadeado_fechado.png" />
     <None Include="Resources\icone_fechar.png" />
     <None Include="Resources\icone_maximizar.png" />

@@ -57,7 +57,7 @@ namespace Beta1._0.Relatorio.Categoria
             //preVisualizacao.ShowDialog();
             //this.Close();
 
-            Relatorio_Atualizado.Categoria.frmRelatorioCategoria frm = new Relatorio_Atualizado.Categoria.frmRelatorioCategoria(txtCategoria.Text,txtSubCategoria.Text,dtInicio.Value,dtFim.Value,conexao,"");
+            Relatorio_Atualizado.Categoria.frmRelatorioCategoria frm = new Relatorio_Atualizado.Categoria.frmRelatorioCategoria();
             frm.MaximizeBox = true;
             frm.ShowDialog();
 
@@ -208,7 +208,7 @@ namespace Beta1._0.Relatorio.Categoria
         private void btnGerarPdf_Click(object sender, EventArgs e)
         {
             this.formato = "pdf";
-            Relatorio_Atualizado.Categoria.frmRelatorioCategoria frm = new Relatorio_Atualizado.Categoria.frmRelatorioCategoria(txtCategoria.Text, txtSubCategoria.Text, dtInicio.Value, dtFim.Value, conexao,formato);
+            Relatorio_Atualizado.Categoria.frmRelatorioCategoria frm = new Relatorio_Atualizado.Categoria.frmRelatorioCategoria();
             frm.MaximizeBox = true;
             frm.ShowDialog();
         }

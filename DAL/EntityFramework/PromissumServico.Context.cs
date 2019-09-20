@@ -26,8 +26,6 @@ namespace DAL.EntityFramework
         }
     
         public virtual DbSet<categoria> categoria { get; set; }
-        public virtual DbSet<cliente> cliente { get; set; }
-        public virtual DbSet<ClienteProduto> ClienteProduto { get; set; }
         public virtual DbSet<clienteVeiculo> clienteVeiculo { get; set; }
         public virtual DbSet<email> email { get; set; }
         public virtual DbSet<fornecedor> fornecedor { get; set; }
@@ -43,5 +41,7 @@ namespace DAL.EntityFramework
         public virtual DbSet<venda> venda { get; set; }
         public virtual DbSet<cidades> cidades { get; set; }
         public virtual DbSet<empresa> empresa { get; set; }
+        public virtual DbSet<ClienteProduto> ClienteProduto { get; set; }
+        public virtual DbSet<cliente> cliente { get; set; }
     }
 }

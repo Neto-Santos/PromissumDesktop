@@ -131,6 +131,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Backup/Restauração";
             this.Activated += new System.EventHandler(this.frmBackupRestauracao_Activated);
+            this.Load += new System.EventHandler(this.frmBackupRestauracao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

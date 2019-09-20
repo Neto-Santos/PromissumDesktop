@@ -64,9 +64,8 @@ namespace Beta1._0
 
         List<string> listaCbRelatorio = new List<string>()    {
                                                                 "Relatórios","Produto","-----","Cliente","ClienteXProduto","------",
-                                                                "Fornecedor","Orçamento","------","Tipo-Modelo","------","Operação"};
-        List<string> listaCbFinanceiro = new List<string>()    {
-                                                                "Financeiro","Contas A Pagar","Contas Pagas", "Contas A Receber","Contas Recebidas","Fluxo de Caixa"};
+                                                                "Fornecedor","Orçamento","Orçamento-Analitico","------","Tipo-Modelo","------","Operação","SubCategoria"};
+        
         
 
         public static string usuario = null;
@@ -155,7 +154,6 @@ namespace Beta1._0
             comboBox2.DataSource = listaCbManutencao;
             cbVendas.DataSource = listaCbVendas;
             cbRelatorios.DataSource = listaCbRelatorio;
-            cbFinanceiro.DataSource = listaCbFinanceiro;
             //Muda cor de fundo
             MdiClient ctlMDI = (MdiClient)this.Controls[this.Controls.Count - 1];
             ctlMDI.BackColor = this.BackColor;
@@ -322,19 +320,25 @@ namespace Beta1._0
             }
             else if (cbRelatorios.Text == "ClienteXProduto")
             {
-                frmFiltroClienteProduto frm = new frmFiltroClienteProduto(new DAL.DalConexao(DAL.DadosConexao.stringConexao));
+                Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos frm = new Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos();
                 frm.ShowDialog();
                 frm.Dispose();
             }
             else if (cbRelatorios.Text == "Fornecedor")
             {
-                frmFiltroFornecedor frm = new frmFiltroFornecedor(new DAL.DalConexao(DAL.DadosConexao.stringConexao));
+                frmFiltroFornecedor frm = new frmFiltroFornecedor();
                 frm.ShowDialog();
                 frm.Dispose();
             }
             else if (cbRelatorios.Text == "Orçamento")
             {
                 Relatorio_Atualizado.Orcamento.frmFiltroOrcamento frm = new Relatorio_Atualizado.Orcamento.frmFiltroOrcamento();
+                frm.ShowDialog();
+                frm.Dispose();
+            }
+            else if (cbRelatorios.Text == "Orçamento-Analitico")
+            {
+                Promissum.Relatorio_Atualizado.Orcamento.frmRelatorioVenda frm = new Promissum.Relatorio_Atualizado.Orcamento.frmRelatorioVenda();
                 frm.ShowDialog();
                 frm.Dispose();
             }
@@ -350,9 +354,11 @@ namespace Beta1._0
                 frm.ShowDialog();
                 frm.Dispose();
             }
-            else
+            else if (cbRelatorios.Text == "SubCategoria")
             {
-
+                Promissum.Relatorio_Atualizado.Categoria.frmFiltraSubCategoria frm = new Promissum.Relatorio_Atualizado.Categoria.frmFiltraSubCategoria();
+                frm.ShowDialog();
+                frm.Dispose();
             }
         }
 

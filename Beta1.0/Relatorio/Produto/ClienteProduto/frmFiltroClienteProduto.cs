@@ -40,7 +40,7 @@ namespace Beta1._0.Relatorio.Produto.ClienteProduto
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos frm = new Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos(txtNome.Text, txtRef.Text, txtProduto.Text,"");
+            Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos frm = new Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos();
             frm.ShowDialog();
 
         }
@@ -58,7 +58,7 @@ namespace Beta1._0.Relatorio.Produto.ClienteProduto
         private void btnGerarPdf_Click(object sender, EventArgs e)
         {
             this.formato = "pdf";
-            Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos frm = new Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos(txtNome.Text, txtRef.Text, txtProduto.Text,formato);
+            Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos frm = new Relatorio_Atualizado.ClienteProdutos.frmClienteProdutos();
             frm.ShowDialog();
         }
     }

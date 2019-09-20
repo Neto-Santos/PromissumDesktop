@@ -48,5 +48,10 @@ namespace Beta1._0.Config
             cbBanco.DisplayMember = "FriendlyName";
             cbBanco.ValueMember = "physical_device_name";
         }
+
+        private void frmBackupRestauracao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

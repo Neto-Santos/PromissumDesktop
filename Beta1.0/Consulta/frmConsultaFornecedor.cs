@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using DAL.EntityFramework;
 using BLL;
 namespace Beta1._0.Consulta
 {
@@ -17,10 +17,11 @@ namespace Beta1._0.Consulta
         public frmConsultaFornecedor()
         {
             InitializeComponent();
-            conexao = new DalConexao(DadosConexao.stringConexao);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-        DalConexao conexao;
+
+        promissumServicoEntities contexto = new promissumServicoEntities();
+
         string codigo;
         void abrirFormularioCadastroOrcamento(string codigo = null)
         {
@@ -39,8 +40,7 @@ namespace Beta1._0.Consulta
         public void atualiarDgFornecedor()
         {
             dgvFornecedor.DataSource = null;
-            BLLFornecedor bll = new BLLFornecedor(conexao);
-            dgvFornecedor.DataSource = bll.LocalizarFornecedorPorNome("");
+            dgvFornecedor.DataSource = contexto.fornecedor.ToList();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -78,12 +78,16 @@ namespace Beta1._0.Consulta
         {
             if (codigo != null)
             {
-                var confirma = MessageBox.Show("Tem certeza que deseja excluir o cliente selecionado?", "Aviso", MessageBoxButtons.YesNo);
+                var confirma = MessageBox.Show("Tem certeza que deseja excluir o item selecionado?", "Aviso", MessageBoxButtons.YesNo);
                 if (confirma == DialogResult.Yes)
                 {
-                    BLLFornecedor bll = new BLLFornecedor(conexao);
-                    bll.Excluir(Convert.ToInt32(codigo));
+                    int codFornecedor = int.Parse(codigo);
+                    var fornecedor = contexto.fornecedor.Find(codFornecedor);
+                    contexto.fornecedor.Remove(fornecedor);
+                    contexto.SaveChanges();
+
                     this.frmConsultaFornecedor_Load(sender, e);
+
                     codigo = null;
                 }
             }
@@ -91,30 +95,34 @@ namespace Beta1._0.Consulta
 
         private void frmConsultaFornecedor_Activated(object sender, EventArgs e)
         {
-            BLLFornecedor bll = new BLLFornecedor(conexao);
-            dgvFornecedor.DataSource = bll.LocalizarFornecedorPorNome("");
+
+            dgvFornecedor.DataSource = contexto.fornecedor.ToList();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            BLLFornecedor bll = new BLLFornecedor(conexao);
+            
             if (rbCnpj.Checked)
             {
-                dgvFornecedor.DataSource = bll.LocalizarFornecedorPorCnpj(textBox1.Text);
+                dgvFornecedor.DataSource = contexto.fornecedor.Where(f => f.for_cnpj.Contains(textBox1.Text)).ToList();
             }
             if (rbCodigo.Checked)
             {
-                dgvFornecedor.DataSource = bll.LocalizarFornecedorPorCodigo(textBox1.Text);
+                if (!String.IsNullOrEmpty(textBox1.Text))
+                {
+                    dgvFornecedor.DataSource = contexto.fornecedor.Where(f => f.for_cod.Equals(textBox1.Text)).ToList();
+                }
+                
             }
             if (rbNome.Checked)
             {
-                dgvFornecedor.DataSource = bll.LocalizarFornecedorPorNome(textBox1.Text);
+                dgvFornecedor.DataSource = contexto.fornecedor.Where(f => f.for_nome.Contains(textBox1.Text)).ToList();
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Relatorio.Fornecedor.frmFiltroFornecedor frm = new Relatorio.Fornecedor.frmFiltroFornecedor(conexao);
+            Relatorio.Fornecedor.frmFiltroFornecedor frm = new Relatorio.Fornecedor.frmFiltroFornecedor();
             frm.ShowDialog();
         }
     }

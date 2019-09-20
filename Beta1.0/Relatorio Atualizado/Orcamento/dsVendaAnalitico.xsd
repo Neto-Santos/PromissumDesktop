@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsVendaAnalitico" targetNamespace="http://tempuri.org/dsVendaAnalitico.xsd" xmlns:mstns="http://tempuri.org/dsVendaAnalitico.xsd" xmlns="http://tempuri.org/dsVendaAnalitico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsVendaAnalitico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsVendaAnalitico" msprop:Generator_UserDSName="dsVendaAnalitico">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsVendaAnalitico" msprop:Generator_TableClassName="dsVendaAnaliticoDataTable" msprop:Generator_TableVarName="tabledsVendaAnalitico" msprop:Generator_RowChangedName="dsVendaAnaliticoRowChanged" msprop:Generator_TablePropName="_dsVendaAnalitico" msprop:Generator_RowDeletingName="dsVendaAnaliticoRowDeleting" msprop:Generator_RowChangingName="dsVendaAnaliticoRowChanging" msprop:Generator_RowEvHandlerName="dsVendaAnaliticoRowChangeEventHandler" msprop:Generator_RowDeletedName="dsVendaAnaliticoRowDeleted" msprop:Generator_RowClassName="dsVendaAnaliticoRow" msprop:Generator_UserTableName="dsVendaAnalitico" msprop:Generator_RowEvArgName="dsVendaAnaliticoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ven_cod" msprop:Generator_ColumnVarNameInTable="columnven_cod" msprop:Generator_ColumnPropNameInRow="ven_cod" msprop:Generator_ColumnPropNameInTable="ven_codColumn" msprop:Generator_UserColumnName="ven_cod" type="xs:int" minOccurs="0" />
+              <xs:element name="ven_cadastro" msprop:Generator_ColumnVarNameInTable="columnven_cadastro" msprop:Generator_ColumnPropNameInRow="ven_cadastro" msprop:Generator_ColumnPropNameInTable="ven_cadastroColumn" msprop:Generator_UserColumnName="ven_cadastro" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ven_status" msprop:Generator_ColumnVarNameInTable="columnven_status" msprop:Generator_ColumnPropNameInRow="ven_status" msprop:Generator_ColumnPropNameInTable="ven_statusColumn" msprop:Generator_UserColumnName="ven_status" type="xs:string" minOccurs="0" />
+              <xs:element name="ven_total" msprop:Generator_ColumnVarNameInTable="columnven_total" msprop:Generator_ColumnPropNameInRow="ven_total" msprop:Generator_ColumnPropNameInTable="ven_totalColumn" msprop:Generator_UserColumnName="ven_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="itv_valorBase" msprop:Generator_ColumnVarNameInTable="columnitv_valorBase" msprop:Generator_ColumnPropNameInRow="itv_valorBase" msprop:Generator_ColumnPropNameInTable="itv_valorBaseColumn" msprop:Generator_UserColumnName="itv_valorBase" type="xs:decimal" minOccurs="0" />
+              <xs:element name="itv_valor" msprop:Generator_ColumnVarNameInTable="columnitv_valor" msprop:Generator_ColumnPropNameInRow="itv_valor" msprop:Generator_ColumnPropNameInTable="itv_valorColumn" msprop:Generator_UserColumnName="itv_valor" type="xs:decimal" minOccurs="0" />
+              <xs:element name="itv_qtde" msprop:Generator_ColumnVarNameInTable="columnitv_qtde" msprop:Generator_ColumnPropNameInRow="itv_qtde" msprop:Generator_ColumnPropNameInTable="itv_qtdeColumn" msprop:Generator_UserColumnName="itv_qtde" type="xs:int" minOccurs="0" />
+              <xs:element name="itv_desconto" msprop:Generator_ColumnVarNameInTable="columnitv_desconto" msprop:Generator_ColumnPropNameInRow="itv_desconto" msprop:Generator_ColumnPropNameInTable="itv_descontoColumn" msprop:Generator_UserColumnName="itv_desconto" type="xs:decimal" minOccurs="0" />
+              <xs:element name="op_nome" msprop:Generator_ColumnVarNameInTable="columnop_nome" msprop:Generator_ColumnPropNameInRow="op_nome" msprop:Generator_ColumnPropNameInTable="op_nomeColumn" msprop:Generator_UserColumnName="op_nome" type="xs:string" minOccurs="0" />
+              <xs:element name="pro_nome" msprop:Generator_ColumnVarNameInTable="columnpro_nome" msprop:Generator_ColumnPropNameInRow="pro_nome" msprop:Generator_ColumnPropNameInTable="pro_nomeColumn" msprop:Generator_UserColumnName="pro_nome" type="xs:string" minOccurs="0" />
+              <xs:element name="cli_nome" msprop:Generator_ColumnVarNameInTable="columncli_nome" msprop:Generator_ColumnPropNameInRow="cli_nome" msprop:Generator_ColumnPropNameInTable="cli_nomeColumn" msprop:Generator_UserColumnName="cli_nome" type="xs:string" minOccurs="0" />
+              <xs:element name="cli_cpfcnpj" msprop:Generator_ColumnVarNameInTable="columncli_cpfcnpj" msprop:Generator_ColumnPropNameInRow="cli_cpfcnpj" msprop:Generator_ColumnPropNameInTable="cli_cpfcnpjColumn" msprop:Generator_UserColumnName="cli_cpfcnpj" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -24,8 +24,8 @@ namespace DAL.EntityFramework
         public Nullable<decimal> itv_desconto { get; set; }
         public Nullable<int> op_cod { get; set; }
     
-        public virtual ClienteProduto ClienteProduto { get; set; }
         public virtual operacao operacao { get; set; }
         public virtual venda venda { get; set; }
+        public virtual ClienteProduto ClienteProduto { get; set; }
     }
 }

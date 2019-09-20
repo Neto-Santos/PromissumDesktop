@@ -53,6 +53,7 @@ warning 6002: The table/view 'promissumServico.dbo.cidades' does not have a prim
     <Property Name="cli_estado" Type="varchar" MaxLength="95" />
     <Property Name="cli_observacao" Type="varchar" MaxLength="95" />
     <Property Name="cli_cadastro" Type="date" />
+    <Property Name="cli_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="ClienteProduto">
     <Key>
@@ -62,6 +63,8 @@ warning 6002: The table/view 'promissumServico.dbo.cidades' does not have a prim
     <Property Name="codCliente" Type="int" />
     <Property Name="codProduto" Type="int" />
     <Property Name="referencia" Type="varchar" MaxLength="250" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="cadastro" Type="datetime" />
   </EntityType>
   <EntityType Name="clienteVeiculo">
     <Key>

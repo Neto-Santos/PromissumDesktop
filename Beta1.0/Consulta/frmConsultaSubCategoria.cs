@@ -8,19 +8,20 @@ using Beta1._0.Cadastro;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using DAL.EntityFramework;
 using BLL;
 
 namespace Beta1._0.Consulta
 {
     public partial class frmConsultaSubCategoria : Form
     {
+        
         public frmConsultaSubCategoria()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
-        DalConexao conexao = new DalConexao(DadosConexao.stringConexao);
+        promissumServicoEntities contexto = new promissumServicoEntities();
         string codigo;
         void abrirFormularioCadastroOrcamento(string codigo = null)
         {
@@ -67,8 +68,7 @@ namespace Beta1._0.Consulta
 
         private void frmConsultaSubCategoria_Activated(object sender, EventArgs e)
         {
-            BLLSubCategoria bll = new BLLSubCategoria(conexao);
-            dgSubCategoria.DataSource = bll.Localizar("");
+            dgSubCategoria.DataSource = contexto.subcategoria.ToList();
 
         }
     }

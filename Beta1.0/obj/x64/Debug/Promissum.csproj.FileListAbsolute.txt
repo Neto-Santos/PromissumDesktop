@@ -3,8 +3,6 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Produtos\dsProduto.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Fornecedor\dsFornecedor.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Produto\dsProduto.cs
-C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Categoria\dsSubCategoria.xsc
-C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Categoria\dsSubCategoria.xss
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Cliente\dsCliente.xsc
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Cliente\dsCliente.xss
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Produtos\dsProduto.xsc
@@ -25,7 +23,6 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Produto\dsProduto.xss
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\SubCategoria\dsSubCategoria.xsc
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\SubCategoria\dsSubCategoria.xss
-C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Categoria\dsSubCategoria.Designer.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Cliente\dsCliente.Designer.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Produtos\dsProduto.Designer.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Categoria\dsCategoria.Designer.cs
@@ -35,7 +32,6 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Produto\ClienteProduto\dsClienteProduto.Designer.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Produto\dsProduto.Designer.cs
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\SubCategoria\dsSubCategoria.Designer.cs
-C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Categoria\dsSubCategoria.xsd
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Cliente\dsCliente.xsd
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio Atualizado\Produtos\dsProduto.xsd
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\Relatorio\Categoria\dsCategoria.xsd
@@ -200,5 +196,6 @@ C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Be
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\EntityFramework.SqlServer.dll
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\EntityFramework.xml
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\x64\Debug\EntityFramework.SqlServer.xml
-C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Debug\Promissum.frmDesignerMelhorado.resources
 C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\bin\Debug\Promissum.exe.config
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Debug\Promissum.Relatorio_Atualizado.Categoria.frmFiltraSubCategoria.resources
+C:\Users\NetoSantos\Documents\Visual Studio 2015\Projects\VERSÕES SISTEMA NG\Beta1.0 - Versão Específica para Prestação de Serviço\Beta1.0\obj\x64\Debug\Promissum.Relatorio_Atualizado.Orcamento.frmRelatorioVenda.resources

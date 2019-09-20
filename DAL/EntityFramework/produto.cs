@@ -36,9 +36,9 @@ namespace DAL.EntityFramework
         public string localizacao { get; set; }
     
         public virtual categoria categoria { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClienteProduto> ClienteProduto { get; set; }
         public virtual fornecedor fornecedor { get; set; }
         public virtual subcategoria subcategoria { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClienteProduto> ClienteProduto { get; set; }
     }
 }

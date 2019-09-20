@@ -12,10 +12,10 @@ namespace Beta1._0.Relatorio.Fornecedor
 {
     public partial class frmFiltroFornecedor : Form
     {
-        public frmFiltroFornecedor(DalConexao conexao)
+        public frmFiltroFornecedor()
         {
             InitializeComponent();
-            this.conexao = conexao;
+           
         }
         DalConexao conexao;
         //Variável será utilizada no momento em que for imprimir uma venda ou orçamento.

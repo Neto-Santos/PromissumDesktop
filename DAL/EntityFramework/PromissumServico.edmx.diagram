@@ -6,8 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6274869401ee4e81b9190fad07b6c3b2" Name="Diagram1">
         <EntityTypeShape EntityType="promissumServicoModel.categoria" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="promissumServicoModel.cliente" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="promissumServicoModel.ClienteProduto" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.clienteVeiculo" Width="1.5" PointX="14.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.email" Width="1.5" PointX="9.75" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.fornecedor" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
@@ -25,15 +23,17 @@
         <EntityTypeShape EntityType="promissumServicoModel.empresa" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
         <AssociationConnector Association="promissumServicoModel.FK_produto_categoria" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_subcategoria_categoria" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_cliente" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_produto" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_itensvenda_ClienteProduto" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_clienteVeiculo_modelo" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_produto_fornecedor" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_itensvenda_operacao" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_itensvenda_venda" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_modelo_montadora" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_produto_subcategoria" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="promissumServicoModel.ClienteProduto" Width="1.5" PointX="7.5" PointY="7.625" />
+        <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_produto" />
+        <AssociationConnector Association="promissumServicoModel.FK_itensvenda_ClienteProduto" />
+        <EntityTypeShape EntityType="promissumServicoModel.cliente" Width="1.5" PointX="3.375" PointY="14" />
+        <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_cliente" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

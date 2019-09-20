@@ -44,5 +44,16 @@ namespace Promissum.Properties {
                 return ((string)(this["promissumServicoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=netosantos-pc\\sqlexpress;Initial Catalog=promissumServico;Integrated " +
+            "Security=True")]
+        public string promissumServicoConnectionString1 {
+            get {
+                return ((string)(this["promissumServicoConnectionString1"]));
+            }
+        }
     }
 }

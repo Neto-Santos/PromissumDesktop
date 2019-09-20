@@ -10,39 +10,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="cliente">
-      <EntityTypeMapping TypeName="promissumServicoModel.cliente">
-        <MappingFragment StoreEntitySet="cliente">
-          <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
-          <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
-          <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
-          <ScalarProperty Name="cli_rgie" ColumnName="cli_rgie" />
-          <ScalarProperty Name="cli_rsocial" ColumnName="cli_rsocial" />
-          <ScalarProperty Name="cli_tipo" ColumnName="cli_tipo" />
-          <ScalarProperty Name="cli_cep" ColumnName="cli_cep" />
-          <ScalarProperty Name="cli_endereco" ColumnName="cli_endereco" />
-          <ScalarProperty Name="cli_bairro" ColumnName="cli_bairro" />
-          <ScalarProperty Name="cli_fone" ColumnName="cli_fone" />
-          <ScalarProperty Name="cli_cel" ColumnName="cli_cel" />
-          <ScalarProperty Name="cli_email" ColumnName="cli_email" />
-          <ScalarProperty Name="cli_endnumero" ColumnName="cli_endnumero" />
-          <ScalarProperty Name="cli_cidade" ColumnName="cli_cidade" />
-          <ScalarProperty Name="cli_estado" ColumnName="cli_estado" />
-          <ScalarProperty Name="cli_observacao" ColumnName="cli_observacao" />
-          <ScalarProperty Name="cli_cadastro" ColumnName="cli_cadastro" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ClienteProduto">
-      <EntityTypeMapping TypeName="promissumServicoModel.ClienteProduto">
-        <MappingFragment StoreEntitySet="ClienteProduto">
-          <ScalarProperty Name="cod" ColumnName="cod" />
-          <ScalarProperty Name="codCliente" ColumnName="codCliente" />
-          <ScalarProperty Name="codProduto" ColumnName="codProduto" />
-          <ScalarProperty Name="referencia" ColumnName="referencia" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="clienteVeiculo">
       <EntityTypeMapping TypeName="promissumServicoModel.clienteVeiculo">
         <MappingFragment StoreEntitySet="clienteVeiculo">
@@ -249,6 +216,42 @@
           <ScalarProperty Name="bairro" ColumnName="bairro" />
           <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="cadastro" ColumnName="cadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClienteProduto">
+      <EntityTypeMapping TypeName="promissumServicoModel.ClienteProduto">
+        <MappingFragment StoreEntitySet="ClienteProduto">
+          <ScalarProperty Name="cadastro" ColumnName="cadastro" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="codProduto" ColumnName="codProduto" />
+          <ScalarProperty Name="codCliente" ColumnName="codCliente" />
+          <ScalarProperty Name="cod" ColumnName="cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="promissumServicoModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="cli_status" ColumnName="cli_status" />
+          <ScalarProperty Name="cli_cadastro" ColumnName="cli_cadastro" />
+          <ScalarProperty Name="cli_observacao" ColumnName="cli_observacao" />
+          <ScalarProperty Name="cli_estado" ColumnName="cli_estado" />
+          <ScalarProperty Name="cli_cidade" ColumnName="cli_cidade" />
+          <ScalarProperty Name="cli_endnumero" ColumnName="cli_endnumero" />
+          <ScalarProperty Name="cli_email" ColumnName="cli_email" />
+          <ScalarProperty Name="cli_cel" ColumnName="cli_cel" />
+          <ScalarProperty Name="cli_fone" ColumnName="cli_fone" />
+          <ScalarProperty Name="cli_bairro" ColumnName="cli_bairro" />
+          <ScalarProperty Name="cli_endereco" ColumnName="cli_endereco" />
+          <ScalarProperty Name="cli_cep" ColumnName="cli_cep" />
+          <ScalarProperty Name="cli_tipo" ColumnName="cli_tipo" />
+          <ScalarProperty Name="cli_rsocial" ColumnName="cli_rsocial" />
+          <ScalarProperty Name="cli_rgie" ColumnName="cli_rgie" />
+          <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
+          <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
+          <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

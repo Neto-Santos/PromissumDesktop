@@ -32,19 +32,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbNome = new System.Windows.Forms.RadioButton();
+            this.button4 = new System.Windows.Forms.Button();
+            this.cbImpressora = new System.Windows.Forms.ComboBox();
             this.rbCPf = new System.Windows.Forms.RadioButton();
             this.rbCod = new System.Windows.Forms.RadioButton();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.cbImpressora = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgCliente = new System.Windows.Forms.DataGridView();
             this.cli_cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cli_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cli_cpfcnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cli_rgie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,18 +65,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblDescricaoProduto = new System.Windows.Forms.Label();
             this.dgClienteProduto = new System.Windows.Forms.DataGridView();
-            this.clienteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdutoServiço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScatNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVinculaProduto = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnConsultaProduto = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtReferencia = new System.Windows.Forms.TextBox();
@@ -95,6 +87,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.pnCabecalho = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdutoServiço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -104,35 +105,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgClienteProduto)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).BeginInit();
+            this.pnCabecalho.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(615, 7);
+            this.groupBox1.Location = new System.Drawing.Point(6, 38);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(233, 312);
+            this.groupBox1.Size = new System.Drawing.Size(842, 109);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rbNome);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.cbImpressora);
             this.groupBox2.Controls.Add(this.rbCPf);
             this.groupBox2.Controls.Add(this.rbCod);
             this.groupBox2.Controls.Add(this.txtPesquisa);
             this.groupBox2.Controls.Add(this.btnFiltrar);
-            this.groupBox2.Location = new System.Drawing.Point(8, 119);
+            this.groupBox2.Location = new System.Drawing.Point(238, 14);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(218, 186);
+            this.groupBox2.Size = new System.Drawing.Size(595, 82);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PESQUISA";
@@ -140,7 +144,7 @@
             // rbNome
             // 
             this.rbNome.AutoSize = true;
-            this.rbNome.Location = new System.Drawing.Point(7, 80);
+            this.rbNome.Location = new System.Drawing.Point(127, 24);
             this.rbNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbNome.Name = "rbNome";
             this.rbNome.Size = new System.Drawing.Size(60, 20);
@@ -149,10 +153,34 @@
             this.rbNome.Text = "NOME";
             this.rbNome.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::Promissum.Properties.Resources.print;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(537, 16);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(52, 50);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // cbImpressora
+            // 
+            this.cbImpressora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImpressora.FormattingEnabled = true;
+            this.cbImpressora.Location = new System.Drawing.Point(193, 24);
+            this.cbImpressora.Name = "cbImpressora";
+            this.cbImpressora.Size = new System.Drawing.Size(127, 24);
+            this.cbImpressora.TabIndex = 10;
+            this.cbImpressora.Visible = false;
+            // 
             // rbCPf
             // 
             this.rbCPf.AutoSize = true;
-            this.rbCPf.Location = new System.Drawing.Point(7, 52);
+            this.rbCPf.Location = new System.Drawing.Point(64, 24);
             this.rbCPf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbCPf.Name = "rbCPf";
             this.rbCPf.Size = new System.Drawing.Size(48, 20);
@@ -175,17 +203,17 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(7, 111);
+            this.txtPesquisa.Location = new System.Drawing.Point(7, 52);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(202, 23);
+            this.txtPesquisa.Size = new System.Drawing.Size(393, 23);
             this.txtPesquisa.TabIndex = 3;
             // 
             // btnFiltrar
             // 
             this.btnFiltrar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnFiltrar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnFiltrar.Location = new System.Drawing.Point(7, 143);
+            this.btnFiltrar.Location = new System.Drawing.Point(406, 49);
             this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(88, 28);
@@ -194,81 +222,72 @@
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::Promissum.Properties.Resources.print;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(123, 41);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 50);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(7, 87);
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Image = global::Promissum.Properties.Resources.icone_delete;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(134, 33);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 28);
+            this.button3.Size = new System.Drawing.Size(105, 56);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Excluir";
+            this.button3.Text = "Mudar Status";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(7, 52);
+            this.button2.Image = global::Promissum.Properties.Resources.icone_alterar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(72, 35);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 28);
+            this.button2.Size = new System.Drawing.Size(66, 53);
             this.button2.TabIndex = 1;
             this.button2.Text = "Alterar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(7, 17);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::Promissum.Properties.Resources.icon_add;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(6, 34);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 28);
+            this.button1.Size = new System.Drawing.Size(66, 55);
             this.button1.TabIndex = 0;
             this.button1.Text = "INCLUIR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cbImpressora
-            // 
-            this.cbImpressora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImpressora.FormattingEnabled = true;
-            this.cbImpressora.Location = new System.Drawing.Point(721, 534);
-            this.cbImpressora.Name = "cbImpressora";
-            this.cbImpressora.Size = new System.Drawing.Size(127, 24);
-            this.cbImpressora.TabIndex = 10;
-            this.cbImpressora.Visible = false;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(2, 4);
+            this.tabControl1.Location = new System.Drawing.Point(6, 155);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(607, 554);
+            this.tabControl1.Size = new System.Drawing.Size(842, 403);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -278,7 +297,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(599, 525);
+            this.tabPage1.Size = new System.Drawing.Size(834, 374);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -293,6 +312,7 @@
             this.dgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cli_cod,
+            this.clienteProduto,
             this.cli_nome,
             this.cli_cpfcnpj,
             this.cli_rgie,
@@ -317,7 +337,7 @@
             this.dgCliente.ReadOnly = true;
             this.dgCliente.RowHeadersVisible = false;
             this.dgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCliente.Size = new System.Drawing.Size(593, 517);
+            this.dgCliente.Size = new System.Drawing.Size(828, 366);
             this.dgCliente.TabIndex = 2;
             this.dgCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCliente_CellClick);
             this.dgCliente.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCliente_CellContentDoubleClick);
@@ -328,6 +348,14 @@
             this.cli_cod.HeaderText = "Codigo";
             this.cli_cod.Name = "cli_cod";
             this.cli_cod.ReadOnly = true;
+            // 
+            // clienteProduto
+            // 
+            this.clienteProduto.DataPropertyName = "ClienteProduto";
+            this.clienteProduto.HeaderText = "ClienteProduto";
+            this.clienteProduto.Name = "clienteProduto";
+            this.clienteProduto.ReadOnly = true;
+            this.clienteProduto.Visible = false;
             // 
             // cli_nome
             // 
@@ -450,7 +478,6 @@
             this.tabPage2.Controls.Add(this.btnVinculaProduto);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.btnConsultaProduto);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.txtReferencia);
@@ -459,7 +486,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(599, 525);
+            this.tabPage2.Size = new System.Drawing.Size(834, 374);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Produtos Vinculados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -467,11 +494,11 @@
             // lblDescricaoProduto
             // 
             this.lblDescricaoProduto.AutoSize = true;
-            this.lblDescricaoProduto.Location = new System.Drawing.Point(89, 32);
+            this.lblDescricaoProduto.Location = new System.Drawing.Point(183, 29);
             this.lblDescricaoProduto.Name = "lblDescricaoProduto";
-            this.lblDescricaoProduto.Size = new System.Drawing.Size(199, 16);
+            this.lblDescricaoProduto.Size = new System.Drawing.Size(34, 16);
             this.lblDescricaoProduto.TabIndex = 5;
-            this.lblDescricaoProduto.Text = "Consulte um Produto====>>>>";
+            this.lblDescricaoProduto.Text = "Item";
             // 
             // dgClienteProduto
             // 
@@ -481,90 +508,27 @@
             this.dgClienteProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgClienteProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgClienteProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clienteNome,
+            this.Cod,
             this.ProdutoServiço,
             this.referencia,
-            this.catNome,
-            this.ScatNome,
-            this.cod,
-            this.codCliente,
-            this.codProduto});
+            this.Status,
+            this.Cadastro});
             this.dgClienteProduto.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgClienteProduto.Location = new System.Drawing.Point(7, 103);
+            this.dgClienteProduto.Location = new System.Drawing.Point(3, 107);
             this.dgClienteProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgClienteProduto.Name = "dgClienteProduto";
             this.dgClienteProduto.ReadOnly = true;
             this.dgClienteProduto.RowHeadersVisible = false;
-            this.dgClienteProduto.Size = new System.Drawing.Size(587, 411);
+            this.dgClienteProduto.Size = new System.Drawing.Size(821, 260);
             this.dgClienteProduto.TabIndex = 4;
             this.dgClienteProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClienteProduto_CellClick);
-            // 
-            // clienteNome
-            // 
-            this.clienteNome.DataPropertyName = "cli_nome";
-            this.clienteNome.HeaderText = "Cliente";
-            this.clienteNome.Name = "clienteNome";
-            this.clienteNome.ReadOnly = true;
-            // 
-            // ProdutoServiço
-            // 
-            this.ProdutoServiço.DataPropertyName = "pro_nome";
-            this.ProdutoServiço.HeaderText = "Produto/Serviço";
-            this.ProdutoServiço.Name = "ProdutoServiço";
-            this.ProdutoServiço.ReadOnly = true;
-            // 
-            // referencia
-            // 
-            this.referencia.DataPropertyName = "referencia";
-            this.referencia.HeaderText = "Referência";
-            this.referencia.Name = "referencia";
-            this.referencia.ReadOnly = true;
-            // 
-            // catNome
-            // 
-            this.catNome.DataPropertyName = "cat_nome";
-            this.catNome.HeaderText = "Tipo";
-            this.catNome.Name = "catNome";
-            this.catNome.ReadOnly = true;
-            // 
-            // ScatNome
-            // 
-            this.ScatNome.DataPropertyName = "scat_nome";
-            this.ScatNome.HeaderText = "Modelo";
-            this.ScatNome.Name = "ScatNome";
-            this.ScatNome.ReadOnly = true;
-            this.ScatNome.Width = 200;
-            // 
-            // cod
-            // 
-            this.cod.DataPropertyName = "cod";
-            this.cod.HeaderText = "cod";
-            this.cod.Name = "cod";
-            this.cod.ReadOnly = true;
-            this.cod.Visible = false;
-            // 
-            // codCliente
-            // 
-            this.codCliente.DataPropertyName = "codCliente";
-            this.codCliente.HeaderText = "codCliente";
-            this.codCliente.Name = "codCliente";
-            this.codCliente.ReadOnly = true;
-            this.codCliente.Visible = false;
-            // 
-            // codProduto
-            // 
-            this.codProduto.DataPropertyName = "codProduto";
-            this.codProduto.HeaderText = "codProduto";
-            this.codProduto.Name = "codProduto";
-            this.codProduto.ReadOnly = true;
-            this.codProduto.Visible = false;
             // 
             // btnVinculaProduto
             // 
             this.btnVinculaProduto.BackColor = System.Drawing.Color.Green;
             this.btnVinculaProduto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnVinculaProduto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVinculaProduto.Location = new System.Drawing.Point(481, 26);
+            this.btnVinculaProduto.Location = new System.Drawing.Point(610, 46);
             this.btnVinculaProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVinculaProduto.Name = "btnVinculaProduto";
             this.btnVinculaProduto.Size = new System.Drawing.Size(87, 28);
@@ -578,12 +542,12 @@
             this.button5.BackColor = System.Drawing.Color.Red;
             this.button5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Location = new System.Drawing.Point(481, 71);
+            this.button5.Location = new System.Drawing.Point(703, 46);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 28);
+            this.button5.Size = new System.Drawing.Size(120, 28);
             this.button5.TabIndex = 2;
-            this.button5.Text = "Excluir";
+            this.button5.Text = "Mudar Status";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -591,7 +555,7 @@
             // 
             this.btnConsultaProduto.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnConsultaProduto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnConsultaProduto.Location = new System.Drawing.Point(386, 26);
+            this.btnConsultaProduto.Location = new System.Drawing.Point(87, 23);
             this.btnConsultaProduto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConsultaProduto.Name = "btnConsultaProduto";
             this.btnConsultaProduto.Size = new System.Drawing.Size(87, 28);
@@ -599,15 +563,6 @@
             this.btnConsultaProduto.Text = "Consultar";
             this.btnConsultaProduto.UseVisualStyleBackColor = false;
             this.btnConsultaProduto.Click += new System.EventHandler(this.btnConsultaProduto_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 7);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descrição";
             // 
             // label3
             // 
@@ -633,11 +588,12 @@
             this.txtReferencia.Location = new System.Drawing.Point(7, 76);
             this.txtReferencia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtReferencia.Name = "txtReferencia";
-            this.txtReferencia.Size = new System.Drawing.Size(371, 23);
+            this.txtReferencia.Size = new System.Drawing.Size(816, 23);
             this.txtReferencia.TabIndex = 0;
             // 
             // txtCod
             // 
+            this.txtCod.Enabled = false;
             this.txtCod.Location = new System.Drawing.Point(7, 26);
             this.txtCod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCod.Name = "txtCod";
@@ -659,9 +615,8 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(599, 525);
+            this.tabPage3.Size = new System.Drawing.Size(834, 374);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Veículo Vinculados";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -672,6 +627,7 @@
             this.label5.Size = new System.Drawing.Size(196, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Consulte um Veículo====>>>>";
+            this.label5.Visible = false;
             // 
             // dgVeiculo
             // 
@@ -686,13 +642,14 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.dgVeiculo.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgVeiculo.Location = new System.Drawing.Point(8, 105);
+            this.dgVeiculo.Location = new System.Drawing.Point(6, 95);
             this.dgVeiculo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgVeiculo.Name = "dgVeiculo";
             this.dgVeiculo.ReadOnly = true;
             this.dgVeiculo.RowHeadersVisible = false;
-            this.dgVeiculo.Size = new System.Drawing.Size(587, 411);
+            this.dgVeiculo.Size = new System.Drawing.Size(822, 227);
             this.dgVeiculo.TabIndex = 14;
+            this.dgVeiculo.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -727,38 +684,41 @@
             this.btnAdicionarVeiculo.BackColor = System.Drawing.Color.Green;
             this.btnAdicionarVeiculo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAdicionarVeiculo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdicionarVeiculo.Location = new System.Drawing.Point(482, 28);
+            this.btnAdicionarVeiculo.Location = new System.Drawing.Point(648, 34);
             this.btnAdicionarVeiculo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdicionarVeiculo.Name = "btnAdicionarVeiculo";
             this.btnAdicionarVeiculo.Size = new System.Drawing.Size(87, 28);
             this.btnAdicionarVeiculo.TabIndex = 11;
             this.btnAdicionarVeiculo.Text = "Add";
             this.btnAdicionarVeiculo.UseVisualStyleBackColor = false;
+            this.btnAdicionarVeiculo.Visible = false;
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Red;
             this.button7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.Location = new System.Drawing.Point(482, 73);
+            this.button7.Location = new System.Drawing.Point(741, 34);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(87, 28);
             this.button7.TabIndex = 12;
             this.button7.Text = "Excluir";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Visible = false;
             // 
             // btnConsultarVeiculo
             // 
             this.btnConsultarVeiculo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnConsultarVeiculo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnConsultarVeiculo.Location = new System.Drawing.Point(387, 28);
+            this.btnConsultarVeiculo.Location = new System.Drawing.Point(292, 28);
             this.btnConsultarVeiculo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConsultarVeiculo.Name = "btnConsultarVeiculo";
             this.btnConsultarVeiculo.Size = new System.Drawing.Size(87, 28);
             this.btnConsultarVeiculo.TabIndex = 13;
             this.btnConsultarVeiculo.Text = "Consultar";
             this.btnConsultarVeiculo.UseVisualStyleBackColor = false;
+            this.btnConsultarVeiculo.Visible = false;
             // 
             // label6
             // 
@@ -768,15 +728,17 @@
             this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Descrição";
+            this.label6.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 75);
+            this.label7.Location = new System.Drawing.Point(4, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 16);
             this.label7.TabIndex = 9;
             this.label7.Text = "Referência (Nº Série/Mac, etc)";
+            this.label7.Visible = false;
             // 
             // label8
             // 
@@ -786,15 +748,17 @@
             this.label8.Size = new System.Drawing.Size(47, 16);
             this.label8.TabIndex = 10;
             this.label8.Text = "Codigo";
+            this.label8.Visible = false;
             // 
             // txtPlacaVeiculo
             // 
             this.txtPlacaVeiculo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPlacaVeiculo.Location = new System.Drawing.Point(194, 72);
+            this.txtPlacaVeiculo.Location = new System.Drawing.Point(194, 67);
             this.txtPlacaVeiculo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-            this.txtPlacaVeiculo.Size = new System.Drawing.Size(102, 23);
+            this.txtPlacaVeiculo.Size = new System.Drawing.Size(634, 23);
             this.txtPlacaVeiculo.TabIndex = 6;
+            this.txtPlacaVeiculo.Visible = false;
             this.txtPlacaVeiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlacaVeiculo_KeyPress);
             // 
             // textBox2
@@ -804,6 +768,97 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(74, 23);
             this.textBox2.TabIndex = 7;
+            this.textBox2.Visible = false;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.BackgroundImage = global::Promissum.Properties.Resources.icone_fechar;
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Location = new System.Drawing.Point(787, 1);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(62, 38);
+            this.btnFechar.TabIndex = 3;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackgroundImage = global::Promissum.Properties.Resources.icone_minimizar;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(742, 8);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(39, 23);
+            this.btnMinimizar.TabIndex = 5;
+            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // pnCabecalho
+            // 
+            this.pnCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnCabecalho.Controls.Add(this.label4);
+            this.pnCabecalho.Controls.Add(this.btnFechar);
+            this.pnCabecalho.Controls.Add(this.btnMinimizar);
+            this.pnCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnCabecalho.Location = new System.Drawing.Point(0, 0);
+            this.pnCabecalho.Name = "pnCabecalho";
+            this.pnCabecalho.Size = new System.Drawing.Size(851, 42);
+            this.pnCabecalho.TabIndex = 6;
+            this.pnCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnCabecalho_MouseMove);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Cliente";
+            // 
+            // Cod
+            // 
+            this.Cod.DataPropertyName = "cod";
+            this.Cod.HeaderText = "Cod";
+            this.Cod.Name = "Cod";
+            this.Cod.ReadOnly = true;
+            // 
+            // ProdutoServiço
+            // 
+            this.ProdutoServiço.DataPropertyName = "pro_nome";
+            this.ProdutoServiço.HeaderText = "Produto/Serviço";
+            this.ProdutoServiço.Name = "ProdutoServiço";
+            this.ProdutoServiço.ReadOnly = true;
+            this.ProdutoServiço.Width = 400;
+            // 
+            // referencia
+            // 
+            this.referencia.DataPropertyName = "referencia";
+            this.referencia.HeaderText = "Referência";
+            this.referencia.Name = "referencia";
+            this.referencia.ReadOnly = true;
+            this.referencia.Width = 200;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Cadastro
+            // 
+            this.Cadastro.DataPropertyName = "cadastro";
+            this.Cadastro.HeaderText = "Cadastro";
+            this.Cadastro.Name = "Cadastro";
+            this.Cadastro.ReadOnly = true;
             // 
             // frmConsultaCliente
             // 
@@ -811,10 +866,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(851, 560);
+            this.Controls.Add(this.pnCabecalho);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.cbImpressora);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -836,6 +892,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVeiculo)).EndInit();
+            this.pnCabecalho.ResumeLayout(false);
+            this.pnCabecalho.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -861,36 +919,10 @@
         private System.Windows.Forms.Button btnVinculaProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtReferencia;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label lblDescricaoProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cpfcnpj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_rgie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_rsocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_endereco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_bairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_fone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_endnumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_observacao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cadastro;
         private System.Windows.Forms.ComboBox cbImpressora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clienteNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoServiço;
-        private System.Windows.Forms.DataGridViewTextBoxColumn referencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn catNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ScatNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codProduto;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label5;
@@ -907,5 +939,32 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Montadora;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clienteProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cpfcnpj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_rgie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_rsocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_fone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_endnumero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_observacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_cadastro;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Panel pnCabecalho;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdutoServiço;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cadastro;
     }
 }

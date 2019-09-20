@@ -51,8 +51,7 @@ namespace Beta1._0.Login
                             this.Hide();
                             this.status = true;
                             frmPrincipal.usuario = txtUsuario.Text;
-                            Promissum.frmDesignerMelhorado frmTeste = new Promissum.frmDesignerMelhorado();
-                            frmTeste.ShowDialog();              
+                            
                         }
 
                     }

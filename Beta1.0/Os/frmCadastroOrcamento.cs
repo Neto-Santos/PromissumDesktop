@@ -19,15 +19,16 @@ namespace Beta1._0.Os
     public partial class frmCadastroOrcamento : Form
     {
         promissumServicoEntities contexto = new promissumServicoEntities();
-        public string codigo;
+        public int codigo;
         private string status = "";
         private string referencia = "";
         public double TotalVenda { get; set; }
 
-        public frmCadastroOrcamento(string codigo = null)
+
+        public frmCadastroOrcamento(int codigoOrcamento)
         {
             InitializeComponent();
-            this.codigo = codigo;
+            this.codigo = codigoOrcamento;
         }
 
         void limpaCampos()
@@ -64,7 +65,7 @@ namespace Beta1._0.Os
             Consulta.frmConsultaCliente frm = new Consulta.frmConsultaCliente();
             frm.ShowDialog();
 
-           int cod = Convert.ToInt32(frm.codigo);
+            int cod = Convert.ToInt32(frm.codigo);
             var modelo = contexto.cliente.Find(cod);
             txtCodCliente.Text = modelo.cli_cod.ToString();
             txtEmail.Text = modelo.cli_email;
@@ -83,25 +84,25 @@ namespace Beta1._0.Os
 
                 int codProduto = Convert.ToInt32(frm.codigo);
                 int codCliente = Convert.ToInt32(frm.codCliente);
-                var modeloProduto = contexto.produto.Find(codProduto);
+
 
                 //bllClienteProduto.CarregarModelo(Convert.ToInt32(frm.codCliente), modeloProduto.ProCod, frm.referencia);
-                var modeloClienteProduto = contexto.ClienteProduto.Where(x => x.codCliente.Equals(codCliente) &&
-                                            x.codProduto.Equals(codProduto) && 
-                                            x.referencia.Equals(frm.referencia)).FirstOrDefault();
+                dynamic modeloClienteProduto = contexto.ClienteProduto.Include("produto").Where(x => x.codCliente == codCliente &&
+                                            x.codProduto == codProduto &&
+                                            x.referencia == frm.referencia).Select(c => new { c.cod, c.produto.pro_nome, c.produto.pro_valorvenda, c.referencia }).FirstOrDefault();
 
                 if (modeloClienteProduto != null)
                 {
                     gbValores.Enabled = true;
                     txtCodProduto.Text = modeloClienteProduto.cod.ToString();
-                    lbProduto.Text = modeloProduto.pro_nome;
+                    lbProduto.Text = modeloClienteProduto.pro_nome;
                     txtDesconto.Text = "0";
                     txtDescontoReal.Text = "0";
-                    txtPrecoUnitario.Text = modeloProduto.pro_valorvenda.ToString();
-                    txtVlrBase.Text = modeloProduto.pro_valorvenda.ToString();
+                    txtPrecoUnitario.Text = modeloClienteProduto.pro_valorvenda.ToString();
+                    txtVlrBase.Text = modeloClienteProduto.pro_valorvenda.ToString();
                     txtQuantidade.Text = "1";
-                    txtTotalProduto.Text = modeloProduto.pro_valorvenda.ToString();
-                    referencia = modeloProduto.pro_ref.ToString();
+                    txtTotalProduto.Text = modeloClienteProduto.pro_valorvenda.ToString();
+                    referencia = modeloClienteProduto.referencia.ToString();
 
                 }
             }
@@ -116,12 +117,12 @@ namespace Beta1._0.Os
         {
             if ((txtCodProduto.Text != "") && (txtQuantidade.Text != "") && (txtPrecoUnitario.Text != ""))
             {
-                
+
                 double totalLocal = Convert.ToDouble(txtQuantidade.Text) * Convert.ToDouble(txtPrecoUnitario.Text);
 
                 this.TotalVenda = TotalVenda + totalLocal;
 
-                String[] i = new String[] { txtCodProduto.Text,referencia, cbOperacao.Text,lbProduto.Text, txtQuantidade.Text, txtVlrBase.Text, txtDescontoReal.Text, txtPrecoUnitario.Text, totalLocal.ToString(), cbOperacao.SelectedValue.ToString() };
+                String[] i = new String[] { txtCodProduto.Text, referencia, cbOperacao.Text, lbProduto.Text, txtQuantidade.Text, txtVlrBase.Text, txtDescontoReal.Text, txtPrecoUnitario.Text, totalLocal.ToString(), cbOperacao.SelectedValue.ToString() };
 
                 dgvItensVenda.Rows.Add(i);
 
@@ -148,7 +149,7 @@ namespace Beta1._0.Os
 
             nupdDiasEmail.Value = 30;
 
-            if (Convert.ToInt32(codigo) > 0)
+            if (this.codigo > 0)
             {
                 //Desabilita o botão para buscar cliente
                 button5.Enabled = false;
@@ -207,11 +208,11 @@ namespace Beta1._0.Os
 
                     #region Carregando Itens da Compra
                     //Modelo = Venda
-                    
+
                     foreach (var item in modelo.itensvenda)
                     {
 
-                        string iCod = item.itv_cod.ToString();
+                        string codProduto = item.cp_cod.ToString();
                         string iNome = item.ClienteProduto.produto.pro_nome;
                         string iQtd = item.itv_qtde.ToString();
                         string iValorUnitario = item.itv_valor.ToString();
@@ -226,7 +227,7 @@ namespace Beta1._0.Os
 
                         //String[] linha = new String[] { iCod, iNome, iQtd, valorBase, desconto, iValorUnitario, totalLocal.ToString(), };
                         // sequência do datagrid codigo - ref - operação - produto - quantidade,valor un,desconto,valor un,total,codOperação
-                        String[] linha = new String[] { iCod, referencia,operacao,iNome, iQtd,valorBase, desconto, iValorUnitario, totalLocal.ToString(), codOperacao };
+                        String[] linha = new String[] { codProduto, referencia, operacao, iNome, iQtd, valorBase, desconto, iValorUnitario, totalLocal.ToString(), codOperacao };
 
                         dgvItensVenda.Rows.Add(linha);
                     }
@@ -295,7 +296,7 @@ namespace Beta1._0.Os
                 modeloVenda.ven_hora_saida = dtHoraSaida.Value;
                 modeloVenda.ven_total = (decimal)this.TotalVenda;
                 modeloVenda.ven_diasProximaRevisao = Convert.ToInt32(nupdDiasEmail.Value);
-                modeloVenda.ven_lembrete = rbLembretePendente.Checked ? "Pendente":"Enviado";
+                modeloVenda.ven_lembrete = rbLembretePendente.Checked ? "Pendente" : "Enviado";
                 //modeloVenda.op_cod = Convert.ToInt32(cbOperacao.SelectedValue);
                 //-------------------------------------------------------------------
 
@@ -312,8 +313,12 @@ namespace Beta1._0.Os
                     modeloVenda.ven_status = "Aberto";
                 }
 
-                if (String.IsNullOrEmpty(this.codigo))
+                if (this.codigo <= 0)
                 {
+                    //Incluindo a Venda
+                    contexto.venda.Add(modeloVenda);
+
+
                     //Cadastrar itens da compra.
                     itensvenda itensVenda = new itensvenda();
                     #region Cadastrando Os Itens da venda no banco de dados
@@ -328,10 +333,9 @@ namespace Beta1._0.Os
                         itensVenda.itv_valorBase = Convert.ToDecimal(dgvItensVenda.Rows[i].Cells["ValorBase"].Value.ToString());
                         itensVenda.itv_desconto = Convert.ToDecimal(dgvItensVenda.Rows[i].Cells["Desconto"].Value.ToString());
                         itensVenda.op_cod = Convert.ToInt32(dgvItensVenda.Rows[i].Cells["codOperacao"].Value.ToString());
-                        
 
                         contexto.itensvenda.Add(itensVenda);
-                        
+
                     }
 
                     var enviarEmail = MessageBox.Show("Deseja enviar email Para o Cliente?", "Email", MessageBoxButtons.YesNo);
@@ -349,21 +353,48 @@ namespace Beta1._0.Os
                         sbCorpo.Append("<br><br><br><br>");
                         sbCorpo.AppendFormat("<p>{0}</p><p>{1}</p><p>{2}</p>", email.rodape1, email.rodape2, email.rodape3);
 
-                        EnviodeEmail.EnviaEmail(txtEmail.Text,"", "", email.assunto, sbCorpo.ToString(), "", email.nome, email.senha);
-                        
+                        EnviodeEmail.EnviaEmail(txtEmail.Text, "", "", email.assunto, sbCorpo.ToString(), "", email.nome, email.senha);
+
                     }
 
+                    contexto.SaveChanges();
                     #endregion
                 }
                 else
                 {
+
+
                     modeloVenda.ven_cod = Convert.ToInt32(this.codigo);
-                    
+                    var objVenda = contexto.venda.Find(this.codigo);
+                    objVenda.cli_cod = Convert.ToInt32(txtCodCliente.Text);
+                    objVenda.tpa_cod = 0;
+                    objVenda.ven_avista = 0;
+                    objVenda.ven_data = DateTime.Now;
+                    objVenda.ven_data_entrada = dtDataEntrada.Value;
+                    objVenda.ven_hora_entrada = dtHoraEntrada.Value;
+                    objVenda.ven_defeito_apresentado = txtDefeitoApresentado.Text;
+                    objVenda.ven_servico_efetuado = txtServicoEfetuado.Text;
+                    objVenda.ven_status = status;
+                    objVenda.ven_data_saida = dtDataSaida.Value;
+                    objVenda.ven_hora_saida = dtHoraSaida.Value;
+                    objVenda.ven_total = (decimal)this.TotalVenda;
+                    objVenda.ven_diasProximaRevisao = Convert.ToInt32(nupdDiasEmail.Value);
+                    objVenda.ven_lembrete = rbLembretePendente.Checked ? "Pendente" : "Enviado";
+
+                    if (rbFinalizado.Checked)
+                    {
+                        objVenda.ven_data_saida = dtDataSaida.Value;
+                        objVenda.ven_hora_saida = dtDataSaida.Value;
+                        objVenda.ven_status = "Finalizado";
+                    }
+                    if (rbAberto.Checked)
+                    {
+                        objVenda.ven_status = "Aberto";
+                    }
                     //Excluindo todos os itens da venda.
-                    foreach (var item in contexto.itensvenda.Where(i=>i.ven_cod == modeloVenda.ven_cod).ToList())
+                    foreach (var item in contexto.itensvenda.Where(i => i.ven_cod == modeloVenda.ven_cod).ToList())
                     {
                         contexto.itensvenda.Remove(item);
-                        contexto.SaveChanges();
                     }
 
 
@@ -383,9 +414,10 @@ namespace Beta1._0.Os
                         _itensVenda.op_cod = Convert.ToInt32(dgvItensVenda.Rows[i].Cells["codOperacao"].Value.ToString());
 
                         contexto.itensvenda.Add(_itensVenda);
+                        contexto.SaveChanges();
                     }
 
-                    contexto.Entry(modeloVenda).State = System.Data.Entity.EntityState.Modified;
+                    contexto.Entry(objVenda).State = System.Data.Entity.EntityState.Modified;
                     contexto.SaveChanges();
 
                     var enviarEmail = MessageBox.Show("Deseja enviar email Para o Cliente?", "Email", MessageBoxButtons.YesNo);
@@ -407,6 +439,8 @@ namespace Beta1._0.Os
 
                     #endregion
                 }
+
+
             }
         }
 
@@ -428,9 +462,9 @@ namespace Beta1._0.Os
 
         private void rbAberto_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(this.codigo))
+            if (this.codigo > 0)
             {
-               
+
                 try
                 {
                     int codVenda = Convert.ToInt32(this.codigo);
@@ -491,7 +525,7 @@ namespace Beta1._0.Os
 
             frm.WindowState = FormWindowState.Maximized;
             frm.ShowDialog();
-           
+
         }
 
         private void txtPrecoUnitario_KeyPress(object sender, KeyPressEventArgs e)
@@ -528,7 +562,7 @@ namespace Beta1._0.Os
                 var totalProduto = valorFinal * quantidade;
                 txtTotalProduto.Text = totalProduto.ToString();
             }
-            
+
         }
 
         private void txtVlrBase_Leave(object sender, EventArgs e)
@@ -570,7 +604,7 @@ namespace Beta1._0.Os
             {
                 e.Handled = true;
             }
-           
+
         }
 
         private void txtkm_Leave(object sender, EventArgs e)

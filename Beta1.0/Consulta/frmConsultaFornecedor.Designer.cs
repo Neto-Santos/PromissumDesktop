@@ -47,7 +47,6 @@
             this.for_cadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.for_cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbImpressora = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbCodigo = new System.Windows.Forms.RadioButton();
@@ -59,9 +58,14 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pnCabecalho = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.pnCabecalho.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvFornecedor
@@ -89,13 +93,13 @@
             this.for_cadastro,
             this.for_cpf});
             this.dgvFornecedor.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvFornecedor.Location = new System.Drawing.Point(1, 1);
+            this.dgvFornecedor.Location = new System.Drawing.Point(1, 163);
             this.dgvFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.RowHeadersVisible = false;
             this.dgvFornecedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedor.Size = new System.Drawing.Size(607, 532);
+            this.dgvFornecedor.Size = new System.Drawing.Size(829, 356);
             this.dgvFornecedor.TabIndex = 3;
             this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
             // 
@@ -213,35 +217,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.cbImpressora);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnExcluir);
             this.groupBox1.Controls.Add(this.btnAlterar);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(614, 1);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Location = new System.Drawing.Point(1, 37);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(233, 316);
+            this.groupBox1.Size = new System.Drawing.Size(829, 122);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Listagem";
             // 
             // cbImpressora
             // 
             this.cbImpressora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbImpressora.FormattingEnabled = true;
-            this.cbImpressora.Location = new System.Drawing.Point(99, 87);
+            this.cbImpressora.Location = new System.Drawing.Point(449, 16);
             this.cbImpressora.Name = "cbImpressora";
             this.cbImpressora.Size = new System.Drawing.Size(127, 24);
             this.cbImpressora.TabIndex = 8;
@@ -250,15 +243,16 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rbCodigo);
+            this.groupBox2.Controls.Add(this.cbImpressora);
             this.groupBox2.Controls.Add(this.rbCnpj);
             this.groupBox2.Controls.Add(this.rbNome);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Location = new System.Drawing.Point(8, 119);
+            this.groupBox2.Location = new System.Drawing.Point(241, 9);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(218, 186);
+            this.groupBox2.Size = new System.Drawing.Size(582, 109);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PESQUISA";
@@ -266,7 +260,7 @@
             // rbCodigo
             // 
             this.rbCodigo.AutoSize = true;
-            this.rbCodigo.Location = new System.Drawing.Point(7, 80);
+            this.rbCodigo.Location = new System.Drawing.Point(134, 20);
             this.rbCodigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbCodigo.Name = "rbCodigo";
             this.rbCodigo.Size = new System.Drawing.Size(65, 20);
@@ -277,7 +271,7 @@
             // rbCnpj
             // 
             this.rbCnpj.AutoSize = true;
-            this.rbCnpj.Location = new System.Drawing.Point(7, 52);
+            this.rbCnpj.Location = new System.Drawing.Point(75, 20);
             this.rbCnpj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbCnpj.Name = "rbCnpj";
             this.rbCnpj.Size = new System.Drawing.Size(52, 20);
@@ -289,7 +283,7 @@
             // 
             this.rbNome.AutoSize = true;
             this.rbNome.Checked = true;
-            this.rbNome.Location = new System.Drawing.Point(7, 23);
+            this.rbNome.Location = new System.Drawing.Point(9, 20);
             this.rbNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbNome.Name = "rbNome";
             this.rbNome.Size = new System.Drawing.Size(59, 20);
@@ -300,22 +294,27 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 111);
+            this.textBox1.Location = new System.Drawing.Point(9, 47);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 23);
+            this.textBox1.Size = new System.Drawing.Size(568, 23);
             this.textBox1.TabIndex = 3;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(7, 143);
+            this.button5.Image = global::Promissum.Properties.Resources.icone_lupa;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(9, 70);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 28);
+            this.button5.Size = new System.Drawing.Size(99, 28);
             this.button5.TabIndex = 4;
             this.button5.Text = "FILTRAR";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -325,64 +324,131 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = global::Promissum.Properties.Resources.print;
-            this.button4.Location = new System.Drawing.Point(120, 17);
+            this.button4.Location = new System.Drawing.Point(6, 80);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 52);
+            this.button4.Size = new System.Drawing.Size(55, 38);
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
+            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExcluir.Location = new System.Drawing.Point(7, 84);
+            this.btnExcluir.ForeColor = System.Drawing.Color.Black;
+            this.btnExcluir.Image = global::Promissum.Properties.Resources.icone_delete;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(167, 9);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(87, 28);
+            this.btnExcluir.Size = new System.Drawing.Size(77, 59);
             this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.BackColor = System.Drawing.Color.Yellow;
+            this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAlterar.Location = new System.Drawing.Point(7, 52);
+            this.btnAlterar.ForeColor = System.Drawing.Color.Black;
+            this.btnAlterar.Image = global::Promissum.Properties.Resources.icone_alterar;
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.Location = new System.Drawing.Point(82, 9);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(87, 28);
+            this.btnAlterar.Size = new System.Drawing.Size(77, 62);
             this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(7, 17);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::Promissum.Properties.Resources.icon_add;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(6, 9);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.Size = new System.Drawing.Size(68, 63);
             this.button1.TabIndex = 0;
             this.button1.Text = "INCLUIR";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pnCabecalho
+            // 
+            this.pnCabecalho.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnCabecalho.Controls.Add(this.label4);
+            this.pnCabecalho.Controls.Add(this.btnFechar);
+            this.pnCabecalho.Controls.Add(this.btnMinimizar);
+            this.pnCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnCabecalho.Location = new System.Drawing.Point(0, 0);
+            this.pnCabecalho.Name = "pnCabecalho";
+            this.pnCabecalho.Size = new System.Drawing.Size(831, 42);
+            this.pnCabecalho.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Fornecedor";
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.BackgroundImage = global::Promissum.Properties.Resources.icone_fechar;
+            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Location = new System.Drawing.Point(767, 1);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(62, 38);
+            this.btnFechar.TabIndex = 3;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.BackgroundImage = global::Promissum.Properties.Resources.icone_minimizar;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(722, 8);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(39, 23);
+            this.btnMinimizar.TabIndex = 5;
+            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
             // 
             // frmConsultaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 537);
+            this.ClientSize = new System.Drawing.Size(831, 518);
+            this.Controls.Add(this.pnCabecalho);
             this.Controls.Add(this.dgvFornecedor);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
@@ -394,9 +460,10 @@
             this.Load += new System.EventHandler(this.frmConsultaFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.pnCabecalho.ResumeLayout(false);
+            this.pnCabecalho.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -430,7 +497,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn for_estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_cadastro;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_cpf;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbImpressora;
+        private System.Windows.Forms.Panel pnCabecalho;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnMinimizar;
     }
 }

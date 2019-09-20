@@ -1,6 +1,6 @@
 ﻿using Beta1._0.Cadastro;
 using BLL;
-using DAL;
+using DAL.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +16,12 @@ namespace Beta1._0.Consulta
     public partial class frmConsultaOperacao : Form
     {
 
-        DalConexao conexao;
-        public frmConsultaOperacao(string codigo = "")
+        public frmConsultaOperacao()
         {
             InitializeComponent();
-            conexao = new DalConexao(DadosConexao.stringConexao);
-            this.codigo = codigo;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+        promissumServicoEntities contexto = new promissumServicoEntities();
         string codigo;
         void abrirFormularioCadastroOrcamento(string codigo = null)
         {
@@ -65,8 +63,7 @@ namespace Beta1._0.Consulta
 
         private void frmConsultaOperacao_Activated(object sender, EventArgs e)
         {
-            BllOperacao bll = new BllOperacao(conexao);
-            dgOperacao.DataSource = bll.Localizar();
+            dgOperacao.DataSource = contexto.operacao.ToList();
         }
     }
 }

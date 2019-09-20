@@ -37,5 +37,10 @@ namespace Promissum.Consulta
         {
              abrirFormulario();
         }
+
+        private void frmConsultaMontadora_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

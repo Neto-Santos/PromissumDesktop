@@ -8,7 +8,7 @@ using Beta1._0.Cadastro;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using DAL.EntityFramework;
 using BLL;
 using Beta1._0.Relatorio.Produto;
 
@@ -20,13 +20,11 @@ namespace Beta1._0.Consulta
         {
             InitializeComponent();
             this.codigo = null;
-            conexao = new DalConexao(DadosConexao.stringConexao);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-       
+        promissumServicoEntities contexto = new promissumServicoEntities();
 
-        DalConexao conexao;
         string codigo;
         void abrirFormularioCadastroOrcamento(string codigo = null)
         {
@@ -50,7 +48,7 @@ namespace Beta1._0.Consulta
         {
             try
             {
-                codigo = dgProduto.Rows[e.RowIndex].Cells[0].Value.ToString();
+                codigo = dgProduto.Rows[e.RowIndex].Cells["pro_cod"].Value.ToString();
             }
             catch (Exception)
             { }
@@ -77,10 +75,9 @@ namespace Beta1._0.Consulta
         {
             if (rbCategoria.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
                 try
                 {
-                    dgProduto.DataSource = bll.LocalizarProdutoCategoria(txtPesquisa.Text);
+                    dgProduto.DataSource = contexto.produto.Include("categoria").Where(p => p.categoria.cat_nome.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {
@@ -90,12 +87,11 @@ namespace Beta1._0.Consulta
             }
             if (rbCod.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
                 try
                 {
                     if (!String.IsNullOrEmpty(txtPesquisa.Text))
                     {
-                        dgProduto.DataSource = bll.LocalizarProdutoCodigo(txtPesquisa.Text);
+                        dgProduto.DataSource = contexto.produto.Include("categoria").Where(p =>p.pro_cod.Equals(txtPesquisa.Text)).ToList();
                     }
 
                 }
@@ -104,10 +100,9 @@ namespace Beta1._0.Consulta
             }
             if (rbProduto.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
                 try
                 {
-                    dgProduto.DataSource = bll.Localizar(txtPesquisa.Text);
+                    dgProduto.DataSource = contexto.produto.Include("categoria").Where(p => p.pro_nome.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {
@@ -116,10 +111,10 @@ namespace Beta1._0.Consulta
             }
             if (rbSubCategoria.Checked)
             {
-                BLLProduto bll = new BLLProduto(conexao);
                 try
                 {
-                    dgProduto.DataSource = bll.LocalizarProdutoSubCategoria(txtPesquisa.Text);
+                    
+                    dgProduto.DataSource = contexto.produto.Include("categoria").Include("subcategoria").Where(p => p.subcategoria.scat_nome.Contains(txtPesquisa.Text)).ToList();
                 }
                 catch (Exception)
                 {
@@ -135,9 +130,10 @@ namespace Beta1._0.Consulta
                 var dlg = MessageBox.Show("Deseja Realmento Excluir este item?", "", MessageBoxButtons.YesNo);
                 if (dlg == DialogResult.Yes)
                 {
-                    BLLProduto bll = new BLLProduto(conexao);
-                    bll.Excluir(Convert.ToInt32(this.codigo));
-                    dgProduto.DataSource = bll.LocalizarProdutoSubCategoria("");
+                    //bll.Excluir(Convert.ToInt32(this.codigo));
+                    //dgProduto.DataSource = bll.LocalizarProdutoSubCategoria("");
+
+                //Produto não deverá ser excluído mas sim cancelado
                 }
             }
         }

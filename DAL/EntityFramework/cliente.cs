@@ -37,6 +37,7 @@ namespace DAL.EntityFramework
         public string cli_estado { get; set; }
         public string cli_observacao { get; set; }
         public Nullable<System.DateTime> cli_cadastro { get; set; }
+        public string cli_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClienteProduto> ClienteProduto { get; set; }

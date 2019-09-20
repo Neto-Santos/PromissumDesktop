@@ -24,10 +24,12 @@ namespace DAL.EntityFramework
         public Nullable<int> codCliente { get; set; }
         public Nullable<int> codProduto { get; set; }
         public string referencia { get; set; }
+        public string status { get; set; }
+        public Nullable<System.DateTime> cadastro { get; set; }
     
-        public virtual cliente cliente { get; set; }
         public virtual produto produto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<itensvenda> itensvenda { get; set; }
+        public virtual cliente cliente { get; set; }
     }
 }

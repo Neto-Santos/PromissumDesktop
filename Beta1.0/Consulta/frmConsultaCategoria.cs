@@ -40,7 +40,7 @@ namespace Beta1._0.Consulta
         }
         private void frmConsultaCategoria_Load(object sender, EventArgs e)
         {
-          
+         
         }
 
         private void dgCategoria_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
