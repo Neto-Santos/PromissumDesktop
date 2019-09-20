@@ -46,18 +46,19 @@
             this.for_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.for_cadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.for_cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbImpressora = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbCodigo = new System.Windows.Forms.RadioButton();
+            this.cbImpressora = new System.Windows.Forms.ComboBox();
             this.rbCnpj = new System.Windows.Forms.RadioButton();
             this.rbNome = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.pnCabecalho = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -91,7 +92,8 @@
             this.for_cidade,
             this.for_estado,
             this.for_cadastro,
-            this.for_cpf});
+            this.for_cpf,
+            this.Status});
             this.dgvFornecedor.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvFornecedor.Location = new System.Drawing.Point(1, 163);
             this.dgvFornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -123,6 +125,7 @@
             this.for_rsocial.HeaderText = "Razão Social";
             this.for_rsocial.Name = "for_rsocial";
             this.for_rsocial.ReadOnly = true;
+            this.for_rsocial.Visible = false;
             // 
             // for_ie
             // 
@@ -130,6 +133,7 @@
             this.for_ie.HeaderText = "IE";
             this.for_ie.Name = "for_ie";
             this.for_ie.ReadOnly = true;
+            this.for_ie.Visible = false;
             // 
             // for_cnpj
             // 
@@ -151,6 +155,7 @@
             this.for_endereco.HeaderText = "Endereço";
             this.for_endereco.Name = "for_endereco";
             this.for_endereco.ReadOnly = true;
+            this.for_endereco.Visible = false;
             // 
             // for_bairro
             // 
@@ -165,6 +170,7 @@
             this.for_fone.HeaderText = "Telefone";
             this.for_fone.Name = "for_fone";
             this.for_fone.ReadOnly = true;
+            this.for_fone.Visible = false;
             // 
             // for_cel
             // 
@@ -179,6 +185,7 @@
             this.for_email.HeaderText = "Email";
             this.for_email.Name = "for_email";
             this.for_email.ReadOnly = true;
+            this.for_email.Visible = false;
             // 
             // for_endnumero
             // 
@@ -186,6 +193,7 @@
             this.for_endnumero.HeaderText = "Nº";
             this.for_endnumero.Name = "for_endnumero";
             this.for_endnumero.ReadOnly = true;
+            this.for_endnumero.Visible = false;
             // 
             // for_cidade
             // 
@@ -214,6 +222,14 @@
             this.for_cpf.HeaderText = "CPF";
             this.for_cpf.Name = "for_cpf";
             this.for_cpf.ReadOnly = true;
+            this.for_cpf.Visible = false;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "for_status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -230,16 +246,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // cbImpressora
-            // 
-            this.cbImpressora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbImpressora.FormattingEnabled = true;
-            this.cbImpressora.Location = new System.Drawing.Point(449, 16);
-            this.cbImpressora.Name = "cbImpressora";
-            this.cbImpressora.Size = new System.Drawing.Size(127, 24);
-            this.cbImpressora.TabIndex = 8;
-            this.cbImpressora.Visible = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.rbCodigo);
@@ -248,11 +254,11 @@
             this.groupBox2.Controls.Add(this.rbNome);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Location = new System.Drawing.Point(241, 9);
+            this.groupBox2.Location = new System.Drawing.Point(250, 9);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(582, 109);
+            this.groupBox2.Size = new System.Drawing.Size(573, 109);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PESQUISA";
@@ -267,6 +273,16 @@
             this.rbCodigo.TabIndex = 2;
             this.rbCodigo.Text = "Codigo";
             this.rbCodigo.UseVisualStyleBackColor = true;
+            // 
+            // cbImpressora
+            // 
+            this.cbImpressora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImpressora.FormattingEnabled = true;
+            this.cbImpressora.Location = new System.Drawing.Point(440, 16);
+            this.cbImpressora.Name = "cbImpressora";
+            this.cbImpressora.Size = new System.Drawing.Size(127, 24);
+            this.cbImpressora.TabIndex = 8;
+            this.cbImpressora.Visible = false;
             // 
             // rbCnpj
             // 
@@ -294,10 +310,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 47);
+            this.textBox1.Location = new System.Drawing.Point(8, 47);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(568, 23);
+            this.textBox1.Size = new System.Drawing.Size(560, 23);
             this.textBox1.TabIndex = 3;
             // 
             // button5
@@ -318,35 +334,21 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
-            // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Promissum.Properties.Resources.print;
-            this.button4.Location = new System.Drawing.Point(6, 80);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 38);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Transparent;
             this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnExcluir.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.btnExcluir.ForeColor = System.Drawing.Color.Black;
             this.btnExcluir.Image = global::Promissum.Properties.Resources.icone_delete;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExcluir.Location = new System.Drawing.Point(167, 9);
+            this.btnExcluir.Location = new System.Drawing.Point(158, 9);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(77, 59);
+            this.btnExcluir.Size = new System.Drawing.Size(95, 59);
             this.btnExcluir.TabIndex = 2;
-            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.Text = "Mudar Status";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -356,11 +358,11 @@
             this.btnAlterar.BackColor = System.Drawing.Color.Transparent;
             this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnAlterar.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.btnAlterar.ForeColor = System.Drawing.Color.Black;
             this.btnAlterar.Image = global::Promissum.Properties.Resources.icone_alterar;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAlterar.Location = new System.Drawing.Point(82, 9);
+            this.btnAlterar.Location = new System.Drawing.Point(77, 6);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(77, 62);
@@ -375,11 +377,11 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Promissum.Properties.Resources.icon_add;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(6, 9);
+            this.button1.Location = new System.Drawing.Point(6, 5);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(68, 63);
@@ -388,6 +390,20 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::Promissum.Properties.Resources.print;
+            this.button4.Location = new System.Drawing.Point(6, 80);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(55, 38);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pnCabecalho
             // 
@@ -400,6 +416,7 @@
             this.pnCabecalho.Name = "pnCabecalho";
             this.pnCabecalho.Size = new System.Drawing.Size(831, 42);
             this.pnCabecalho.TabIndex = 7;
+            this.pnCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnCabecalho_MouseMove);
             // 
             // label4
             // 
@@ -424,6 +441,7 @@
             this.btnFechar.Size = new System.Drawing.Size(62, 38);
             this.btnFechar.TabIndex = 3;
             this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnMinimizar
             // 
@@ -438,6 +456,7 @@
             this.btnMinimizar.TabIndex = 5;
             this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // frmConsultaFornecedor
             // 
@@ -481,6 +500,11 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dgvFornecedor;
         public System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbImpressora;
+        private System.Windows.Forms.Panel pnCabecalho;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_cod;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_rsocial;
@@ -497,10 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn for_estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_cadastro;
         private System.Windows.Forms.DataGridViewTextBoxColumn for_cpf;
-        private System.Windows.Forms.ComboBox cbImpressora;
-        private System.Windows.Forms.Panel pnCabecalho;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

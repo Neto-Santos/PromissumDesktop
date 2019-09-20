@@ -10,15 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL.EntityFramework;
 
 namespace Beta1._0.Relatorio_Atualizado.Cliente
 {
     public partial class frmRelatorioCliente : Form
     {
-        public frmRelatorioCliente(DalConexao conexao, string formato = "")
+        promissumServicoEntities contexto = new promissumServicoEntities();
+        public frmRelatorioCliente()
         {
             InitializeComponent();
-            this.conexao = conexao;
             this.formato = formato;
         }
         public string formato { get; set; }
@@ -33,12 +34,11 @@ namespace Beta1._0.Relatorio_Atualizado.Cliente
         public string referencia { get; set; }
         public string tipo { get; set; }
 
-        DalConexao conexao;
+
         private void frmRelatorioCliente_Load(object sender, EventArgs e)
         {
             if (formato == "pdf")
             {
-                //Esconde o formulário.
                 this.Hide();
             }
             this.reportViewer1.ShowExportButton = false;
@@ -46,22 +46,113 @@ namespace Beta1._0.Relatorio_Atualizado.Cliente
             this.reportViewer1.ShowFindControls = false;
             this.reportViewer1.ShowRefreshButton = false;
             this.reportViewer1.ShowStopButton = false;
-
-            //var bll = new BLL.BllCliente(conexao);
+            string caminhoRelatorio = null;
 
             if (tipo == "Analitico")
             {
-                //    ReportDataSource rpt = new ReportDataSource("dsCliente", bll.LocalizarRelatorioAnalitico(nome, dataInicial, dataFinal, cidade, estado, status, defeito, solucao, referencia));
-                //    reportViewer1.LocalReport.ReportEmbeddedResource = "Beta1._0.Relatorio_Atualizado.Cliente.rptCliente.rdlc";
-                //    reportViewer1.LocalReport.DataSources.Add(rpt);
+
+                caminhoRelatorio = "Promissum.Relatorio_Atualizado.Cliente.rptClienteAnalitico.rdlc";
+
+                DataTable dsClienteSintetico = new DataTable();
+                dsClienteSintetico.Columns.Add("cli_cod", typeof(int));
+                dsClienteSintetico.Columns.Add("cli_nome", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cpfcnpj", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_rgie", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_rsocial", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_tipo", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cep", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_endereco", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_bairro", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_fone", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cel", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_email", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_endnumero", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cidade", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_estado", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_observacao", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cadastro", typeof(DateTime));
+
+                var lista = contexto.cliente.Select(c => new
+                {
+                    c.cli_cod,
+                    c.cli_nome,
+                    c.cli_cpfcnpj,
+                    c.cli_rgie,
+                    c.cli_rsocial,
+                    c.cli_tipo,
+                    c.cli_cep,
+                    c.cli_endereco,
+                    c.cli_bairro,
+                    c.cli_fone,
+                    c.cli_cel,
+                    c.cli_email,
+                    c.cli_endnumero,
+                    c.cli_cidade,
+                    c.cli_estado,
+                    c.cli_observacao,
+                    c.cli_cadastro
+                }).Where(c => c.cli_cadastro.Value > dataInicio && c.cli_cadastro.Value <= dataFim &&
+                 c.cli_nome.Contains(nome) &&
+                c.cli_cidade.Contains(cidade) && c.cli_estado.Contains(estado)).ToList();
+
             }
             else
             {
-                string caminhoRelatorio = "Promissum.Relatorio_Atualizado.Cliente.rptClienteSintetico.rdlc";
-                var ta = new Promissum.Relatorio_Atualizado.Cliente.dsClienteTableAdapters.clienteTableAdapter();
-                var tabela = new dsCliente.clienteDataTable();
-                tabela = ta.GetData(nome, cidade, estado, "", dataInicial, dataFinal);
-                ReportDataSource rpt = new ReportDataSource("dsCliente", tabela.Rows);
+                DataTable dsClienteSintetico = new DataTable();
+                dsClienteSintetico.Columns.Add("cli_cod", typeof(int));
+                dsClienteSintetico.Columns.Add("cli_nome", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cpfcnpj", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_rgie", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_rsocial", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_tipo", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cep", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_endereco", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_bairro", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_fone", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cel", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_email", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_endnumero", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cidade", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_estado", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_observacao", typeof(string));
+                dsClienteSintetico.Columns.Add("cli_cadastro", typeof(DateTime));
+
+                var dataInicio = Convert.ToDateTime(dataInicial);
+                var dataFim = Convert.ToDateTime(dataFinal);
+
+                var lista = contexto.cliente.Select(c => new
+                {
+                    c.cli_cod,
+                    c.cli_nome,
+                    c.cli_cpfcnpj,
+                    c.cli_rgie,
+                    c.cli_rsocial,
+                    c.cli_tipo,
+                    c.cli_cep,
+                    c.cli_endereco,
+                    c.cli_bairro,
+                    c.cli_fone,
+                    c.cli_cel,
+                    c.cli_email,
+                    c.cli_endnumero,
+                    c.cli_cidade,
+                    c.cli_estado,
+                    c.cli_observacao,
+                    c.cli_cadastro
+                }).Where(c => c.cli_cadastro.Value > dataInicio && c.cli_cadastro.Value <= dataFim &&
+                 c.cli_nome.Contains(nome) &&
+                c.cli_cidade.Contains(cidade) && c.cli_estado.Contains(estado)).ToList();
+
+                foreach (var item in lista)
+                {
+                    dsClienteSintetico.Rows.Add(item.cli_cod, item.cli_nome, item.cli_cpfcnpj, item.cli_rgie, item.cli_rsocial, item.cli_tipo, item.cli_cep,
+                        item.cli_endereco, item.cli_bairro, item.cli_fone, item.cli_cel,item.cli_email,item.cli_endnumero,item.cli_cidade,item.cli_estado,item.cli_observacao,item.cli_cadastro);
+                }
+
+
+                caminhoRelatorio = "Promissum.Relatorio_Atualizado.Cliente.rptClienteSintetico.rdlc";
+
+                ReportDataSource rpt = new ReportDataSource("dsClienteSintetico", dsClienteSintetico);
                 string caminhoImagem = Ferramentas.xmlConfig.config.retornaLogo();
 
                 if (formato == "pdf")

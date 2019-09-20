@@ -34,11 +34,12 @@ namespace DAL.EntityFramework
         public Nullable<int> for_cod { get; set; }
         public string pro_ref { get; set; }
         public string localizacao { get; set; }
+        public string pro_status { get; set; }
     
-        public virtual categoria categoria { get; set; }
-        public virtual fornecedor fornecedor { get; set; }
-        public virtual subcategoria subcategoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClienteProduto> ClienteProduto { get; set; }
+        public virtual fornecedor fornecedor { get; set; }
+        public virtual categoria categoria { get; set; }
+        public virtual subcategoria subcategoria { get; set; }
     }
 }

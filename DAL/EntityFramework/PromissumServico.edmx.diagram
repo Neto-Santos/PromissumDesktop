@@ -5,35 +5,35 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6274869401ee4e81b9190fad07b6c3b2" Name="Diagram1">
-        <EntityTypeShape EntityType="promissumServicoModel.categoria" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.clienteVeiculo" Width="1.5" PointX="14.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.email" Width="1.5" PointX="9.75" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="promissumServicoModel.fornecedor" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.itensvenda" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.lembrete" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.modelo" Width="1.5" PointX="12" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.montadora" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="promissumServicoModel.operacao" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="promissumServicoModel.produto" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="promissumServicoModel.subcategoria" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.usuario" Width="1.5" PointX="11.75" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.venda" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.cidades" Width="1.5" PointX="11.75" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="promissumServicoModel.empresa" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
-        <AssociationConnector Association="promissumServicoModel.FK_produto_categoria" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_subcategoria_categoria" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_clienteVeiculo_modelo" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_produto_fornecedor" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_itensvenda_operacao" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_itensvenda_venda" ManuallyRouted="false" />
         <AssociationConnector Association="promissumServicoModel.FK_modelo_montadora" ManuallyRouted="false" />
-        <AssociationConnector Association="promissumServicoModel.FK_produto_subcategoria" ManuallyRouted="false" />
         <EntityTypeShape EntityType="promissumServicoModel.ClienteProduto" Width="1.5" PointX="7.5" PointY="7.625" />
-        <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_produto" />
         <AssociationConnector Association="promissumServicoModel.FK_itensvenda_ClienteProduto" />
         <EntityTypeShape EntityType="promissumServicoModel.cliente" Width="1.5" PointX="3.375" PointY="14" />
         <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_cliente" />
+        <EntityTypeShape EntityType="promissumServicoModel.fornecedor" Width="1.5" PointX="14.375" PointY="6" />
+        <EntityTypeShape EntityType="promissumServicoModel.produto" Width="1.5" PointX="16.625" PointY="6.75" />
+        <AssociationConnector Association="promissumServicoModel.FK_ClienteProduto_produto" />
+        <AssociationConnector Association="promissumServicoModel.FK_produto_fornecedor" />
+        <EntityTypeShape EntityType="promissumServicoModel.categoria" Width="1.5" PointX="12.125" PointY="16.375" />
+        <EntityTypeShape EntityType="promissumServicoModel.operacao" Width="1.5" PointX="7.5" PointY="4.375" />
+        <EntityTypeShape EntityType="promissumServicoModel.subcategoria" Width="1.5" PointX="14.375" PointY="11.875" />
+        <AssociationConnector Association="promissumServicoModel.FK_produto_categoria" />
+        <AssociationConnector Association="promissumServicoModel.FK_subcategoria_categoria" />
+        <AssociationConnector Association="promissumServicoModel.FK_itensvenda_operacao" />
+        <AssociationConnector Association="promissumServicoModel.FK_produto_subcategoria" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -54,6 +54,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
+            this.ven_cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cli_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ven_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ven_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ven_data_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ven_data_saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Venda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pro_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itv_qtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itv_valorBase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itv_valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itv_desconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.op_nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -293,6 +307,13 @@
             this.dgOrcamento.AllowUserToDeleteRows = false;
             this.dgOrcamento.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgOrcamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgOrcamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ven_cod,
+            this.cli_nome,
+            this.ven_total,
+            this.ven_status,
+            this.ven_data_entrada,
+            this.ven_data_saida});
             this.dgOrcamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgOrcamento.Location = new System.Drawing.Point(3, 4);
             this.dgOrcamento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -322,6 +343,15 @@
             this.dgvItens.AllowUserToDeleteRows = false;
             this.dgvItens.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Venda,
+            this.pro_nome,
+            this.itv_qtde,
+            this.itv_valorBase,
+            this.itv_valor,
+            this.itv_desconto,
+            this.referencia,
+            this.op_nome});
             this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvItens.Location = new System.Drawing.Point(3, 4);
             this.dgvItens.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -394,6 +424,106 @@
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
+            // ven_cod
+            // 
+            this.ven_cod.DataPropertyName = "ven_cod";
+            this.ven_cod.HeaderText = "Cod";
+            this.ven_cod.Name = "ven_cod";
+            this.ven_cod.ReadOnly = true;
+            // 
+            // cli_nome
+            // 
+            this.cli_nome.DataPropertyName = "cli_nome";
+            this.cli_nome.HeaderText = "Cliente";
+            this.cli_nome.Name = "cli_nome";
+            this.cli_nome.ReadOnly = true;
+            this.cli_nome.Width = 500;
+            // 
+            // ven_total
+            // 
+            this.ven_total.DataPropertyName = "ven_total";
+            this.ven_total.HeaderText = "Total";
+            this.ven_total.Name = "ven_total";
+            this.ven_total.ReadOnly = true;
+            // 
+            // ven_status
+            // 
+            this.ven_status.DataPropertyName = "ven_status";
+            this.ven_status.HeaderText = "Status";
+            this.ven_status.Name = "ven_status";
+            this.ven_status.ReadOnly = true;
+            // 
+            // ven_data_entrada
+            // 
+            this.ven_data_entrada.DataPropertyName = "ven_data_entrada";
+            this.ven_data_entrada.HeaderText = "Entrada";
+            this.ven_data_entrada.Name = "ven_data_entrada";
+            this.ven_data_entrada.ReadOnly = true;
+            // 
+            // ven_data_saida
+            // 
+            this.ven_data_saida.DataPropertyName = "ven_data_saida";
+            this.ven_data_saida.HeaderText = "Saida";
+            this.ven_data_saida.Name = "ven_data_saida";
+            this.ven_data_saida.ReadOnly = true;
+            // 
+            // Venda
+            // 
+            this.Venda.DataPropertyName = "ven_cod";
+            this.Venda.HeaderText = "Venda";
+            this.Venda.Name = "Venda";
+            this.Venda.ReadOnly = true;
+            // 
+            // pro_nome
+            // 
+            this.pro_nome.DataPropertyName = "pro_nome";
+            this.pro_nome.HeaderText = "Item";
+            this.pro_nome.Name = "pro_nome";
+            this.pro_nome.ReadOnly = true;
+            this.pro_nome.Width = 200;
+            // 
+            // itv_qtde
+            // 
+            this.itv_qtde.DataPropertyName = "itv_qtde";
+            this.itv_qtde.HeaderText = "Qtd";
+            this.itv_qtde.Name = "itv_qtde";
+            this.itv_qtde.ReadOnly = true;
+            // 
+            // itv_valorBase
+            // 
+            this.itv_valorBase.DataPropertyName = "itv_valorBase";
+            this.itv_valorBase.HeaderText = "Valor-Base";
+            this.itv_valorBase.Name = "itv_valorBase";
+            this.itv_valorBase.ReadOnly = true;
+            // 
+            // itv_valor
+            // 
+            this.itv_valor.DataPropertyName = "itv_valor";
+            this.itv_valor.HeaderText = "Valor";
+            this.itv_valor.Name = "itv_valor";
+            this.itv_valor.ReadOnly = true;
+            // 
+            // itv_desconto
+            // 
+            this.itv_desconto.DataPropertyName = "itv_desconto";
+            this.itv_desconto.HeaderText = "Desconto";
+            this.itv_desconto.Name = "itv_desconto";
+            this.itv_desconto.ReadOnly = true;
+            // 
+            // referencia
+            // 
+            this.referencia.DataPropertyName = "referencia";
+            this.referencia.HeaderText = "Referencia";
+            this.referencia.Name = "referencia";
+            this.referencia.ReadOnly = true;
+            // 
+            // op_nome
+            // 
+            this.op_nome.DataPropertyName = "op_nome";
+            this.op_nome.HeaderText = "Operação";
+            this.op_nome.Name = "op_nome";
+            this.op_nome.ReadOnly = true;
+            // 
             // frmConsultaOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -451,5 +581,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ven_cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cli_nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ven_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ven_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ven_data_entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ven_data_saida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Venda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pro_nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itv_qtde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itv_valorBase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itv_valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itv_desconto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn referencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn op_nome;
     }
 }

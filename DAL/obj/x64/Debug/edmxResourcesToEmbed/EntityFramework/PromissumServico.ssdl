@@ -7,6 +7,7 @@
     <Property Name="cat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cat_nome" Type="varchar" MaxLength="95" />
     <Property Name="cat_cadastro" Type="date" />
+    <Property Name="cat_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'promissumServico.dbo.cidades' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -126,6 +127,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
     <Property Name="for_cadastro" Type="date" />
     <Property Name="for_cpf" Type="varchar" MaxLength="95" />
     <Property Name="for_observacao" Type="varchar" MaxLength="150" />
+    <Property Name="for_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="itensvenda">
     <Key>
@@ -178,6 +180,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
     <Property Name="op_nome" Type="varchar" MaxLength="95" />
     <Property Name="op_cadastro" Type="date" />
     <Property Name="op_descricao" Type="varchar" MaxLength="150" />
+    <Property Name="op_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="produto">
     <Key>
@@ -197,6 +200,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
     <Property Name="for_cod" Type="int" />
     <Property Name="pro_ref" Type="varchar" MaxLength="100" />
     <Property Name="localizacao" Type="varchar" MaxLength="15" />
+    <Property Name="pro_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="subcategoria">
     <Key>
@@ -206,6 +210,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
     <Property Name="scat_nome" Type="varchar" MaxLength="95" />
     <Property Name="cat_cod" Type="int" />
     <Property Name="scat_cadastro" Type="date" />
+    <Property Name="scat_status" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

@@ -277,6 +277,7 @@
             this.rbSintetico.Text = "Sintético";
             this.rbSintetico.UseVisualStyleBackColor = true;
             this.rbSintetico.Visible = false;
+            this.rbSintetico.Click += new System.EventHandler(this.rbSintetico_Click);
             // 
             // rbAnalitico
             // 
@@ -308,7 +309,6 @@
             this.Name = "frmFiltroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtro";
-            //this.Load += new System.EventHandler(this.frmFiltroCliente_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

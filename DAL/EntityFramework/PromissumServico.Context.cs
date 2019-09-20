@@ -25,17 +25,12 @@ namespace DAL.EntityFramework
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<categoria> categoria { get; set; }
         public virtual DbSet<clienteVeiculo> clienteVeiculo { get; set; }
         public virtual DbSet<email> email { get; set; }
-        public virtual DbSet<fornecedor> fornecedor { get; set; }
         public virtual DbSet<itensvenda> itensvenda { get; set; }
         public virtual DbSet<lembrete> lembrete { get; set; }
         public virtual DbSet<modelo> modelo { get; set; }
         public virtual DbSet<montadora> montadora { get; set; }
-        public virtual DbSet<operacao> operacao { get; set; }
-        public virtual DbSet<produto> produto { get; set; }
-        public virtual DbSet<subcategoria> subcategoria { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
         public virtual DbSet<venda> venda { get; set; }
@@ -43,5 +38,10 @@ namespace DAL.EntityFramework
         public virtual DbSet<empresa> empresa { get; set; }
         public virtual DbSet<ClienteProduto> ClienteProduto { get; set; }
         public virtual DbSet<cliente> cliente { get; set; }
+        public virtual DbSet<fornecedor> fornecedor { get; set; }
+        public virtual DbSet<produto> produto { get; set; }
+        public virtual DbSet<categoria> categoria { get; set; }
+        public virtual DbSet<operacao> operacao { get; set; }
+        public virtual DbSet<subcategoria> subcategoria { get; set; }
     }
 }

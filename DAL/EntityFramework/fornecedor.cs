@@ -37,6 +37,7 @@ namespace DAL.EntityFramework
         public Nullable<System.DateTime> for_cadastro { get; set; }
         public string for_cpf { get; set; }
         public string for_observacao { get; set; }
+        public string for_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<produto> produto { get; set; }

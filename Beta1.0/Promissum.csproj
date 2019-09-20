@@ -303,6 +303,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSubCategoria.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Relatorio Atualizado\Categoria\frmFiltraSubCategoria.cs">
       <SubType>Form</SubType>
@@ -320,6 +321,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsClienteProduto.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Relatorio Atualizado\ClienteProdutos\frmClienteProdutos.cs">
       <SubType>Form</SubType>
@@ -327,15 +329,10 @@
     <Compile Include="Relatorio Atualizado\ClienteProdutos\frmClienteProdutos.Designer.cs">
       <DependentUpon>frmClienteProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Relatorio Atualizado\Cliente\dsCliente.cs">
-      <DependentUpon>dsCliente.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Relatorio Atualizado\Cliente\dsCliente.Designer.cs">
-      <DependentUpon>dsCliente.xsd</DependentUpon>
+    <Compile Include="Relatorio Atualizado\Cliente\dsClienteSintetico.Designer.cs">
       <AutoGen>True</AutoGen>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
+      <DependentUpon>dsClienteSintetico.xsd</DependentUpon>
     </Compile>
     <Compile Include="Relatorio Atualizado\Cliente\frmFiltroCliente.cs">
       <SubType>Form</SubType>
@@ -743,7 +740,9 @@
     <EmbeddedResource Include="Relatorio Atualizado\Categoria\frmRelatorioCategoria.resx">
       <DependentUpon>frmRelatorioCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio Atualizado\Categoria\rptCategoria.rdlc" />
+    <EmbeddedResource Include="Relatorio Atualizado\Categoria\rptCategoria.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorio Atualizado\ClienteProdutos\frmClienteProdutos.resx">
       <DependentUpon>frmClienteProdutos.cs</DependentUpon>
     </EmbeddedResource>
@@ -754,7 +753,7 @@
     <EmbeddedResource Include="Relatorio Atualizado\Cliente\frmRelatorioCliente.resx">
       <DependentUpon>frmRelatorioCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorio Atualizado\Cliente\rptCliente.rdlc" />
+    <EmbeddedResource Include="Relatorio Atualizado\Cliente\rptClienteAnalitico.rdlc" />
     <EmbeddedResource Include="Relatorio Atualizado\Cliente\rptClienteSintetico.rdlc" />
     <EmbeddedResource Include="Relatorio Atualizado\Fornecedor\frmRelatorio.resx">
       <DependentUpon>frmRelatorio.cs</DependentUpon>
@@ -901,39 +900,42 @@
   <ItemGroup>
     <None Include="Relatorio Atualizado\Categoria\dsSubCategoria.xsc">
       <DependentUpon>dsSubCategoria.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\Categoria\dsSubCategoria.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsSubCategoria.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\Categoria\dsSubCategoria.xss">
       <DependentUpon>dsSubCategoria.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\ClienteProdutos\dsClienteProduto.xsc">
       <DependentUpon>dsClienteProduto.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\ClienteProdutos\dsClienteProduto.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsClienteProduto.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Relatorio Atualizado\ClienteProdutos\dsClienteProduto.xss">
       <DependentUpon>dsClienteProduto.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Relatorio Atualizado\Cliente\dsCliente.xsc">
-      <DependentUpon>dsCliente.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="Relatorio Atualizado\Cliente\dsClienteSintetico.xsc">
+      <DependentUpon>dsClienteSintetico.xsd</DependentUpon>
     </None>
-    <None Include="Relatorio Atualizado\Cliente\dsCliente.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCliente.Designer.cs</LastGenOutput>
+    <None Include="Relatorio Atualizado\Cliente\dsClienteSintetico.xsd">
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsClienteSintetico.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Relatorio Atualizado\Cliente\dsCliente.xss">
-      <DependentUpon>dsCliente.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="Relatorio Atualizado\Cliente\dsClienteSintetico.xss">
+      <DependentUpon>dsClienteSintetico.xsd</DependentUpon>
     </None>
     <None Include="Relatorio Atualizado\Fornecedor\dsFornecedor.xsc">
       <DependentUpon>dsFornecedor.xsd</DependentUpon>

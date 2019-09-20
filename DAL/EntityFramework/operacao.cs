@@ -24,6 +24,7 @@ namespace DAL.EntityFramework
         public string op_nome { get; set; }
         public Nullable<System.DateTime> op_cadastro { get; set; }
         public string op_descricao { get; set; }
+        public string op_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<itensvenda> itensvenda { get; set; }

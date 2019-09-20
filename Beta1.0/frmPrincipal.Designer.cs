@@ -36,18 +36,22 @@
             this.statusDataHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbRelatorios = new System.Windows.Forms.ComboBox();
             this.cbVendas = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pnCabecalho = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pnCabecalho = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
@@ -57,8 +61,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
             this.btnBackup = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnCabecalho.SuspendLayout();
@@ -70,7 +72,7 @@
             this.toolStripStatusLabel1,
             this.statusUsuario,
             this.statusDataHora});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 610);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1258, 24);
             this.statusStrip1.TabIndex = 0;
@@ -115,6 +117,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Turquoise;
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbRelatorios);
@@ -123,14 +126,59 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(161, 483);
+            this.panel1.Size = new System.Drawing.Size(161, 571);
             this.panel1.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(2, 408);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Relatórios";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(2, 155);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 25);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Orçamento";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(2, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 25);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Comercial";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Estoque";
             // 
             // cbRelatorios
             // 
@@ -147,7 +195,7 @@
             "UNIDADE",
             "CATEGORIA",
             "SUBCATEGORIA"});
-            this.cbRelatorios.Location = new System.Drawing.Point(3, 401);
+            this.cbRelatorios.Location = new System.Drawing.Point(3, 500);
             this.cbRelatorios.Name = "cbRelatorios";
             this.cbRelatorios.Size = new System.Drawing.Size(152, 24);
             this.cbRelatorios.TabIndex = 4;
@@ -169,7 +217,7 @@
             "UNIDADE",
             "CATEGORIA",
             "SUBCATEGORIA"});
-            this.cbVendas.Location = new System.Drawing.Point(3, 371);
+            this.cbVendas.Location = new System.Drawing.Point(3, 470);
             this.cbVendas.Name = "cbVendas";
             this.cbVendas.Size = new System.Drawing.Size(152, 24);
             this.cbVendas.TabIndex = 2;
@@ -191,65 +239,12 @@
             "UNIDADE",
             "CATEGORIA",
             "SUBCATEGORIA"});
-            this.comboBox2.Location = new System.Drawing.Point(3, 341);
+            this.comboBox2.Location = new System.Drawing.Point(3, 440);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(152, 24);
             this.comboBox2.TabIndex = 2;
             this.comboBox2.Tag = "";
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // pnCabecalho
-            // 
-            this.pnCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.pnCabecalho.Controls.Add(this.label1);
-            this.pnCabecalho.Controls.Add(this.btnFechar);
-            this.pnCabecalho.Controls.Add(this.btnMaximizar);
-            this.pnCabecalho.Controls.Add(this.btnMinimizar);
-            this.pnCabecalho.Controls.Add(this.btnConsultaRapida);
-            this.pnCabecalho.Controls.Add(this.btnSobre);
-            this.pnCabecalho.Controls.Add(this.button7);
-            this.pnCabecalho.Controls.Add(this.button1);
-            this.pnCabecalho.Controls.Add(this.btnConfig);
-            this.pnCabecalho.Controls.Add(this.btnBackup);
-            this.pnCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnCabecalho.Location = new System.Drawing.Point(0, 0);
-            this.pnCabecalho.Name = "pnCabecalho";
-            this.pnCabecalho.Size = new System.Drawing.Size(1258, 39);
-            this.pnCabecalho.TabIndex = 7;
-            this.pnCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnCabecalho_MouseMove);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "PromissumSystem";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Estoque";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(2, 309);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Relatórios";
             // 
             // button5
             // 
@@ -262,7 +257,7 @@
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Image = global::Promissum.Properties.Resources.icone_produtos;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 185);
+            this.button5.Location = new System.Drawing.Point(3, 256);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(152, 38);
@@ -283,7 +278,7 @@
             this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Image = global::Promissum.Properties.Resources.icone_cliente;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 265);
+            this.button6.Location = new System.Drawing.Point(3, 336);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(152, 38);
@@ -303,7 +298,7 @@
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Image = global::Promissum.Properties.Resources.icone_cliente;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 225);
+            this.button4.Location = new System.Drawing.Point(3, 296);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(152, 38);
@@ -311,6 +306,48 @@
             this.button4.Text = "Manutenção Tipo";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.btnConsultaRapida_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Image = global::Promissum.Properties.Resources.icone_vendas;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(3, 180);
+            this.button9.Margin = new System.Windows.Forms.Padding(0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(152, 38);
+            this.button9.TabIndex = 3;
+            this.button9.Text = "Manutenção Vendas";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.btnConsultaRapida_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.Black;
+            this.button8.Image = global::Promissum.Properties.Resources.icone_cliente;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(3, 110);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(152, 38);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Manutenção Operação";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.btnConsultaRapida_Click);
             // 
             // button3
             // 
@@ -354,12 +391,44 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnConsultaRapida_Click);
             // 
+            // pnCabecalho
+            // 
+            this.pnCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.pnCabecalho.Controls.Add(this.label1);
+            this.pnCabecalho.Controls.Add(this.btnFechar);
+            this.pnCabecalho.Controls.Add(this.btnMaximizar);
+            this.pnCabecalho.Controls.Add(this.btnMinimizar);
+            this.pnCabecalho.Controls.Add(this.btnConsultaRapida);
+            this.pnCabecalho.Controls.Add(this.btnSobre);
+            this.pnCabecalho.Controls.Add(this.button7);
+            this.pnCabecalho.Controls.Add(this.button1);
+            this.pnCabecalho.Controls.Add(this.btnConfig);
+            this.pnCabecalho.Controls.Add(this.btnBackup);
+            this.pnCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnCabecalho.Location = new System.Drawing.Point(0, 0);
+            this.pnCabecalho.Name = "pnCabecalho";
+            this.pnCabecalho.Size = new System.Drawing.Size(1258, 39);
+            this.pnCabecalho.TabIndex = 7;
+            this.pnCabecalho.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnCabecalho_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 22);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "PromissumSystem";
+            // 
             // btnFechar
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFechar.BackColor = System.Drawing.Color.Transparent;
             this.btnFechar.BackgroundImage = global::Promissum.Properties.Resources.icone_fechar;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnFechar.FlatAppearance.BorderSize = 0;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Location = new System.Drawing.Point(1211, 4);
@@ -375,6 +444,7 @@
             this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
             this.btnMaximizar.BackgroundImage = global::Promissum.Properties.Resources.icone_maximizar;
             this.btnMaximizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaximizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Location = new System.Drawing.Point(1158, 8);
@@ -390,6 +460,7 @@
             this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.BackgroundImage = global::Promissum.Properties.Resources.icone_minimizar;
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnMinimizar.FlatAppearance.BorderSize = 0;
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Location = new System.Drawing.Point(1116, 8);
@@ -405,6 +476,7 @@
             this.btnConsultaRapida.BackColor = System.Drawing.Color.Turquoise;
             this.btnConsultaRapida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnConsultaRapida.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConsultaRapida.FlatAppearance.BorderSize = 0;
             this.btnConsultaRapida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultaRapida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultaRapida.ForeColor = System.Drawing.Color.White;
@@ -425,14 +497,15 @@
             this.btnSobre.BackColor = System.Drawing.Color.Turquoise;
             this.btnSobre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSobre.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSobre.FlatAppearance.BorderSize = 0;
             this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSobre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSobre.ForeColor = System.Drawing.Color.White;
             this.btnSobre.Image = global::Promissum.Properties.Resources.icone_sobre;
             this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSobre.Location = new System.Drawing.Point(771, 2);
+            this.btnSobre.Location = new System.Drawing.Point(771, 0);
             this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(89, 37);
+            this.btnSobre.Size = new System.Drawing.Size(89, 40);
             this.btnSobre.TabIndex = 3;
             this.btnSobre.Text = "Sobre";
             this.btnSobre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -444,14 +517,15 @@
             this.button7.BackColor = System.Drawing.Color.Turquoise;
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Image = global::Promissum.Properties.Resources.icone_vendas;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(351, 1);
+            this.button7.Location = new System.Drawing.Point(351, 0);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(108, 38);
+            this.button7.Size = new System.Drawing.Size(108, 40);
             this.button7.TabIndex = 3;
             this.button7.Text = "Vendas";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -463,14 +537,15 @@
             this.button1.BackColor = System.Drawing.Color.Turquoise;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::Promissum.Properties.Resources.icone_lock1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(460, 1);
+            this.button1.Location = new System.Drawing.Point(460, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 38);
+            this.button1.Size = new System.Drawing.Size(108, 40);
             this.button1.TabIndex = 3;
             this.button1.Text = "Bloquear";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -482,14 +557,15 @@
             this.btnConfig.BackColor = System.Drawing.Color.Turquoise;
             this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnConfig.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.Image = global::Promissum.Properties.Resources.icone_config;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(673, 1);
+            this.btnConfig.Location = new System.Drawing.Point(673, 0);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(97, 38);
+            this.btnConfig.Size = new System.Drawing.Size(97, 40);
             this.btnConfig.TabIndex = 3;
             this.btnConfig.Text = "Config";
             this.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -501,51 +577,20 @@
             this.btnBackup.BackColor = System.Drawing.Color.Turquoise;
             this.btnBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBackup.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBackup.FlatAppearance.BorderSize = 0;
             this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackup.ForeColor = System.Drawing.Color.White;
             this.btnBackup.Image = global::Promissum.Properties.Resources.icone_backup;
             this.btnBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackup.Location = new System.Drawing.Point(569, 2);
+            this.btnBackup.Location = new System.Drawing.Point(569, 0);
             this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(103, 37);
+            this.btnBackup.Size = new System.Drawing.Size(103, 40);
             this.btnBackup.TabIndex = 3;
             this.btnBackup.Text = "Backup";
             this.btnBackup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBackup.UseVisualStyleBackColor = false;
             this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(2, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 25);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Comercial";
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Image = global::Promissum.Properties.Resources.icone_cliente;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(3, 110);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(152, 38);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Manutenção Operador";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.btnConsultaRapida_Click);
             // 
             // frmPrincipal
             // 
@@ -553,7 +598,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1258, 546);
+            this.ClientSize = new System.Drawing.Size(1258, 634);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnCabecalho);
             this.Controls.Add(this.statusStrip1);
@@ -609,6 +654,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button9;
     }
 }
 

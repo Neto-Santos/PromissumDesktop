@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="promissumServicoModelStoreContainer" CdmEntityContainer="promissumServicoEntities">
-    <EntitySetMapping Name="categoria">
-      <EntityTypeMapping TypeName="promissumServicoModel.categoria">
-        <MappingFragment StoreEntitySet="categoria">
-          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
-          <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
-          <ScalarProperty Name="cat_cadastro" ColumnName="cat_cadastro" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="clienteVeiculo">
       <EntityTypeMapping TypeName="promissumServicoModel.clienteVeiculo">
         <MappingFragment StoreEntitySet="clienteVeiculo">
@@ -29,29 +20,6 @@
           <ScalarProperty Name="rodape1" ColumnName="rodape1" />
           <ScalarProperty Name="rodape2" ColumnName="rodape2" />
           <ScalarProperty Name="rodape3" ColumnName="rodape3" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="fornecedor">
-      <EntityTypeMapping TypeName="promissumServicoModel.fornecedor">
-        <MappingFragment StoreEntitySet="fornecedor">
-          <ScalarProperty Name="for_cod" ColumnName="for_cod" />
-          <ScalarProperty Name="for_nome" ColumnName="for_nome" />
-          <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
-          <ScalarProperty Name="for_ie" ColumnName="for_ie" />
-          <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
-          <ScalarProperty Name="for_cep" ColumnName="for_cep" />
-          <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
-          <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
-          <ScalarProperty Name="for_fone" ColumnName="for_fone" />
-          <ScalarProperty Name="for_cel" ColumnName="for_cel" />
-          <ScalarProperty Name="for_email" ColumnName="for_email" />
-          <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
-          <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
-          <ScalarProperty Name="for_estado" ColumnName="for_estado" />
-          <ScalarProperty Name="for_cadastro" ColumnName="for_cadastro" />
-          <ScalarProperty Name="for_cpf" ColumnName="for_cpf" />
-          <ScalarProperty Name="for_observacao" ColumnName="for_observacao" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -99,46 +67,6 @@
           <ScalarProperty Name="montadora1" ColumnName="montadora" />
           <ScalarProperty Name="abreviatura_montadora" ColumnName="abreviatura_montadora" />
           <ScalarProperty Name="cadastro" ColumnName="cadastro" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="operacao">
-      <EntityTypeMapping TypeName="promissumServicoModel.operacao">
-        <MappingFragment StoreEntitySet="operacao">
-          <ScalarProperty Name="op_cod" ColumnName="op_cod" />
-          <ScalarProperty Name="op_nome" ColumnName="op_nome" />
-          <ScalarProperty Name="op_cadastro" ColumnName="op_cadastro" />
-          <ScalarProperty Name="op_descricao" ColumnName="op_descricao" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="produto">
-      <EntityTypeMapping TypeName="promissumServicoModel.produto">
-        <MappingFragment StoreEntitySet="produto">
-          <ScalarProperty Name="pro_cod" ColumnName="pro_cod" />
-          <ScalarProperty Name="pro_nome" ColumnName="pro_nome" />
-          <ScalarProperty Name="pro_descricao" ColumnName="pro_descricao" />
-          <ScalarProperty Name="pro_foto" ColumnName="pro_foto" />
-          <ScalarProperty Name="pro_valorpago" ColumnName="pro_valorpago" />
-          <ScalarProperty Name="pro_valorvenda" ColumnName="pro_valorvenda" />
-          <ScalarProperty Name="pro_qtde" ColumnName="pro_qtde" />
-          <ScalarProperty Name="umed" ColumnName="umed" />
-          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
-          <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
-          <ScalarProperty Name="pro_cadastro" ColumnName="pro_cadastro" />
-          <ScalarProperty Name="for_cod" ColumnName="for_cod" />
-          <ScalarProperty Name="pro_ref" ColumnName="pro_ref" />
-          <ScalarProperty Name="localizacao" ColumnName="localizacao" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="subcategoria">
-      <EntityTypeMapping TypeName="promissumServicoModel.subcategoria">
-        <MappingFragment StoreEntitySet="subcategoria">
-          <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
-          <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
-          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
-          <ScalarProperty Name="scat_cadastro" ColumnName="scat_cadastro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -252,6 +180,83 @@
           <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
           <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
           <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fornecedor">
+      <EntityTypeMapping TypeName="promissumServicoModel.fornecedor">
+        <MappingFragment StoreEntitySet="fornecedor">
+          <ScalarProperty Name="for_status" ColumnName="for_status" />
+          <ScalarProperty Name="for_observacao" ColumnName="for_observacao" />
+          <ScalarProperty Name="for_cpf" ColumnName="for_cpf" />
+          <ScalarProperty Name="for_cadastro" ColumnName="for_cadastro" />
+          <ScalarProperty Name="for_estado" ColumnName="for_estado" />
+          <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
+          <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
+          <ScalarProperty Name="for_email" ColumnName="for_email" />
+          <ScalarProperty Name="for_cel" ColumnName="for_cel" />
+          <ScalarProperty Name="for_fone" ColumnName="for_fone" />
+          <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
+          <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
+          <ScalarProperty Name="for_cep" ColumnName="for_cep" />
+          <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
+          <ScalarProperty Name="for_ie" ColumnName="for_ie" />
+          <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
+          <ScalarProperty Name="for_nome" ColumnName="for_nome" />
+          <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produto">
+      <EntityTypeMapping TypeName="promissumServicoModel.produto">
+        <MappingFragment StoreEntitySet="produto">
+          <ScalarProperty Name="pro_status" ColumnName="pro_status" />
+          <ScalarProperty Name="localizacao" ColumnName="localizacao" />
+          <ScalarProperty Name="pro_ref" ColumnName="pro_ref" />
+          <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+          <ScalarProperty Name="pro_cadastro" ColumnName="pro_cadastro" />
+          <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+          <ScalarProperty Name="umed" ColumnName="umed" />
+          <ScalarProperty Name="pro_qtde" ColumnName="pro_qtde" />
+          <ScalarProperty Name="pro_valorvenda" ColumnName="pro_valorvenda" />
+          <ScalarProperty Name="pro_valorpago" ColumnName="pro_valorpago" />
+          <ScalarProperty Name="pro_foto" ColumnName="pro_foto" />
+          <ScalarProperty Name="pro_descricao" ColumnName="pro_descricao" />
+          <ScalarProperty Name="pro_nome" ColumnName="pro_nome" />
+          <ScalarProperty Name="pro_cod" ColumnName="pro_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoria">
+      <EntityTypeMapping TypeName="promissumServicoModel.categoria">
+        <MappingFragment StoreEntitySet="categoria">
+          <ScalarProperty Name="cat_status" ColumnName="cat_status" />
+          <ScalarProperty Name="cat_cadastro" ColumnName="cat_cadastro" />
+          <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="operacao">
+      <EntityTypeMapping TypeName="promissumServicoModel.operacao">
+        <MappingFragment StoreEntitySet="operacao">
+          <ScalarProperty Name="op_status" ColumnName="op_status" />
+          <ScalarProperty Name="op_descricao" ColumnName="op_descricao" />
+          <ScalarProperty Name="op_cadastro" ColumnName="op_cadastro" />
+          <ScalarProperty Name="op_nome" ColumnName="op_nome" />
+          <ScalarProperty Name="op_cod" ColumnName="op_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategoria">
+      <EntityTypeMapping TypeName="promissumServicoModel.subcategoria">
+        <MappingFragment StoreEntitySet="subcategoria">
+          <ScalarProperty Name="scat_status" ColumnName="scat_status" />
+          <ScalarProperty Name="scat_cadastro" ColumnName="scat_cadastro" />
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+          <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
+          <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

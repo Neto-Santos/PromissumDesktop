@@ -24,7 +24,7 @@ namespace Beta1._0.Relatorio_Atualizado.Cliente
         
         private void button1_Click(object sender, EventArgs e)
         {
-            frmRelatorioCliente frm = new frmRelatorioCliente(new DAL.DalConexao(DAL.DadosConexao.stringConexao));
+            frmRelatorioCliente frm = new frmRelatorioCliente();
             frm.nome = txtNome.Text;
             frm.dataInicial = dtInicio.Value.ToShortDateString();
             frm.dataFinal = dtFim.Value.ToShortDateString();
@@ -45,16 +45,13 @@ namespace Beta1._0.Relatorio_Atualizado.Cliente
         private void btnGerarPdf_Click(object sender, EventArgs e)
         {
             this.formato = "pdf";
-            frmRelatorioCliente frm = new frmRelatorioCliente(new DAL.DalConexao(DAL.DadosConexao.stringConexao),formato);
+            frmRelatorioCliente frm = new frmRelatorioCliente();
             frm.nome = txtNome.Text;
             frm.dataInicial = dtInicio.Value.ToShortDateString();
             frm.dataFinal = dtFim.Value.ToShortDateString();
             frm.cidade = txtCidade.Text;
             frm.estado = txtEstado.Text;
             frm.tipo = rbSintetico.Checked ? "Sintetico" : "Analitico";
-            //frm.status = rbAberto.Checked ? "Aberto" : "";
-            //frm.status = rbCancelado.Checked ? "Cancelado" : "";
-            //frm.status = rbFinalizado.Checked ? "Finalizado" : "";
             frm.defeito = txtDefeito.Text;
             frm.solucao = txtServiço.Text;
             frm.referencia = txtRef.Text;
@@ -62,6 +59,21 @@ namespace Beta1._0.Relatorio_Atualizado.Cliente
             frm.ShowDialog();
             frm.Dispose();
         }
-        
+
+        private void rbSintetico_Click(object sender, EventArgs e)
+        {
+            if (rbSintetico.Checked)
+            {
+                txtRef.Enabled = false;
+                txtDefeito.Enabled = false;
+                txtServiço.Enabled = false;
+            }
+            else
+            {
+                txtRef.Enabled = true;
+                txtDefeito.Enabled = true;
+                txtServiço.Enabled = true;
+            }
+        }
     }
 }

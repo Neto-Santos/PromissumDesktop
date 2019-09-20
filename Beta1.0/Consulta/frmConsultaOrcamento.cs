@@ -32,7 +32,7 @@ namespace Beta1._0.Consulta
         //Variável será utilizada no momento em que for imprimir uma listagem dos produtos.
         public int codProduto { get; set; }
         public int contadorProduto = 0;
-
+        private enum status {Aberto=1,Finalizado =2,Cancelado=3};
 
         private int paginaAtual = 1;
         private string relatorioTitulo = "Ordem de Serviço";
@@ -56,24 +56,44 @@ namespace Beta1._0.Consulta
 
         private void button1_Click(object sender, EventArgs e)
         {
+            codigoOrcamento = 0;
             abrirFormularioCadastroOrcamento();
         }
-        void carregaDataGrid()
+        void carregaDataGrid(status Status)
         {
-            dgOrcamento.DataSource = null;
 
-            dgOrcamento.DataSource = contexto.venda.Where(v => v.ven_status.Contains("Aberto")).Select(x => new
+            dgOrcamento.DataSource = contexto.venda.Where(v => v.ven_status.Contains(Status.ToString())).Select(x => new
             {
                 x.itensvenda.Where(i => i.ven_cod == x.ven_cod).FirstOrDefault().ClienteProduto.cliente.cli_nome,
                 x.ven_cod,
                 x.ven_status,
                 x.ven_total,
+                x.ven_data_entrada,
+                x.ven_data_saida
             }).ToList();
 
         }
+
+        void carregaDataGridItensVenda()
+        {
+            dgvItens.DataSource = contexto.itensvenda.Include("operacao").Include("ClienteProduto").Include("produto").Select(i => new
+            {
+                i.ven_cod,
+                i.ClienteProduto.produto.pro_nome,
+                i.itv_qtde,
+                i.itv_valorBase,
+                i.itv_valor,
+                i.itv_desconto,
+                i.referencia,
+                i.operacao.op_nome
+            }).Where(i => i.ven_cod == codigoOrcamento).ToList();
+        }
+
+       
+
         private void frmConsultaOrcamento_Load(object sender, EventArgs e)
         {
-            carregaDataGrid();
+            carregaDataGrid(status.Aberto);
 
             Ferramentas.impressao objferra = new Ferramentas.impressao();
             objferra.CarregarListaDeImpressoras(cbImpressora);
@@ -85,19 +105,8 @@ namespace Beta1._0.Consulta
             try
             {
                 this.codigoOrcamento = int.Parse(dgOrcamento.Rows[e.RowIndex].Cells["ven_cod"].Value.ToString());
-                dgvItens.DataSource = null;
 
-                dgvItens.DataSource = contexto.itensvenda.Include("operacao").Include("ClienteProduto").Include("produto").Select(i => new
-                {
-                    i.ven_cod,
-                    i.ClienteProduto.produto.pro_nome,
-                    i.itv_qtde,
-                    i.itv_valorBase,
-                    i.itv_valor,
-                    i.itv_desconto,
-                    i.referencia,
-                    i.operacao.op_nome
-                }).Where(i => i.ven_cod == codigoOrcamento).ToList();
+                carregaDataGridItensVenda();
             }
             catch (Exception)
             {
@@ -164,25 +173,6 @@ namespace Beta1._0.Consulta
                     //Se a venda não estiver cancelada.
                     if (modeloVenda.ven_status != "Cancelado")
                     {
-                        //Calculando a quantidade de parcelas já pagas
-
-                        //Se quantidade for maior que zero significar que já foi pago alguma ou todas as parcelas
-                        //Sendo assim não será possível excluir a compra.
-
-                        //cx.Conectar();
-                        //cx.IniciarTransacao();
-
-                        //Excluindo todas as parcelas de uma compra
-                        //Aqui estou incrementando a quantidade dos produtos, já que a venda foi cancelada.
-
-                        //Excluindo todos os Itens de uma compra
-                        //BllItensVenda bllItensVenda = new BllItensVenda(cx);
-
-                        //Aqui é chamado uma trigger DecrementaEstoqueCompra
-                        //bllItensVenda.ExcluirTodosItensVenda(Convert.ToInt32(codigoOrcamento));
-
-                        //Excluindo a Compra                  
-
                         modeloVenda.ven_status = "Cancelado";
                         contexto.Entry(modeloVenda).State = System.Data.Entity.EntityState.Modified;
                         contexto.SaveChanges();
@@ -190,7 +180,7 @@ namespace Beta1._0.Consulta
                         dgOrcamento.DataSource = null;
 
 
-                        carregaDataGrid();
+                        carregaDataGrid(status.Aberto);
 
                     }
                     else
@@ -211,37 +201,15 @@ namespace Beta1._0.Consulta
         {
             if (rbAberto.Checked)
             {
-                dgOrcamento.DataSource = dgOrcamento.DataSource = contexto.venda.Where(v => v.ven_status.Contains("Aberto")).Select(x => new
-                {
-                    x.itensvenda.Where(i => i.ven_cod == x.ven_cod).FirstOrDefault().ClienteProduto.cliente.cli_nome,
-                    x.ven_cod,
-                    x.ven_status,
-                    x.ven_total,
-                    x.ven_data_entrada
-                }).ToList();
+                carregaDataGrid(status.Aberto);
             }
             if (rbFinalizado.Checked)
             {
-                dgOrcamento.DataSource = dgOrcamento.DataSource = contexto.venda.Where(v => v.ven_status.Contains("Finalizado")).Select(x => new
-                {
-                    x.itensvenda.Where(i => i.ven_cod == x.ven_cod).FirstOrDefault().ClienteProduto.cliente.cli_nome,
-                    x.ven_cod,
-                    x.ven_status,
-                    x.ven_total,
-                    x.ven_data_entrada,
-                    x.ven_data_saida
-                }).ToList();
+                carregaDataGrid(status.Finalizado);
             }
             if (rbCancelado.Checked)
             {
-                dgOrcamento.DataSource = dgOrcamento.DataSource = contexto.venda.Where(v => v.ven_status.Contains("Cancelado")).Select(x => new
-                {
-                    x.itensvenda.Where(i => i.ven_cod == x.ven_cod).FirstOrDefault().ClienteProduto.cliente.cli_nome,
-                    x.ven_cod,
-                    x.ven_status,
-                    x.ven_total,
-                    x.ven_data_entrada
-                }).ToList();
+                carregaDataGrid(status.Cancelado);
             }
         }
 

@@ -24,6 +24,7 @@ namespace DAL.EntityFramework
         public int cat_cod { get; set; }
         public string cat_nome { get; set; }
         public Nullable<System.DateTime> cat_cadastro { get; set; }
+        public string cat_status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<produto> produto { get; set; }

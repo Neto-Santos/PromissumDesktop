@@ -24,6 +24,7 @@ namespace DAL.EntityFramework
         public string scat_nome { get; set; }
         public Nullable<int> cat_cod { get; set; }
         public Nullable<System.DateTime> scat_cadastro { get; set; }
+        public string scat_status { get; set; }
     
         public virtual categoria categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

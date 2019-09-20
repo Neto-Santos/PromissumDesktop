@@ -12,6 +12,7 @@
           <Property Name="cat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cat_nome" Type="varchar" MaxLength="95" />
           <Property Name="cat_cadastro" Type="date" />
+          <Property Name="cat_status" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'promissumServico.dbo.cidades' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -131,6 +132,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="for_cadastro" Type="date" />
           <Property Name="for_cpf" Type="varchar" MaxLength="95" />
           <Property Name="for_observacao" Type="varchar" MaxLength="150" />
+          <Property Name="for_status" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="itensvenda">
           <Key>
@@ -183,6 +185,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="op_nome" Type="varchar" MaxLength="95" />
           <Property Name="op_cadastro" Type="date" />
           <Property Name="op_descricao" Type="varchar" MaxLength="150" />
+          <Property Name="op_status" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="produto">
           <Key>
@@ -202,6 +205,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="for_cod" Type="int" />
           <Property Name="pro_ref" Type="varchar" MaxLength="100" />
           <Property Name="localizacao" Type="varchar" MaxLength="15" />
+          <Property Name="pro_status" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="subcategoria">
           <Key>
@@ -211,6 +215,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="scat_nome" Type="varchar" MaxLength="95" />
           <Property Name="cat_cod" Type="int" />
           <Property Name="scat_cadastro" Type="date" />
+          <Property Name="scat_status" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -480,16 +485,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="promissumServicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="categoria">
-          <Key>
-            <PropertyRef Name="cat_cod" />
-          </Key>
-          <Property Name="cat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="cat_cadastro" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="produto" Relationship="Self.FK_produto_categoria" FromRole="categoria" ToRole="produto" />
-          <NavigationProperty Name="subcategoria" Relationship="Self.FK_subcategoria_categoria" FromRole="categoria" ToRole="subcategoria" />
-        </EntityType>
         <EntityType Name="clienteVeiculo">
           <Key>
             <PropertyRef Name="cod" />
@@ -511,29 +506,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="rodape2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="rodape3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="fornecedor">
-          <Key>
-            <PropertyRef Name="for_cod" />
-          </Key>
-          <Property Name="for_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="for_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_ie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_cnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_cep" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_endnumero" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_cadastro" Type="DateTime" Precision="0" />
-          <Property Name="for_cpf" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="for_observacao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="produto" Relationship="Self.FK_produto_fornecedor" FromRole="fornecedor" ToRole="produto" />
-        </EntityType>
         <EntityType Name="itensvenda">
           <Key>
             <PropertyRef Name="itv_cod" />
@@ -547,9 +519,9 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="itv_valorBase" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="itv_desconto" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="op_cod" Type="Int32" />
-          <NavigationProperty Name="operacao" Relationship="Self.FK_itensvenda_operacao" FromRole="itensvenda" ToRole="operacao" />
           <NavigationProperty Name="venda" Relationship="Self.FK_itensvenda_venda" FromRole="itensvenda" ToRole="venda" />
           <NavigationProperty Name="ClienteProduto" Relationship="promissumServicoModel.FK_itensvenda_ClienteProduto" FromRole="itensvenda" ToRole="ClienteProduto" />
+          <NavigationProperty Name="operacao" Relationship="promissumServicoModel.FK_itensvenda_operacao" FromRole="itensvenda" ToRole="operacao" />
         </EntityType>
         <EntityType Name="lembrete">
           <Key>
@@ -582,50 +554,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="abreviatura_montadora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cadastro" Type="DateTime" Precision="0" />
           <NavigationProperty Name="modelo" Relationship="Self.FK_modelo_montadora" FromRole="montadora" ToRole="modelo" />
-        </EntityType>
-        <EntityType Name="operacao">
-          <Key>
-            <PropertyRef Name="op_cod" />
-          </Key>
-          <Property Name="op_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="op_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="op_cadastro" Type="DateTime" Precision="0" />
-          <Property Name="op_descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="itensvenda" Relationship="Self.FK_itensvenda_operacao" FromRole="operacao" ToRole="itensvenda" />
-        </EntityType>
-        <EntityType Name="produto">
-          <Key>
-            <PropertyRef Name="pro_cod" />
-          </Key>
-          <Property Name="pro_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="pro_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="pro_descricao" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="pro_foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="pro_valorpago" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="pro_valorvenda" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="pro_qtde" Type="Double" />
-          <Property Name="umed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cat_cod" Type="Int32" />
-          <Property Name="scat_cod" Type="Int32" />
-          <Property Name="pro_cadastro" Type="DateTime" Precision="0" />
-          <Property Name="for_cod" Type="Int32" />
-          <Property Name="pro_ref" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="localizacao" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="categoria" Relationship="Self.FK_produto_categoria" FromRole="produto" ToRole="categoria" />
-          <NavigationProperty Name="fornecedor" Relationship="Self.FK_produto_fornecedor" FromRole="produto" ToRole="fornecedor" />
-          <NavigationProperty Name="subcategoria" Relationship="Self.FK_produto_subcategoria" FromRole="produto" ToRole="subcategoria" />
-          <NavigationProperty Name="ClienteProduto" Relationship="promissumServicoModel.FK_ClienteProduto_produto" FromRole="produto" ToRole="ClienteProduto" />
-        </EntityType>
-        <EntityType Name="subcategoria">
-          <Key>
-            <PropertyRef Name="scat_cod" />
-          </Key>
-          <Property Name="scat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="scat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
-          <Property Name="cat_cod" Type="Int32" />
-          <Property Name="scat_cadastro" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="categoria" Relationship="Self.FK_subcategoria_categoria" FromRole="subcategoria" ToRole="categoria" />
-          <NavigationProperty Name="produto" Relationship="Self.FK_produto_subcategoria" FromRole="subcategoria" ToRole="produto" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -708,30 +636,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="estado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="cadastro" Type="DateTime" Precision="0" />
         </EntityType>
-        <Association Name="FK_produto_categoria">
-          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
-          <End Role="produto" Type="Self.produto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categoria">
-              <PropertyRef Name="cat_cod" />
-            </Principal>
-            <Dependent Role="produto">
-              <PropertyRef Name="cat_cod" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_subcategoria_categoria">
-          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
-          <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categoria">
-              <PropertyRef Name="cat_cod" />
-            </Principal>
-            <Dependent Role="subcategoria">
-              <PropertyRef Name="cat_cod" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_clienteVeiculo_modelo">
           <End Role="modelo" Type="Self.modelo" Multiplicity="0..1" />
           <End Role="clienteVeiculo" Type="Self.clienteVeiculo" Multiplicity="*" />
@@ -741,30 +645,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
             </Principal>
             <Dependent Role="clienteVeiculo">
               <PropertyRef Name="codVeiculo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_produto_fornecedor">
-          <End Role="fornecedor" Type="Self.fornecedor" Multiplicity="0..1" />
-          <End Role="produto" Type="Self.produto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="fornecedor">
-              <PropertyRef Name="for_cod" />
-            </Principal>
-            <Dependent Role="produto">
-              <PropertyRef Name="for_cod" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_itensvenda_operacao">
-          <End Role="operacao" Type="Self.operacao" Multiplicity="0..1" />
-          <End Role="itensvenda" Type="Self.itensvenda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="operacao">
-              <PropertyRef Name="op_cod" />
-            </Principal>
-            <Dependent Role="itensvenda">
-              <PropertyRef Name="op_cod" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -792,54 +672,21 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_produto_subcategoria">
-          <End Role="subcategoria" Type="Self.subcategoria" Multiplicity="0..1" />
-          <End Role="produto" Type="Self.produto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="subcategoria">
-              <PropertyRef Name="scat_cod" />
-            </Principal>
-            <Dependent Role="produto">
-              <PropertyRef Name="scat_cod" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="promissumServicoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="categoria" EntityType="Self.categoria" />
           <EntitySet Name="clienteVeiculo" EntityType="Self.clienteVeiculo" />
           <EntitySet Name="email" EntityType="Self.email" />
-          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" />
           <EntitySet Name="itensvenda" EntityType="Self.itensvenda" />
           <EntitySet Name="lembrete" EntityType="Self.lembrete" />
           <EntitySet Name="modelo" EntityType="Self.modelo" />
           <EntitySet Name="montadora" EntityType="Self.montadora" />
-          <EntitySet Name="operacao" EntityType="Self.operacao" />
-          <EntitySet Name="produto" EntityType="Self.produto" />
-          <EntitySet Name="subcategoria" EntityType="Self.subcategoria" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="usuario" EntityType="Self.usuario" />
           <EntitySet Name="venda" EntityType="Self.venda" />
           <EntitySet Name="cidades" EntityType="Self.cidades" />
           <EntitySet Name="empresa" EntityType="Self.empresa" />
-          <AssociationSet Name="FK_produto_categoria" Association="Self.FK_produto_categoria">
-            <End Role="categoria" EntitySet="categoria" />
-            <End Role="produto" EntitySet="produto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_subcategoria_categoria" Association="Self.FK_subcategoria_categoria">
-            <End Role="categoria" EntitySet="categoria" />
-            <End Role="subcategoria" EntitySet="subcategoria" />
-          </AssociationSet>
           <AssociationSet Name="FK_clienteVeiculo_modelo" Association="Self.FK_clienteVeiculo_modelo">
             <End Role="modelo" EntitySet="modelo" />
             <End Role="clienteVeiculo" EntitySet="clienteVeiculo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_produto_fornecedor" Association="Self.FK_produto_fornecedor">
-            <End Role="fornecedor" EntitySet="fornecedor" />
-            <End Role="produto" EntitySet="produto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_itensvenda_operacao" Association="Self.FK_itensvenda_operacao">
-            <End Role="operacao" EntitySet="operacao" />
-            <End Role="itensvenda" EntitySet="itensvenda" />
           </AssociationSet>
           <AssociationSet Name="FK_itensvenda_venda" Association="Self.FK_itensvenda_venda">
             <End Role="venda" EntitySet="venda" />
@@ -849,15 +696,7 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
             <End Role="montadora" EntitySet="montadora" />
             <End Role="modelo" EntitySet="modelo" />
           </AssociationSet>
-          <AssociationSet Name="FK_produto_subcategoria" Association="Self.FK_produto_subcategoria">
-            <End Role="subcategoria" EntitySet="subcategoria" />
-            <End Role="produto" EntitySet="produto" />
-          </AssociationSet>
           <EntitySet Name="ClienteProduto" EntityType="promissumServicoModel.ClienteProduto" />
-          <AssociationSet Name="FK_ClienteProduto_produto" Association="promissumServicoModel.FK_ClienteProduto_produto">
-            <End Role="produto" EntitySet="produto" />
-            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
-          </AssociationSet>
           <AssociationSet Name="FK_itensvenda_ClienteProduto" Association="promissumServicoModel.FK_itensvenda_ClienteProduto">
             <End Role="ClienteProduto" EntitySet="ClienteProduto" />
             <End Role="itensvenda" EntitySet="itensvenda" />
@@ -866,6 +705,35 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <AssociationSet Name="FK_ClienteProduto_cliente" Association="promissumServicoModel.FK_ClienteProduto_cliente">
             <End Role="cliente" EntitySet="cliente" />
             <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <EntitySet Name="fornecedor" EntityType="promissumServicoModel.fornecedor" />
+          <EntitySet Name="produto" EntityType="promissumServicoModel.produto" />
+          <AssociationSet Name="FK_ClienteProduto_produto" Association="promissumServicoModel.FK_ClienteProduto_produto">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="ClienteProduto" EntitySet="ClienteProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_fornecedor" Association="promissumServicoModel.FK_produto_fornecedor">
+            <End Role="fornecedor" EntitySet="fornecedor" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <EntitySet Name="categoria" EntityType="promissumServicoModel.categoria" />
+          <EntitySet Name="operacao" EntityType="promissumServicoModel.operacao" />
+          <EntitySet Name="subcategoria" EntityType="promissumServicoModel.subcategoria" />
+          <AssociationSet Name="FK_produto_categoria" Association="promissumServicoModel.FK_produto_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="produto" EntitySet="produto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subcategoria_categoria" Association="promissumServicoModel.FK_subcategoria_categoria">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="subcategoria" EntitySet="subcategoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_itensvenda_operacao" Association="promissumServicoModel.FK_itensvenda_operacao">
+            <End Role="operacao" EntitySet="operacao" />
+            <End Role="itensvenda" EntitySet="itensvenda" />
+          </AssociationSet>
+          <AssociationSet Name="FK_produto_subcategoria" Association="promissumServicoModel.FK_produto_subcategoria">
+            <End Role="subcategoria" EntitySet="subcategoria" />
+            <End Role="produto" EntitySet="produto" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="ClienteProduto">
@@ -878,22 +746,10 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
           <Property Name="referencia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cadastro" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="produto" Relationship="promissumServicoModel.FK_ClienteProduto_produto" FromRole="ClienteProduto" ToRole="produto" />
           <NavigationProperty Name="itensvenda" Relationship="promissumServicoModel.FK_itensvenda_ClienteProduto" FromRole="ClienteProduto" ToRole="itensvenda" />
           <NavigationProperty Name="cliente" Relationship="promissumServicoModel.FK_ClienteProduto_cliente" FromRole="ClienteProduto" ToRole="cliente" />
+          <NavigationProperty Name="produto" Relationship="promissumServicoModel.FK_ClienteProduto_produto" FromRole="ClienteProduto" ToRole="produto" />
         </EntityType>
-        <Association Name="FK_ClienteProduto_produto">
-          <End Type="promissumServicoModel.produto" Role="produto" Multiplicity="0..1" />
-          <End Type="promissumServicoModel.ClienteProduto" Role="ClienteProduto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="produto">
-              <PropertyRef Name="pro_cod" />
-            </Principal>
-            <Dependent Role="ClienteProduto">
-              <PropertyRef Name="codProduto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_itensvenda_ClienteProduto">
           <End Type="promissumServicoModel.ClienteProduto" Role="ClienteProduto" Multiplicity="0..1" />
           <End Type="promissumServicoModel.itensvenda" Role="itensvenda" Multiplicity="*" />
@@ -942,21 +798,166 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="for_cod" />
+          </Key>
+          <Property Name="for_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="for_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_ie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cep" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_endnumero" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="for_cpf" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_observacao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="for_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="produto" Relationship="promissumServicoModel.FK_produto_fornecedor" FromRole="fornecedor" ToRole="produto" />
+        </EntityType>
+        <EntityType Name="produto">
+          <Key>
+            <PropertyRef Name="pro_cod" />
+          </Key>
+          <Property Name="pro_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pro_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="pro_descricao" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="pro_foto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pro_valorpago" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pro_valorvenda" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="pro_qtde" Type="Double" />
+          <Property Name="umed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+          <Property Name="scat_cod" Type="Int32" />
+          <Property Name="pro_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="for_cod" Type="Int32" />
+          <Property Name="pro_ref" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="localizacao" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="pro_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ClienteProduto" Relationship="promissumServicoModel.FK_ClienteProduto_produto" FromRole="produto" ToRole="ClienteProduto" />
+          <NavigationProperty Name="fornecedor" Relationship="promissumServicoModel.FK_produto_fornecedor" FromRole="produto" ToRole="fornecedor" />
+          <NavigationProperty Name="categoria" Relationship="promissumServicoModel.FK_produto_categoria" FromRole="produto" ToRole="categoria" />
+          <NavigationProperty Name="subcategoria" Relationship="promissumServicoModel.FK_produto_subcategoria" FromRole="produto" ToRole="subcategoria" />
+        </EntityType>
+        <Association Name="FK_ClienteProduto_produto">
+          <End Type="promissumServicoModel.produto" Role="produto" Multiplicity="0..1" />
+          <End Type="promissumServicoModel.ClienteProduto" Role="ClienteProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="pro_cod" />
+            </Principal>
+            <Dependent Role="ClienteProduto">
+              <PropertyRef Name="codProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_fornecedor">
+          <End Type="promissumServicoModel.fornecedor" Role="fornecedor" Multiplicity="0..1" />
+          <End Type="promissumServicoModel.produto" Role="produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fornecedor">
+              <PropertyRef Name="for_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="for_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="categoria">
+          <Key>
+            <PropertyRef Name="cat_cod" />
+          </Key>
+          <Property Name="cat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="cat_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="produto" Relationship="promissumServicoModel.FK_produto_categoria" FromRole="categoria" ToRole="produto" />
+          <NavigationProperty Name="subcategoria" Relationship="promissumServicoModel.FK_subcategoria_categoria" FromRole="categoria" ToRole="subcategoria" />
+        </EntityType>
+        <EntityType Name="operacao">
+          <Key>
+            <PropertyRef Name="op_cod" />
+          </Key>
+          <Property Name="op_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="op_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="op_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="op_descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="op_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="itensvenda" Relationship="promissumServicoModel.FK_itensvenda_operacao" FromRole="operacao" ToRole="itensvenda" />
+        </EntityType>
+        <EntityType Name="subcategoria">
+          <Key>
+            <PropertyRef Name="scat_cod" />
+          </Key>
+          <Property Name="scat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="scat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+          <Property Name="scat_cadastro" Type="DateTime" Precision="0" />
+          <Property Name="scat_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="categoria" Relationship="promissumServicoModel.FK_subcategoria_categoria" FromRole="subcategoria" ToRole="categoria" />
+          <NavigationProperty Name="produto" Relationship="promissumServicoModel.FK_produto_subcategoria" FromRole="subcategoria" ToRole="produto" />
+        </EntityType>
+        <Association Name="FK_produto_categoria">
+          <End Type="promissumServicoModel.categoria" Role="categoria" Multiplicity="0..1" />
+          <End Type="promissumServicoModel.produto" Role="produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="cat_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="cat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subcategoria_categoria">
+          <End Type="promissumServicoModel.categoria" Role="categoria" Multiplicity="0..1" />
+          <End Type="promissumServicoModel.subcategoria" Role="subcategoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria">
+              <PropertyRef Name="cat_cod" />
+            </Principal>
+            <Dependent Role="subcategoria">
+              <PropertyRef Name="cat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_itensvenda_operacao">
+          <End Type="promissumServicoModel.operacao" Role="operacao" Multiplicity="0..1" />
+          <End Type="promissumServicoModel.itensvenda" Role="itensvenda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operacao">
+              <PropertyRef Name="op_cod" />
+            </Principal>
+            <Dependent Role="itensvenda">
+              <PropertyRef Name="op_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_produto_subcategoria">
+          <End Type="promissumServicoModel.subcategoria" Role="subcategoria" Multiplicity="0..1" />
+          <End Type="promissumServicoModel.produto" Role="produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subcategoria">
+              <PropertyRef Name="scat_cod" />
+            </Principal>
+            <Dependent Role="produto">
+              <PropertyRef Name="scat_cod" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="promissumServicoModelStoreContainer" CdmEntityContainer="promissumServicoEntities">
-          <EntitySetMapping Name="categoria">
-            <EntityTypeMapping TypeName="promissumServicoModel.categoria">
-              <MappingFragment StoreEntitySet="categoria">
-                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
-                <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
-                <ScalarProperty Name="cat_cadastro" ColumnName="cat_cadastro" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="clienteVeiculo">
             <EntityTypeMapping TypeName="promissumServicoModel.clienteVeiculo">
               <MappingFragment StoreEntitySet="clienteVeiculo">
@@ -976,29 +977,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
                 <ScalarProperty Name="rodape1" ColumnName="rodape1" />
                 <ScalarProperty Name="rodape2" ColumnName="rodape2" />
                 <ScalarProperty Name="rodape3" ColumnName="rodape3" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="fornecedor">
-            <EntityTypeMapping TypeName="promissumServicoModel.fornecedor">
-              <MappingFragment StoreEntitySet="fornecedor">
-                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
-                <ScalarProperty Name="for_nome" ColumnName="for_nome" />
-                <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
-                <ScalarProperty Name="for_ie" ColumnName="for_ie" />
-                <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
-                <ScalarProperty Name="for_cep" ColumnName="for_cep" />
-                <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
-                <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
-                <ScalarProperty Name="for_fone" ColumnName="for_fone" />
-                <ScalarProperty Name="for_cel" ColumnName="for_cel" />
-                <ScalarProperty Name="for_email" ColumnName="for_email" />
-                <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
-                <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
-                <ScalarProperty Name="for_estado" ColumnName="for_estado" />
-                <ScalarProperty Name="for_cadastro" ColumnName="for_cadastro" />
-                <ScalarProperty Name="for_cpf" ColumnName="for_cpf" />
-                <ScalarProperty Name="for_observacao" ColumnName="for_observacao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1046,46 +1024,6 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
                 <ScalarProperty Name="montadora1" ColumnName="montadora" />
                 <ScalarProperty Name="abreviatura_montadora" ColumnName="abreviatura_montadora" />
                 <ScalarProperty Name="cadastro" ColumnName="cadastro" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="operacao">
-            <EntityTypeMapping TypeName="promissumServicoModel.operacao">
-              <MappingFragment StoreEntitySet="operacao">
-                <ScalarProperty Name="op_cod" ColumnName="op_cod" />
-                <ScalarProperty Name="op_nome" ColumnName="op_nome" />
-                <ScalarProperty Name="op_cadastro" ColumnName="op_cadastro" />
-                <ScalarProperty Name="op_descricao" ColumnName="op_descricao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="produto">
-            <EntityTypeMapping TypeName="promissumServicoModel.produto">
-              <MappingFragment StoreEntitySet="produto">
-                <ScalarProperty Name="pro_cod" ColumnName="pro_cod" />
-                <ScalarProperty Name="pro_nome" ColumnName="pro_nome" />
-                <ScalarProperty Name="pro_descricao" ColumnName="pro_descricao" />
-                <ScalarProperty Name="pro_foto" ColumnName="pro_foto" />
-                <ScalarProperty Name="pro_valorpago" ColumnName="pro_valorpago" />
-                <ScalarProperty Name="pro_valorvenda" ColumnName="pro_valorvenda" />
-                <ScalarProperty Name="pro_qtde" ColumnName="pro_qtde" />
-                <ScalarProperty Name="umed" ColumnName="umed" />
-                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
-                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
-                <ScalarProperty Name="pro_cadastro" ColumnName="pro_cadastro" />
-                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
-                <ScalarProperty Name="pro_ref" ColumnName="pro_ref" />
-                <ScalarProperty Name="localizacao" ColumnName="localizacao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="subcategoria">
-            <EntityTypeMapping TypeName="promissumServicoModel.subcategoria">
-              <MappingFragment StoreEntitySet="subcategoria">
-                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
-                <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
-                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
-                <ScalarProperty Name="scat_cadastro" ColumnName="scat_cadastro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1199,6 +1137,83 @@ warning 6002: The table/view 'promissumServico.dbo.empresa' does not have a prim
                 <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
                 <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
                 <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="promissumServicoModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="for_status" ColumnName="for_status" />
+                <ScalarProperty Name="for_observacao" ColumnName="for_observacao" />
+                <ScalarProperty Name="for_cpf" ColumnName="for_cpf" />
+                <ScalarProperty Name="for_cadastro" ColumnName="for_cadastro" />
+                <ScalarProperty Name="for_estado" ColumnName="for_estado" />
+                <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
+                <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
+                <ScalarProperty Name="for_email" ColumnName="for_email" />
+                <ScalarProperty Name="for_cel" ColumnName="for_cel" />
+                <ScalarProperty Name="for_fone" ColumnName="for_fone" />
+                <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
+                <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
+                <ScalarProperty Name="for_cep" ColumnName="for_cep" />
+                <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
+                <ScalarProperty Name="for_ie" ColumnName="for_ie" />
+                <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
+                <ScalarProperty Name="for_nome" ColumnName="for_nome" />
+                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="promissumServicoModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="pro_status" ColumnName="pro_status" />
+                <ScalarProperty Name="localizacao" ColumnName="localizacao" />
+                <ScalarProperty Name="pro_ref" ColumnName="pro_ref" />
+                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+                <ScalarProperty Name="pro_cadastro" ColumnName="pro_cadastro" />
+                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+                <ScalarProperty Name="umed" ColumnName="umed" />
+                <ScalarProperty Name="pro_qtde" ColumnName="pro_qtde" />
+                <ScalarProperty Name="pro_valorvenda" ColumnName="pro_valorvenda" />
+                <ScalarProperty Name="pro_valorpago" ColumnName="pro_valorpago" />
+                <ScalarProperty Name="pro_foto" ColumnName="pro_foto" />
+                <ScalarProperty Name="pro_descricao" ColumnName="pro_descricao" />
+                <ScalarProperty Name="pro_nome" ColumnName="pro_nome" />
+                <ScalarProperty Name="pro_cod" ColumnName="pro_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categoria">
+            <EntityTypeMapping TypeName="promissumServicoModel.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="cat_status" ColumnName="cat_status" />
+                <ScalarProperty Name="cat_cadastro" ColumnName="cat_cadastro" />
+                <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operacao">
+            <EntityTypeMapping TypeName="promissumServicoModel.operacao">
+              <MappingFragment StoreEntitySet="operacao">
+                <ScalarProperty Name="op_status" ColumnName="op_status" />
+                <ScalarProperty Name="op_descricao" ColumnName="op_descricao" />
+                <ScalarProperty Name="op_cadastro" ColumnName="op_cadastro" />
+                <ScalarProperty Name="op_nome" ColumnName="op_nome" />
+                <ScalarProperty Name="op_cod" ColumnName="op_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subcategoria">
+            <EntityTypeMapping TypeName="promissumServicoModel.subcategoria">
+              <MappingFragment StoreEntitySet="subcategoria">
+                <ScalarProperty Name="scat_status" ColumnName="scat_status" />
+                <ScalarProperty Name="scat_cadastro" ColumnName="scat_cadastro" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+                <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
+                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

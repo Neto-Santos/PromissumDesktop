@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DAL.EntityFramework;
 using BLL;
 using Beta1._0.Relatorio.Produto;
+using System.Runtime.InteropServices;
 
 namespace Beta1._0.Consulta
 {
@@ -20,7 +21,6 @@ namespace Beta1._0.Consulta
         {
             InitializeComponent();
             this.codigo = null;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         promissumServicoEntities contexto = new promissumServicoEntities();
@@ -68,58 +68,85 @@ namespace Beta1._0.Consulta
             Ferramentas.impressao objferra = new Ferramentas.impressao();
             objferra.CarregarListaDeImpressoras(cbImpressora);
 
-            
+
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (rbCategoria.Checked)
+            try
             {
-                try
+                if (rbCategoria.Checked)
                 {
-                    dgProduto.DataSource = contexto.produto.Include("categoria").Where(p => p.categoria.cat_nome.Contains(txtPesquisa.Text)).ToList();
-                }
-                catch (Exception)
-                {
-                    throw new Exception();
-                }
+                    dgProduto.DataSource = contexto.produto.Include("categoria").Include("subcategoria").Select(p => new
+                    {
+                        p.pro_cod,
+                        p.pro_nome,
+                        p.pro_ref,
+                        p.subcategoria.scat_nome,
+                        p.categoria.cat_nome,
+                        p.localizacao,
+                        p.pro_cadastro,
+                        p.pro_valorpago,
+                        p.pro_valorvenda
+                    }).Where(x => x.scat_nome.Contains(txtPesquisa.Text)).ToList();
 
-            }
-            if (rbCod.Checked)
-            {
-                try
+                }
+                if (rbCod.Checked)
                 {
                     if (!String.IsNullOrEmpty(txtPesquisa.Text))
                     {
-                        dgProduto.DataSource = contexto.produto.Include("categoria").Where(p =>p.pro_cod.Equals(txtPesquisa.Text)).ToList();
+                        dgProduto.DataSource = contexto.produto.Include("categoria").Include("subcategoria").Select(p => new
+                        {
+                            p.pro_cod,
+                            p.pro_nome,
+                            p.pro_ref,
+                            p.pro_qtde,
+                            p.umed,                            
+                            p.subcategoria.scat_nome,
+                            p.categoria.cat_nome,
+                            p.localizacao,
+                            p.pro_cadastro,
+                            p.pro_valorpago,
+                            p.pro_valorvenda
+                        }).Where(x => x.cat_nome.Contains(txtPesquisa.Text)).ToList();
                     }
+                }
+                if (rbProduto.Checked)
+                {
+                    dgProduto.DataSource = contexto.produto.Include("categoria").Include("subcategoria").Select(p => new
+                    {
+                        p.pro_cod,
+                        p.pro_nome,
+                        p.pro_ref,
+                        p.subcategoria.scat_nome,
+                        p.categoria.cat_nome,
+                        p.localizacao,
+                        p.pro_cadastro,
+                        p.pro_valorpago,
+                        p.pro_valorvenda
+                    }).Where(x => x.pro_nome.Contains(txtPesquisa.Text)).ToList();
 
                 }
-                catch (Exception)
-                { }
+                if (rbSubCategoria.Checked)
+                {
+                    dgProduto.DataSource = contexto.produto.Include("categoria").Include("subcategoria").Select(p => new
+                    {
+                        p.pro_cod,
+                        p.pro_nome,
+                        p.pro_ref,
+                        p.subcategoria.scat_nome,
+                        p.categoria.cat_nome,
+                        p.localizacao,
+                        p.pro_cadastro,
+                        p.pro_valorpago,
+                        p.pro_valorvenda
+                    }).Where(x => x.scat_nome.Contains(txtPesquisa.Text)).ToList();
+
+                }
             }
-            if (rbProduto.Checked)
+            catch (Exception)
             {
-                try
-                {
-                    dgProduto.DataSource = contexto.produto.Include("categoria").Where(p => p.pro_nome.Contains(txtPesquisa.Text)).ToList();
-                }
-                catch (Exception)
-                {
-                    throw new Exception();
-                }
-            }
-            if (rbSubCategoria.Checked)
-            {
-                try
-                {
-                    
-                    dgProduto.DataSource = contexto.produto.Include("categoria").Include("subcategoria").Where(p => p.subcategoria.scat_nome.Contains(txtPesquisa.Text)).ToList();
-                }
-                catch (Exception)
-                {
-                    throw new Exception();
-                }
+                MessageBox.Show("Ops. Parece que algo deu errado. Verifique se o campo foi preenchido corretamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -130,10 +157,21 @@ namespace Beta1._0.Consulta
                 var dlg = MessageBox.Show("Deseja Realmento Excluir este item?", "", MessageBoxButtons.YesNo);
                 if (dlg == DialogResult.Yes)
                 {
-                    //bll.Excluir(Convert.ToInt32(this.codigo));
-                    //dgProduto.DataSource = bll.LocalizarProdutoSubCategoria("");
+                    var codProduto = int.Parse(codigo);
+                    var _produto = contexto.produto.Find(codProduto);
 
-                //Produto não deverá ser excluído mas sim cancelado
+                    if (_produto.pro_status == "Cancelado")
+                    {
+                        _produto.pro_status = "Ativo";
+                    }
+                    else
+                    {
+                        _produto.pro_status = "Cancelado";
+                    }
+                    contexto.Entry(_produto).State = System.Data.Entity.EntityState.Modified;
+                    contexto.SaveChanges();
+
+                    btnFiltrar_Click(sender, e);
                 }
             }
         }
@@ -148,6 +186,44 @@ namespace Beta1._0.Consulta
             frmFiltroProduto frm = new frmFiltroProduto(new DAL.DalConexao(DAL.DadosConexao.stringConexao));
             frm.ShowDialog();
             frm.Dispose();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized || this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+
+        }
+
+        public const int WM_NCLMUTTONDOWN = 0XA1;
+        public const int HT_CAPTION = 0X2;
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImport("user32.dll")]
+        public static extern int ReleaseCapture();
+
+        private void pnCabecalho_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLMUTTONDOWN, HT_CAPTION, 0);
+            }
         }
     }
 }
